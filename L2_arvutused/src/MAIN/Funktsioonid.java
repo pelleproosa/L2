@@ -25,8 +25,8 @@ public class Funktsioonid {
 		asukoht1=0;
 		b=a;
 
-		System.out.println("Enne loopi");
-		System.out.println(b);
+		//System.out.println("Enne loopi");
+		//System.out.println(b);
 		
 		
 		
@@ -57,9 +57,9 @@ public class Funktsioonid {
 						}
 						if(tulp){System.out.println("Tulp");}
 						if(rida){System.out.println("Rida");}
-						System.out.println("Peale tühikute eraldamist");
-						System.out.println(a);
-						System.out.println("");
+						//System.out.println("Peale tühikute eraldamist");
+						//System.out.println(a);
+						//System.out.println("");
 						//System.exit(0);
 		// Tühikute eemaldamine  END
 		asukoht1=0;

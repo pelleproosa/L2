@@ -23,7 +23,7 @@ public class MAIN {
 		// Vahetest END
 		
 		GLOBAL.SaveFileName=System.getProperty("user.dir")+"\\"+"L2Calc.ini";
-		
+		System.out.println(System.getProperty("user.dir")+"\\"+"L2Calc.ini");
 		// System.out.println(System.getProperty("user.home")+"\\Desktop\\");
 
 	INI_GLOBAL.start(args); 
