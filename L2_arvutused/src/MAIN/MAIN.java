@@ -26,7 +26,7 @@ public class MAIN {
 		
 		// System.out.println(System.getProperty("user.home")+"\\Desktop\\");
 
-	INI_GLOBAL.start(args);
+	INI_GLOBAL.start(args); 
 	tabel.start(args);
 
 	}
