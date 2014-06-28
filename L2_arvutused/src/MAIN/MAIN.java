@@ -10,7 +10,7 @@ import INI.INI_GLOBAL;
  * @author Pele
  *
  */ 
-public class MAIN {
+public class MAIN { 
 
 	/**
 	 * @param args
