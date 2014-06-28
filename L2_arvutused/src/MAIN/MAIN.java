@@ -9,7 +9,7 @@ import INI.INI_GLOBAL;
 /**
  * @author Pele
  *
- */
+ */ 
 public class MAIN {
 
 	/**
