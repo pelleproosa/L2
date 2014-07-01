@@ -17,7 +17,7 @@ public class MAIN {
 	 * @throws Exception 
 	 */
 	public static void main(String[] args) throws Exception {
-		// Vahetest START
+		// Vahetest START 
 	//Funktsioonid.TulbadReadDoubleJadasse("{75, 75, 75, 75, 75, 200, 75, 75, 75, 75}", "{75, 75, 75, 75, 75, 75, 75, 75, 75, 75}");
 	//System.exit(0);       
 		// Vahetest END

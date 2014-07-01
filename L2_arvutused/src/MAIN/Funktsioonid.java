@@ -11,7 +11,7 @@ public class Funktsioonid {
 		
 		String a="";
 		String b="";
-		int asukoht1=0;
+		int asukoht1=0; 
 		int asukoht2=0;
 		int tulpRidaLugeja=0;
 		double[] column = new double[10];

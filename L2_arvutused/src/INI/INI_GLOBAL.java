@@ -38,7 +38,7 @@ public class INI_GLOBAL {
 		MAIN.GLOBAL.inputlocation[7]=tulem[37];
 		MAIN.GLOBAL.inputlocation[8]=tulem[38];
 		MAIN.GLOBAL.inputlocation[9]=tulem[39];
-		MAIN.GLOBAL.inputlocation[10]=tulem[40];
+		MAIN.GLOBAL.inputlocation[10]=tulem[40]; 
 		MAIN.GLOBAL.inputlocation[11]=tulem[41];
 		MAIN.GLOBAL.inputlocation[12]=tulem[42];
 		MAIN.GLOBAL.inputlocation[13]=tulem[43];

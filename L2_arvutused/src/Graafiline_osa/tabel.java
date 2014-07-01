@@ -95,7 +95,7 @@ public class tabel {
         	frame.add(MinuOutput[19], MAIN.GLOBAL.outputlocation_19);
         	frame.add(MinuOutput[20], MAIN.GLOBAL.outputlocation_20);
         	frame.add(MinuOutput[21], MAIN.GLOBAL.outputlocation_21);
-        	frame.add(MinuOutput[22], MAIN.GLOBAL.outputlocation_22);
+        	frame.add(MinuOutput[22], MAIN.GLOBAL.outputlocation_22); 
         	frame.add(MinuOutput[23], MAIN.GLOBAL.outputlocation_23);
         	frame.add(MinuOutput[24], MAIN.GLOBAL.outputlocation_24);
         	frame.add(MinuOutput[25], MAIN.GLOBAL.outputlocation_25);

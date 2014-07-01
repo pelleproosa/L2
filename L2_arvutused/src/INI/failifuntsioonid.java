@@ -49,7 +49,7 @@ while (i<sisu_suurus){
 	i++;
 }
 
-	        output.close();
+	        output.close(); 
         
 	        
 	        return true;
