@@ -55,8 +55,8 @@ public class Funktsioonid {
 							}			
 
 						}
-						if(tulp){System.out.println("Tulp");}
-						if(rida){System.out.println("Rida");}
+						//if(tulp){System.out.println("Tulp");}
+						//if(rida){System.out.println("Rida");}
 						//System.out.println("Peale tühikute eraldamist");
 						//System.out.println(a);
 						//System.out.println("");
@@ -144,6 +144,19 @@ public class Funktsioonid {
 		
 		
 
+	}
+	
+	
+	
+	public static void TulbadReadstringideks()
+	{
+		String tulbad="{"+(int)GLOBAL.size[0][0]+", "+(int)GLOBAL.size[0][1]+", "+(int)GLOBAL.size[0][2]+", "+(int)GLOBAL.size[0][3]+", "+(int)GLOBAL.size[0][4]+", "+(int)GLOBAL.size[0][5]+", "+(int)GLOBAL.size[0][6]+", "+(int)GLOBAL.size[0][7]+", "+(int)GLOBAL.size[0][8]+", "+(int)GLOBAL.size[0][9]+"}";
+		String read="{"+(int)GLOBAL.size[1][0]+", "+(int)GLOBAL.size[1][1]+", "+(int)GLOBAL.size[1][2]+", "+(int)GLOBAL.size[1][3]+", "+(int)GLOBAL.size[1][4]+", "+(int)GLOBAL.size[1][5]+", "+(int)GLOBAL.size[1][6]+", "+(int)GLOBAL.size[1][7]+", "+(int)GLOBAL.size[1][8]+", "+(int)GLOBAL.size[1][9]+"}";
+		GLOBAL.tulbadFunktsioonist=tulbad;
+		GLOBAL.readFunktsioonist=read;
+	//	System.out.println(tulbad);
+	//	System.out.println(read);
+	//	int a=(int)GLOBAL.size[0][0];
 	}
 	
 	

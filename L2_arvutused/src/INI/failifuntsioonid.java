@@ -71,7 +71,7 @@ while (i<sisu_suurus){
 		int i=0;
 		while ((rida = br.readLine()) != null) {
 			line[i]=rida;
-			System.out.println(i+"  "+line[i]);
+			//System.out.println(i+"  "+line[i]);
 			i++;
 		}
 	 
@@ -80,5 +80,29 @@ while (i<sisu_suurus){
 		return line;
 
 	}
+	public static void kustutafail()
+	{
+		try{
+			 
+    		File file = new File(MAIN.GLOBAL.SaveFileName);
+/* 
+    		if(file.delete()){
+    			System.out.println(file.getName() + " is deleted!");
+    		}else{
+    			System.out.println("Delete operation is failed.");
+    		}
+ */
+    	}catch(Exception e){
+    		System.out.println("Mingi jama faili kustutamisega... failifuntsioonid");
+    		//e.printStackTrace();
+ 
+    	}
+	}
+public static void nupunimed()
+{
+	
+}
+	
+	
 }
 

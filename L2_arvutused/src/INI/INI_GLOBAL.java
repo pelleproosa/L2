@@ -2,6 +2,8 @@ package INI;
 
 import java.io.FileNotFoundException;
 
+import MAIN.Funktsioonid;
+
 
 
 public class INI_GLOBAL {
@@ -18,10 +20,14 @@ public class INI_GLOBAL {
 		MAIN.GLOBAL.width=Integer.parseInt(tulem[5]);
 		MAIN.GLOBAL.height=Integer.parseInt(tulem[6]);
 		MAIN.Funktsioonid.TulbadReadDoubleJadasse(tulem[8],tulem[9]); //sisestab 8 ja 9 funtsioonis.
-		MAIN.GLOBAL.btn1=tulem[11];
+		MAIN.GLOBAL.btn1=tulem[11]; //System.out.println(tulem[11]);System.exit(0);
 		MAIN.GLOBAL.btn2=tulem[12];
 		MAIN.GLOBAL.btn3=tulem[13];
 		MAIN.GLOBAL.btn4=tulem[14];
+		MAIN.GLOBAL.label[0] =MAIN.GLOBAL.btn1;
+		MAIN.GLOBAL.label[1] =MAIN.GLOBAL.btn2; 
+		MAIN.GLOBAL.label[2]=MAIN.GLOBAL.btn3;
+		MAIN.GLOBAL.label[3] = MAIN.GLOBAL.btn4;
 		MAIN.GLOBAL.lbl1string=tulem[15];
 		// ... vaba ruum uutele komponentidele
 		MAIN.GLOBAL.btnlocation_1=tulem[26];
@@ -57,34 +63,74 @@ public class INI_GLOBAL {
 		MAIN.GLOBAL.inputlocation[26]=tulem[56];
 		MAIN.GLOBAL.inputlocation[27]=tulem[57];
 		MAIN.GLOBAL.inputlocation[28]=tulem[58];
-		MAIN.GLOBAL.outputlocation_1=tulem[59];
-		MAIN.GLOBAL.outputlocation_2=tulem[60];
-		MAIN.GLOBAL.outputlocation_3=tulem[61];
-		MAIN.GLOBAL.outputlocation_4=tulem[62];
-		MAIN.GLOBAL.outputlocation_5=tulem[63];
-		MAIN.GLOBAL.outputlocation_6=tulem[64];
-		MAIN.GLOBAL.outputlocation_7=tulem[65];
-		MAIN.GLOBAL.outputlocation_8=tulem[66];
-		MAIN.GLOBAL.outputlocation_9=tulem[67];
-		MAIN.GLOBAL.outputlocation_10=tulem[68];
-		MAIN.GLOBAL.outputlocation_11=tulem[69];
-		MAIN.GLOBAL.outputlocation_12=tulem[70];
-		MAIN.GLOBAL.outputlocation_13=tulem[71];
-		MAIN.GLOBAL.outputlocation_14=tulem[72];
-		MAIN.GLOBAL.outputlocation_15=tulem[73];
-		MAIN.GLOBAL.outputlocation_16=tulem[74];
-		MAIN.GLOBAL.outputlocation_17=tulem[75];
-		MAIN.GLOBAL.outputlocation_18=tulem[76];
-		MAIN.GLOBAL.outputlocation_19=tulem[77];
-		MAIN.GLOBAL.outputlocation_20=tulem[78];
-		MAIN.GLOBAL.outputlocation_21=tulem[79];
-		MAIN.GLOBAL.outputlocation_22=tulem[80];
-		MAIN.GLOBAL.outputlocation_23=tulem[81];
-		MAIN.GLOBAL.outputlocation_24=tulem[82];
-		MAIN.GLOBAL.outputlocation_25=tulem[83];
-		MAIN.GLOBAL.outputlocation_26=tulem[84];
-		MAIN.GLOBAL.outputlocation_27=tulem[85];
-		MAIN.GLOBAL.outputlocation_28=tulem[86];
+		MAIN.GLOBAL.outputlocation[1]=tulem[59];
+		MAIN.GLOBAL.outputlocation[2]=tulem[60];
+		MAIN.GLOBAL.outputlocation[3]=tulem[61];
+		MAIN.GLOBAL.outputlocation[4]=tulem[62];
+		MAIN.GLOBAL.outputlocation[5]=tulem[63];
+		MAIN.GLOBAL.outputlocation[6]=tulem[64];
+		MAIN.GLOBAL.outputlocation[7]=tulem[65];
+		MAIN.GLOBAL.outputlocation[8]=tulem[66];
+		MAIN.GLOBAL.outputlocation[9]=tulem[67];
+		MAIN.GLOBAL.outputlocation[10]=tulem[68];
+		MAIN.GLOBAL.outputlocation[11]=tulem[69];
+		MAIN.GLOBAL.outputlocation[12]=tulem[70];
+		MAIN.GLOBAL.outputlocation[13]=tulem[71];
+		MAIN.GLOBAL.outputlocation[14]=tulem[72];
+		MAIN.GLOBAL.outputlocation[15]=tulem[73];
+		MAIN.GLOBAL.outputlocation[16]=tulem[74];
+		MAIN.GLOBAL.outputlocation[17]=tulem[75];
+		MAIN.GLOBAL.outputlocation[18]=tulem[76];
+		MAIN.GLOBAL.outputlocation[19]=tulem[77];
+		MAIN.GLOBAL.outputlocation[20]=tulem[78];
+		MAIN.GLOBAL.outputlocation[21]=tulem[79];
+		MAIN.GLOBAL.outputlocation[22]=tulem[80];
+		MAIN.GLOBAL.outputlocation[23]=tulem[81];
+		MAIN.GLOBAL.outputlocation[24]=tulem[82];
+		MAIN.GLOBAL.outputlocation[25]=tulem[83];
+		MAIN.GLOBAL.outputlocation[26]=tulem[84];
+		MAIN.GLOBAL.outputlocation[27]=tulem[85];
+		MAIN.GLOBAL.outputlocation[28]=tulem[86];
+		MAIN.GLOBAL.locationsolekfailis=tulem[87];
+		MAIN.GLOBAL.displaylocations=(MAIN.GLOBAL.locationsolekfailis.toLowerCase().contains("true"));
+		MAIN.GLOBAL.labellocation[1]=tulem[88];
+		MAIN.GLOBAL.labellocation[2]=tulem[89];
+		MAIN.GLOBAL.labellocation[3]=tulem[90];
+		MAIN.GLOBAL.labellocation[4]=tulem[91];
+		MAIN.GLOBAL.labellocation[5]=tulem[92];
+		MAIN.GLOBAL.labellocation[6]=tulem[93];
+		MAIN.GLOBAL.labellocation[7]=tulem[94];
+		MAIN.GLOBAL.labellocation[8]=tulem[95];
+		MAIN.GLOBAL.labellocation[9]=tulem[96];
+		MAIN.GLOBAL.labellocation[10]=tulem[97];
+		MAIN.GLOBAL.labellocation[11]=tulem[98];
+		MAIN.GLOBAL.labellocation[12]=tulem[99];
+		MAIN.GLOBAL.labellocation[13]=tulem[100];
+		MAIN.GLOBAL.labellocation[14]=tulem[101];
+		MAIN.GLOBAL.labellocation[15]=tulem[102];
+		MAIN.GLOBAL.labellocation[16]=tulem[103];
+		MAIN.GLOBAL.labellocation[17]=tulem[104];
+		MAIN.GLOBAL.labellocation[18]=tulem[105];
+		MAIN.GLOBAL.labellocation[19]=tulem[106];
+		MAIN.GLOBAL.labeltext[1]=tulem[107];
+		MAIN.GLOBAL.labeltext[2]=tulem[108];
+		MAIN.GLOBAL.labeltext[3]=tulem[109];
+		MAIN.GLOBAL.labeltext[4]=tulem[110];
+		MAIN.GLOBAL.labeltext[5]=tulem[111];
+		MAIN.GLOBAL.labeltext[6]=tulem[112];
+		MAIN.GLOBAL.labeltext[7]=tulem[113];
+		MAIN.GLOBAL.labeltext[8]=tulem[114];
+		MAIN.GLOBAL.labeltext[9]=tulem[115];
+		MAIN.GLOBAL.labeltext[10]=tulem[116];
+		MAIN.GLOBAL.labeltext[11]=tulem[117];
+		MAIN.GLOBAL.labeltext[12]=tulem[118];
+		MAIN.GLOBAL.labeltext[13]=tulem[119];
+		MAIN.GLOBAL.labeltext[14]=tulem[120];
+		MAIN.GLOBAL.labeltext[15]=tulem[121];
+		MAIN.GLOBAL.labeltext[16]=tulem[122];
+		MAIN.GLOBAL.labeltext[17]=tulem[123];
+		MAIN.GLOBAL.labeltext[18]=tulem[124];
+		MAIN.GLOBAL.labeltext[19]=tulem[125];
 		
 		//	tulem[49]="tagasi kirjutatud";
 	//	failifuntsioonid.Fail_Kirjuta((MAIN.GLOBAL.SaveFileName), tulem, "rewrite",MAIN.GLOBAL.INI_lines);
@@ -94,7 +140,7 @@ public class INI_GLOBAL {
 		
 		System.out.println("faili ei leia!  INI");
 		
-		
+		Funktsioonid.TulbadReadstringideks();
 		
 				
 				String Sisu[]={
@@ -106,8 +152,8 @@ public class INI_GLOBAL {
 				""+MAIN.GLOBAL.width,
 				""+MAIN.GLOBAL.height,
 				"#Items positions:/ Columns / Rows /",  /*siin peab kirjutama juurde, et loeks jada failist sisse*/
-				"{10, 75, 75, 75, 75, 200, 75, 75, 75, 75}",
-				"{10, 75, 75, 75, 75, 75, 75, 75, 75, 75}",
+				MAIN.GLOBAL.tulbadFunktsioonist,
+				MAIN.GLOBAL.readFunktsioonist,
 				"#Components:/ 1..4 buttons names / 5 label1 text value /",
 				MAIN.GLOBAL.btn1,
 				MAIN.GLOBAL.btn2,
@@ -157,82 +203,74 @@ public class INI_GLOBAL {
 				MAIN.GLOBAL.inputlocation[26],
 				MAIN.GLOBAL.inputlocation[27],
 				MAIN.GLOBAL.inputlocation[28],
-		/*		MAIN.GLOBAL.inputlocation_1,
-				MAIN.GLOBAL.inputlocation_2,
-				MAIN.GLOBAL.inputlocation_3,
-				MAIN.GLOBAL.inputlocation_4,
-				MAIN.GLOBAL.inputlocation_5,
-				MAIN.GLOBAL.inputlocation_6,
-				MAIN.GLOBAL.inputlocation_7,
-				MAIN.GLOBAL.inputlocation_8,
-				MAIN.GLOBAL.inputlocation_9,
-				MAIN.GLOBAL.inputlocation_10,
-				MAIN.GLOBAL.inputlocation_11,
-				MAIN.GLOBAL.inputlocation_12,
-				MAIN.GLOBAL.inputlocation_13,
-				MAIN.GLOBAL.inputlocation_14,
-				MAIN.GLOBAL.inputlocation_15,
-				MAIN.GLOBAL.inputlocation_16,
-				MAIN.GLOBAL.inputlocation_17,
-				MAIN.GLOBAL.inputlocation_18,
-				MAIN.GLOBAL.inputlocation_19,
-				MAIN.GLOBAL.inputlocation_20,
-				MAIN.GLOBAL.inputlocation_21,
-				MAIN.GLOBAL.inputlocation_22,
-				MAIN.GLOBAL.inputlocation_23,
-				MAIN.GLOBAL.inputlocation_24,
-				MAIN.GLOBAL.inputlocation_25,
-				MAIN.GLOBAL.inputlocation_26,
-				MAIN.GLOBAL.inputlocation_27,
-				MAIN.GLOBAL.inputlocation_28,*/
-				MAIN.GLOBAL.outputlocation_1,
-				MAIN.GLOBAL.outputlocation_2,
-				MAIN.GLOBAL.outputlocation_3,
-				MAIN.GLOBAL.outputlocation_4,
-				MAIN.GLOBAL.outputlocation_5,
-				MAIN.GLOBAL.outputlocation_6,
-				MAIN.GLOBAL.outputlocation_7,
-				MAIN.GLOBAL.outputlocation_8,
-				MAIN.GLOBAL.outputlocation_9,
-				MAIN.GLOBAL.outputlocation_10,
-				MAIN.GLOBAL.outputlocation_11,
-				MAIN.GLOBAL.outputlocation_12,
-				MAIN.GLOBAL.outputlocation_13,
-				MAIN.GLOBAL.outputlocation_14,
-				MAIN.GLOBAL.outputlocation_15,
-				MAIN.GLOBAL.outputlocation_16,
-				MAIN.GLOBAL.outputlocation_17,
-				MAIN.GLOBAL.outputlocation_18,
-				MAIN.GLOBAL.outputlocation_19,
-				MAIN.GLOBAL.outputlocation_20,
-				MAIN.GLOBAL.outputlocation_21,
-				MAIN.GLOBAL.outputlocation_22,
-				MAIN.GLOBAL.outputlocation_23,
-				MAIN.GLOBAL.outputlocation_24,
-				MAIN.GLOBAL.outputlocation_25,
-				MAIN.GLOBAL.outputlocation_26,
-				MAIN.GLOBAL.outputlocation_27,
-				MAIN.GLOBAL.outputlocation_28,
-				"",
-				"",
-				"",
-				"",
-				"",
-				"",
-				"", //// hõivatud akna komponentidele
-				"Yet not used variables",
-				"",
-				"",
-				"",
-				"",
-				"",
-				"",
-				"",
-				"",
-				"",
-				"",
-				"",
-				"",
+
+				MAIN.GLOBAL.outputlocation[1],
+				MAIN.GLOBAL.outputlocation[2],
+				MAIN.GLOBAL.outputlocation[3],
+				MAIN.GLOBAL.outputlocation[4],
+				MAIN.GLOBAL.outputlocation[5],
+				MAIN.GLOBAL.outputlocation[6],
+				MAIN.GLOBAL.outputlocation[7],
+				MAIN.GLOBAL.outputlocation[8],
+				MAIN.GLOBAL.outputlocation[9],
+				MAIN.GLOBAL.outputlocation[10],
+				MAIN.GLOBAL.outputlocation[11],
+				MAIN.GLOBAL.outputlocation[12],
+				MAIN.GLOBAL.outputlocation[13],
+				MAIN.GLOBAL.outputlocation[14],
+				MAIN.GLOBAL.outputlocation[15],
+				MAIN.GLOBAL.outputlocation[16],
+				MAIN.GLOBAL.outputlocation[17],
+				MAIN.GLOBAL.outputlocation[18],
+				MAIN.GLOBAL.outputlocation[19],
+				MAIN.GLOBAL.outputlocation[20],
+				MAIN.GLOBAL.outputlocation[21],
+				MAIN.GLOBAL.outputlocation[22],
+				MAIN.GLOBAL.outputlocation[23],
+				MAIN.GLOBAL.outputlocation[24],
+				MAIN.GLOBAL.outputlocation[25],
+				MAIN.GLOBAL.outputlocation[26],
+				MAIN.GLOBAL.outputlocation[27],
+				MAIN.GLOBAL.outputlocation[28],
+				MAIN.GLOBAL.locationskirjefailis,
+				MAIN.GLOBAL.labellocation[1],
+				MAIN.GLOBAL.labellocation[2],
+				MAIN.GLOBAL.labellocation[3],
+				MAIN.GLOBAL.labellocation[4],
+				MAIN.GLOBAL.labellocation[5],
+				MAIN.GLOBAL.labellocation[6],
+				MAIN.GLOBAL.labellocation[7],
+				MAIN.GLOBAL.labellocation[8],
+				MAIN.GLOBAL.labellocation[9],
+				MAIN.GLOBAL.labellocation[10],
+				MAIN.GLOBAL.labellocation[11],
+				MAIN.GLOBAL.labellocation[12],
+				MAIN.GLOBAL.labellocation[13],
+				MAIN.GLOBAL.labellocation[14],
+				MAIN.GLOBAL.labellocation[15],
+				MAIN.GLOBAL.labellocation[16],
+				MAIN.GLOBAL.labellocation[17],
+				MAIN.GLOBAL.labellocation[18],
+				MAIN.GLOBAL.labellocation[19],
+				MAIN.GLOBAL.labeltext[1],
+				MAIN.GLOBAL.labeltext[2],
+				MAIN.GLOBAL.labeltext[3],
+				MAIN.GLOBAL.labeltext[4],
+				MAIN.GLOBAL.labeltext[5],
+				MAIN.GLOBAL.labeltext[6],
+				MAIN.GLOBAL.labeltext[7],
+				MAIN.GLOBAL.labeltext[8],
+				MAIN.GLOBAL.labeltext[9],
+				MAIN.GLOBAL.labeltext[10],
+				MAIN.GLOBAL.labeltext[11],
+				MAIN.GLOBAL.labeltext[12],
+				MAIN.GLOBAL.labeltext[13],
+				MAIN.GLOBAL.labeltext[14],
+				MAIN.GLOBAL.labeltext[15],
+				MAIN.GLOBAL.labeltext[16],
+				MAIN.GLOBAL.labeltext[17],
+				MAIN.GLOBAL.labeltext[18],
+				MAIN.GLOBAL.labeltext[19],
 				"",
 				"",
 				"",
@@ -257,5 +295,6 @@ public class INI_GLOBAL {
 		System.out.println("ini global on uue faili kirjutamise edukalt lõpetanud");
 	}
 
+	
 	}
 }

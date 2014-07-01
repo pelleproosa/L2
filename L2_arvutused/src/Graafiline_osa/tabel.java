@@ -14,11 +14,13 @@ import javax.swing.JLabel;
 
 import javax.swing.JTextField;
 
+import INI.INI_GLOBAL;
+import INI.failifuntsioonid;
 import layout.TableLayout;
 
 public class tabel {
 
-    public static void start(String args[]) {
+    public static void start(final String args[]) {
     	
         JFrame frame = new JFrame(MAIN.GLOBAL.aknanimi);
         frame.setSize((MAIN.GLOBAL.width), (MAIN.GLOBAL.height));
@@ -28,93 +30,91 @@ public class tabel {
         JButton button[] = new JButton[label.length];
         for (int i = 0; i < label.length; i++) {
             button[i] = new JButton(label[i]);
+            button[i].setText(label[i]);
         }
         
-        JLabel label1;
+        final JLabel label1;
         label1 = new JLabel(MAIN.GLOBAL.lbl1string);
         
+        JLabel[] labelid=new JLabel[(MAIN.GLOBAL.labeliteArv+1)];
+        for (int i = 1; i < (MAIN.GLOBAL.labeliteArv); i++)
+        {
+        	System.out.println(i);
+        	labelid[i]=new JLabel(MAIN.GLOBAL.labeltext[i]);
+        	frame.add(labelid[i],MAIN.GLOBAL.labellocation[i]);
+        	}
 
-        final JTextField[] yourInputField= new JTextField[MAIN.GLOBAL.yourInputFieldArv];
+
+      
         
-        for (int i = 1; i < MAIN.GLOBAL.yourInputFieldArv; i++)
+        
+        
+        
+        
+        final JTextField[] yourInputField= new JTextField[(MAIN.GLOBAL.yourInputFieldArv+1)];
+        
+        for (int i = 1; i < (MAIN.GLOBAL.yourInputFieldArv+1); i++)
         {
         	yourInputField[i] = new JTextField();
-          // add any listener you want to txt[i]
+        	if(MAIN.GLOBAL.displaylocations){
+        	yourInputField[i].setText(""+i+" # "+MAIN.GLOBAL.inputlocation[i]);
+        	}
+
           frame.add(yourInputField[i],MAIN.GLOBAL.inputlocation[i]);
+
         }
-        
-        /*
-        final JTextField MinuOutput = new JTextField();
-        MinuOutput.setText("This is a text");
-        MinuOutput.setColumns(20); 
-        */
-       final  JTextField[] MinuOutput=new JTextField[MAIN.GLOBAL.MinuOutputArv];
-  //      System.out.print("loen sisse minuoutputte ...");
+
+       final  JTextField[] MinuOutput=new JTextField[(MAIN.GLOBAL.MinuOutputArv+1)];
+
         int i = 0;
-        for (i = 1; i < MAIN.GLOBAL.MinuOutputArv; i++)
+        for (i = 1; i < (MAIN.GLOBAL.MinuOutputArv+1); i++)
         {
         	MinuOutput[i] = new JTextField();
         	if (i==1){
         		MinuOutput[i].setBackground(Color.GREEN);
         		MinuOutput[i].setText("kuku");
+        		frame.add(MinuOutput[i], MAIN.GLOBAL.outputlocation[i]);
         		
         	}else{
-        	  MinuOutput[i].setText(""+i);
+        		if(MAIN.GLOBAL.displaylocations){
+        	  MinuOutput[i].setText(""+i+" # "+MAIN.GLOBAL.outputlocation[i]);
+        		}
         	  MinuOutput[i].setEditable(false);}
-          // add any listener you want to txt[i]
-   //       frame.add(MinuOutput[i]);
+        	frame.add(MinuOutput[i], MAIN.GLOBAL.outputlocation[i]);
         }
        
-        
-        
-    
-    //    System.out.println("...done");
-        
-        
-        
-        
-// System.out.print("lisan outputte ....");
-        	frame.add(MinuOutput[1], MAIN.GLOBAL.outputlocation_1);
-        	frame.add(MinuOutput[2], MAIN.GLOBAL.outputlocation_2);
-        	frame.add(MinuOutput[3], MAIN.GLOBAL.outputlocation_3);
-        	frame.add(MinuOutput[4], MAIN.GLOBAL.outputlocation_4);
-        	frame.add(MinuOutput[5], MAIN.GLOBAL.outputlocation_5);
-        	frame.add(MinuOutput[6], MAIN.GLOBAL.outputlocation_6);
-        	frame.add(MinuOutput[7], MAIN.GLOBAL.outputlocation_7);
-        	frame.add(MinuOutput[8], MAIN.GLOBAL.outputlocation_8);
-        	frame.add(MinuOutput[9], MAIN.GLOBAL.outputlocation_9);
-        	frame.add(MinuOutput[10], MAIN.GLOBAL.outputlocation_10);
-        	frame.add(MinuOutput[11], MAIN.GLOBAL.outputlocation_11);
-        	frame.add(MinuOutput[12], MAIN.GLOBAL.outputlocation_12);
-        	frame.add(MinuOutput[13], MAIN.GLOBAL.outputlocation_13);
-        	frame.add(MinuOutput[14], MAIN.GLOBAL.outputlocation_14);
-        	frame.add(MinuOutput[15], MAIN.GLOBAL.outputlocation_15);
-        	frame.add(MinuOutput[16], MAIN.GLOBAL.outputlocation_16);
-        	frame.add(MinuOutput[17], MAIN.GLOBAL.outputlocation_17);
-        	frame.add(MinuOutput[18], MAIN.GLOBAL.outputlocation_18);
-        	frame.add(MinuOutput[19], MAIN.GLOBAL.outputlocation_19);
-        	frame.add(MinuOutput[20], MAIN.GLOBAL.outputlocation_20);
-        	frame.add(MinuOutput[21], MAIN.GLOBAL.outputlocation_21);
-        	frame.add(MinuOutput[22], MAIN.GLOBAL.outputlocation_22);
-        	frame.add(MinuOutput[23], MAIN.GLOBAL.outputlocation_23);
-        	frame.add(MinuOutput[24], MAIN.GLOBAL.outputlocation_24);
-        	frame.add(MinuOutput[25], MAIN.GLOBAL.outputlocation_25);
-        	frame.add(MinuOutput[26], MAIN.GLOBAL.outputlocation_26);
-        	frame.add(MinuOutput[27], MAIN.GLOBAL.outputlocation_27);
-      //  	System.out.println("done");
 
-        
-      //  	System.out.print("lisan muid asju ...");
-        
- //   frame.add(yourInputField[1], MAIN.GLOBAL.inputlocation_1); 
- //   frame.add(yourInputField[2], MAIN.GLOBAL.inputlocation_2);
         frame.add(label1, MAIN.GLOBAL.lbllocation_1);
         frame.add(button[0], MAIN.GLOBAL.btnlocation_1);
         frame.add(button[1], MAIN.GLOBAL.btnlocation_2);
         frame.add(button[2], MAIN.GLOBAL.btnlocation_3);
         frame.add(button[3], MAIN.GLOBAL.btnlocation_4);
         
-     //   System.out.print("done");
+        button[0].addActionListener(
+        	    new ActionListener() {
+        	    	
+        	        public void actionPerformed(ActionEvent e) {
+        	        	failifuntsioonid.kustutafail();
+        	        	try {
+							INI_GLOBAL.start(args);
+						} catch (Exception e1) {
+							// TODO Auto-generated catch block
+							label1.setText("Faili ülekirjutamisel viga...tabel button 0 action");
+						}
+        	        	label1.setText("Save done!");
+        	        	
+        	            String str=yourInputField[1].getText();
+        	            MinuOutput[1].setText(str);
+        	        
+        	        }
+        	        
+        	        
+        	        
+        	        
+        	    }	
+        		
+        		
+        		);
         
         yourInputField[1].addActionListener(
         	    new ActionListener() {
@@ -124,6 +124,241 @@ public class tabel {
         	        }
         	    }
         	);
+        
+        yourInputField[2].addActionListener(
+        	    new ActionListener() {
+        	        public void actionPerformed(ActionEvent e) {
+        	            String str=yourInputField[2].getText();
+        	            MinuOutput[2].setText(str);
+        	        }
+        	    }
+        	);
+        yourInputField[3].addActionListener(
+        	    new ActionListener() {
+        	        public void actionPerformed(ActionEvent e) {
+        	            String str=yourInputField[3].getText();
+        	            MinuOutput[3].setText(str);
+        	        }
+        	    }
+        	);
+        yourInputField[4].addActionListener(
+        	    new ActionListener() {
+        	        public void actionPerformed(ActionEvent e) {
+        	            String str=yourInputField[4].getText();
+        	            MinuOutput[4].setText(str);
+        	        }
+        	    }
+        	);
+        yourInputField[5].addActionListener(
+        	    new ActionListener() {
+        	        public void actionPerformed(ActionEvent e) {
+        	            String str=yourInputField[5].getText();
+        	            MinuOutput[5].setText(str);
+        	        }
+        	    }
+        	);
+        yourInputField[6].addActionListener(
+        	    new ActionListener() {
+        	        public void actionPerformed(ActionEvent e) {
+        	            String str=yourInputField[6].getText();
+        	            MinuOutput[6].setText(str);
+        	        }
+        	    }
+        	);
+        yourInputField[7].addActionListener(
+        	    new ActionListener() {
+        	        public void actionPerformed(ActionEvent e) {
+        	            String str=yourInputField[7].getText();
+        	            MinuOutput[7].setText(str);
+        	        }
+        	    }
+        	);
+        yourInputField[8].addActionListener(
+        	    new ActionListener() {
+        	        public void actionPerformed(ActionEvent e) {
+        	            String str=yourInputField[8].getText();
+        	            MinuOutput[8].setText(str);
+        	        }
+        	    }
+        	);
+        yourInputField[9].addActionListener(
+        	    new ActionListener() {
+        	        public void actionPerformed(ActionEvent e) {
+        	            String str=yourInputField[9].getText();
+        	            MinuOutput[9].setText(str);
+        	        }
+        	    }
+        	);
+        yourInputField[10].addActionListener(
+        	    new ActionListener() {
+        	        public void actionPerformed(ActionEvent e) {
+        	            String str=yourInputField[10].getText();
+        	            MinuOutput[10].setText(str);
+        	        }
+        	    }
+        	);
+        yourInputField[11].addActionListener(
+        	    new ActionListener() {
+        	        public void actionPerformed(ActionEvent e) {
+        	            String str=yourInputField[11].getText();
+        	            MinuOutput[11].setText(str);
+        	        }
+        	    }
+        	);
+        yourInputField[12].addActionListener(
+        	    new ActionListener() {
+        	        public void actionPerformed(ActionEvent e) {
+        	            String str=yourInputField[12].getText();
+        	            MinuOutput[12].setText(str);
+        	        }
+        	    }
+        	);
+        yourInputField[13].addActionListener(
+        	    new ActionListener() {
+        	        public void actionPerformed(ActionEvent e) {
+        	            String str=yourInputField[13].getText();
+        	            MinuOutput[13].setText(str);
+        	        }
+        	    }
+        	);
+        yourInputField[14].addActionListener(
+        	    new ActionListener() {
+        	        public void actionPerformed(ActionEvent e) {
+        	            String str=yourInputField[14].getText();
+        	            MinuOutput[14].setText(str);
+        	        }
+        	    }
+        	);
+        yourInputField[15].addActionListener(
+        	    new ActionListener() {
+        	        public void actionPerformed(ActionEvent e) {
+        	            String str=yourInputField[15].getText();
+        	            MinuOutput[15].setText(str);
+        	        }
+        	    }
+        	);
+        yourInputField[16].addActionListener(
+        	    new ActionListener() {
+        	        public void actionPerformed(ActionEvent e) {
+        	            String str=yourInputField[16].getText();
+        	            MinuOutput[16].setText(str);
+        	        }
+        	    }
+        	);
+        yourInputField[17].addActionListener(
+        	    new ActionListener() {
+        	        public void actionPerformed(ActionEvent e) {
+        	            String str=yourInputField[17].getText();
+        	            MinuOutput[17].setText(str);
+        	        }
+        	    }
+        	);
+        yourInputField[18].addActionListener(
+        	    new ActionListener() {
+        	        public void actionPerformed(ActionEvent e) {
+        	            String str=yourInputField[18].getText();
+        	            MinuOutput[18].setText(str);
+        	        }
+        	    }
+        	);
+        yourInputField[19].addActionListener(
+        	    new ActionListener() {
+        	        public void actionPerformed(ActionEvent e) {
+        	            String str=yourInputField[19].getText();
+        	            MinuOutput[19].setText(str);
+        	        }
+        	    }
+        	);
+        yourInputField[20].addActionListener(
+        	    new ActionListener() {
+        	        public void actionPerformed(ActionEvent e) {
+        	            String str=yourInputField[20].getText();
+        	            MinuOutput[20].setText(str);
+        	        }
+        	    }
+        	);
+        yourInputField[21].addActionListener(
+        	    new ActionListener() {
+        	        public void actionPerformed(ActionEvent e) {
+        	            String str=yourInputField[21].getText();
+        	            MinuOutput[21].setText(str);
+        	        }
+        	    }
+        	);
+        yourInputField[22].addActionListener(
+        	    new ActionListener() {
+        	        public void actionPerformed(ActionEvent e) {
+        	            String str=yourInputField[22].getText();
+        	            MinuOutput[22].setText(str);
+        	        }
+        	    }
+        	);
+        yourInputField[23].addActionListener(
+        	    new ActionListener() {
+        	        public void actionPerformed(ActionEvent e) {
+        	            String str=yourInputField[23].getText();
+        	            MinuOutput[23].setText(str);
+        	        }
+        	    }
+        	);
+        yourInputField[24].addActionListener(
+        	    new ActionListener() {
+        	        public void actionPerformed(ActionEvent e) {
+        	            String str=yourInputField[24].getText();
+        	            MinuOutput[24].setText(str);
+        	        }
+        	    }
+        	);
+        yourInputField[25].addActionListener(
+        	    new ActionListener() {
+        	        public void actionPerformed(ActionEvent e) {
+        	            String str=yourInputField[25].getText();
+        	            MinuOutput[25].setText(str);
+        	        }
+        	    }
+        	);
+        yourInputField[26].addActionListener(
+        	    new ActionListener() {
+        	        public void actionPerformed(ActionEvent e) {
+        	            String str=yourInputField[26].getText();
+        	            MinuOutput[26].setText(str);
+        	        }
+        	    }
+        	);
+
+        yourInputField[27].addActionListener(
+        	    new ActionListener() {
+        	        public void actionPerformed(ActionEvent e) {
+        	            String str=yourInputField[27].getText();
+        	            MinuOutput[27].setText(str);
+        	        }
+        	    }
+        	); 
+        yourInputField[28].addActionListener(
+        	    new ActionListener() {
+        	        public void actionPerformed(ActionEvent e) {
+        	            String str=yourInputField[28].getText();
+        	            MinuOutput[28].setText(str);
+        	        }
+        	    }
+        );
+        
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
