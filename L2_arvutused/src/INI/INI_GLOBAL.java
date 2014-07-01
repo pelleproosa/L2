@@ -91,8 +91,8 @@ public class INI_GLOBAL {
 		MAIN.GLOBAL.outputlocation[26]=tulem[84];
 		MAIN.GLOBAL.outputlocation[27]=tulem[85];
 		MAIN.GLOBAL.outputlocation[28]=tulem[86];
-		MAIN.GLOBAL.locationsolekfailis=tulem[87];
-		MAIN.GLOBAL.displaylocations=(MAIN.GLOBAL.locationsolekfailis.toLowerCase().contains("true"));
+		MAIN.GLOBAL.locationskirjefailis=tulem[87];
+		MAIN.GLOBAL.displaylocations=(MAIN.GLOBAL.locationskirjefailis.toLowerCase().contains("true"));
 		MAIN.GLOBAL.labellocation[1]=tulem[88];
 		MAIN.GLOBAL.labellocation[2]=tulem[89];
 		MAIN.GLOBAL.labellocation[3]=tulem[90];

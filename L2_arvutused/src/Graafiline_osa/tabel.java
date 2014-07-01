@@ -4,6 +4,8 @@ package Graafiline_osa;
 
 
 import java.awt.Color;
+import java.awt.Font;
+import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -30,11 +32,14 @@ public class tabel {
         JButton button[] = new JButton[label.length];
         for (int i = 0; i < label.length; i++) {
             button[i] = new JButton(label[i]);
+            button[i].setMargin(new Insets(0,0,0,0));
+            button[i].setFont(new Font("Arial", Font.BOLD, 12));
             button[i].setText(label[i]);
         }
         
-        final JLabel label1;
-        label1 = new JLabel(MAIN.GLOBAL.lbl1string);
+        
+        
+
         
         JLabel[] labelid=new JLabel[(MAIN.GLOBAL.labeliteArv+1)];
         for (int i = 1; i < (MAIN.GLOBAL.labeliteArv); i++)
@@ -43,6 +48,16 @@ public class tabel {
         	labelid[i]=new JLabel(MAIN.GLOBAL.labeltext[i]);
         	frame.add(labelid[i],MAIN.GLOBAL.labellocation[i]);
         	}
+        labelid[1].setVisible(false);
+        labelid[15].setVisible(false);
+        labelid[18].setVisible(false);
+        labelid[19].setVisible(false);
+        labelid[3].setVisible(false);
+        labelid[4].setVisible(false);
+        labelid[5].setVisible(false);
+        labelid[8].setVisible(false);
+        labelid[9].setVisible(false);
+        labelid[10].setVisible(false);
 
 
       
@@ -63,7 +78,37 @@ public class tabel {
           frame.add(yourInputField[i],MAIN.GLOBAL.inputlocation[i]);
 
         }
-
+        
+        
+        yourInputField[1].setVisible(false);
+        yourInputField[3].setVisible(false);
+        yourInputField[4].setVisible(false);
+        yourInputField[5].setVisible(false);
+        yourInputField[6].setVisible(false);
+        yourInputField[8].setVisible(false);
+        yourInputField[9].setVisible(false);
+        yourInputField[10].setVisible(false);
+        yourInputField[11].setVisible(false);
+        yourInputField[12].setVisible(false);
+        yourInputField[13].setVisible(false);
+        yourInputField[14].setVisible(false);
+        yourInputField[15].setVisible(false);
+        yourInputField[17].setVisible(false);
+        yourInputField[19].setVisible(false);
+        yourInputField[20].setVisible(false);
+        yourInputField[21].setVisible(false);
+        yourInputField[22].setVisible(false);
+        yourInputField[23].setVisible(false);
+        yourInputField[24].setVisible(false);
+        yourInputField[25].setVisible(false);
+        yourInputField[28].setVisible(false);
+        
+        
+        
+        
+        
+        
+        
        final  JTextField[] MinuOutput=new JTextField[(MAIN.GLOBAL.MinuOutputArv+1)];
 
         int i = 0;
@@ -71,8 +116,9 @@ public class tabel {
         {
         	MinuOutput[i] = new JTextField();
         	if (i==1){
-        		MinuOutput[i].setBackground(Color.GREEN);
-        		MinuOutput[i].setText("kuku");
+        	//	MinuOutput[i].setBackground(Color.GREEN);
+        	//	MinuOutput[i].setText("kuku");
+        		MinuOutput[i].setEditable(false);
         		frame.add(MinuOutput[i], MAIN.GLOBAL.outputlocation[i]);
         		
         	}else{
@@ -82,13 +128,36 @@ public class tabel {
         	  MinuOutput[i].setEditable(false);}
         	frame.add(MinuOutput[i], MAIN.GLOBAL.outputlocation[i]);
         }
-       
+ 
+        MinuOutput[3].setVisible(false);
+        MinuOutput[4].setVisible(false);
+        MinuOutput[5].setVisible(false);
+        MinuOutput[6].setVisible(false);
+        MinuOutput[7].setVisible(false);
+        MinuOutput[8].setVisible(false);
+        MinuOutput[9].setVisible(false);
+        MinuOutput[10].setVisible(false);
+        MinuOutput[13].setVisible(false);
+        MinuOutput[14].setVisible(false);
+        MinuOutput[15].setVisible(false);
+        MinuOutput[16].setVisible(false);
+        MinuOutput[17].setVisible(false);
+        MinuOutput[18].setVisible(false);
+        MinuOutput[21].setVisible(false);
+        MinuOutput[22].setVisible(false);
+        MinuOutput[23].setVisible(false);
+        MinuOutput[24].setVisible(false);
+        MinuOutput[25].setVisible(false);
+        MinuOutput[26].setVisible(false);
+        MinuOutput[27].setVisible(false);
 
-        frame.add(label1, MAIN.GLOBAL.lbllocation_1);
+
         frame.add(button[0], MAIN.GLOBAL.btnlocation_1);
         frame.add(button[1], MAIN.GLOBAL.btnlocation_2);
         frame.add(button[2], MAIN.GLOBAL.btnlocation_3);
         frame.add(button[3], MAIN.GLOBAL.btnlocation_4);
+        frame.add(button[4], MAIN.GLOBAL.btnlocation_5);
+        frame.add(button[5], MAIN.GLOBAL.btnlocation_6);
         
         button[0].addActionListener(
         	    new ActionListener() {
@@ -99,9 +168,9 @@ public class tabel {
 							INI_GLOBAL.start(args);
 						} catch (Exception e1) {
 							// TODO Auto-generated catch block
-							label1.setText("Faili ülekirjutamisel viga...tabel button 0 action");
+							
 						}
-        	        	label1.setText("Save done!");
+        	        	
         	        	
         	            String str=yourInputField[1].getText();
         	            MinuOutput[1].setText(str);
@@ -115,6 +184,32 @@ public class tabel {
         		
         		
         		);
+        
+        button[1].addActionListener(
+        	    new ActionListener() {
+        	    	
+        	        public void actionPerformed(ActionEvent e) {
+        	        if(MAIN.GLOBAL.locationskirjefailis.toLowerCase().contains("true")){
+        	        	MAIN.GLOBAL.locationskirjefailis="Display locations=false";
+        	        	
+        	        }else{
+        	        	MAIN.GLOBAL.locationskirjefailis="Display locations=true";
+        	        	
+        	        }
+        	        	
+        	            String str=yourInputField[1].getText();
+        	            MinuOutput[1].setText(str);
+        	        
+        	        }
+        	        
+        	        
+        	        
+        	        
+        	    }	
+        		
+        		
+        		);
+        
         
         yourInputField[1].addActionListener(
         	    new ActionListener() {

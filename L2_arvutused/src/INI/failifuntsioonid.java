@@ -85,20 +85,20 @@ while (i<sisu_suurus){
 		try{
 			 
     		File file = new File(MAIN.GLOBAL.SaveFileName);
-/* 
+ 
     		if(file.delete()){
-    			System.out.println(file.getName() + " is deleted!");
+    		//	System.out.println(file.getName() + " is deleted!");
     		}else{
-    			System.out.println("Delete operation is failed.");
+    		//	System.out.println("Delete operation is failed.");
     		}
- */
+ 
     	}catch(Exception e){
     		System.out.println("Mingi jama faili kustutamisega... failifuntsioonid");
     		//e.printStackTrace();
  
     	}
 	}
-public static void nupunimed()
+public static void peitu()
 {
 	
 }
