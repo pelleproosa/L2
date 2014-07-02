@@ -104,7 +104,14 @@ public class tabel {
         yourInputField[28].setVisible(false);
         
         
+        yourInputField[18].setText("0");
+        yourInputField[27].setText("0");
+        yourInputField[16].setText("0");
         
+    	yourInputField[2].setText("0");
+    	
+    	yourInputField[26].setText("0");
+    	yourInputField[7].setText("0");
         
         
         
@@ -159,7 +166,7 @@ public class tabel {
         frame.add(button[4], MAIN.GLOBAL.btnlocation_5);
         frame.add(button[5], MAIN.GLOBAL.btnlocation_6);
         
-        button[0].addActionListener(
+/*        button[0].addActionListener(
         	    new ActionListener() {
         	    	
         	        public void actionPerformed(ActionEvent e) {
@@ -184,43 +191,230 @@ public class tabel {
         		
         		
         		);
-        
+ */       
         button[1].addActionListener(
         	    new ActionListener() {
         	    	
         	        public void actionPerformed(ActionEvent e) {
-        	        if(MAIN.GLOBAL.locationskirjefailis.toLowerCase().contains("true")){
-        	        	MAIN.GLOBAL.locationskirjefailis="Display locations=false";
+int i=0;
         	        	
-        	        }else{
-        	        	MAIN.GLOBAL.locationskirjefailis="Display locations=true";
+        	        	String str[]=new String[4];
+        	        	str[0]=yourInputField[16].getText();
+        	        	str[1]=yourInputField[2].getText();
+        	        	str[2]=yourInputField[26].getText();
+        	        	str[3]=yourInputField[7].getText();
+        	            try{
+        	            	MAIN.GLOBAL.adenaReserv=Double.parseDouble(str[i]);i++;MAIN.GLOBAL.soulReserv=Double.parseDouble(str[i]);i++;MAIN.GLOBAL.spiritReserv=Double.parseDouble(str[i]);i++;MAIN.GLOBAL.cryDReserv=Double.parseDouble(str[i]);
+        	      
+        	        	ssd_adena_input.Klass1.main(null);	
+            	        MinuOutput[1].setText(""+(int)MAIN.GLOBAL.cryDKogusOsta);
+            	        MinuOutput[12].setText(""+(int)MAIN.GLOBAL.soulKogusOsta);
+            	       MinuOutput[20].setText(""+(int)MAIN.GLOBAL.spiritKogusOsta);
+            	        MinuOutput[2].setText(""+(int)MAIN.GLOBAL.adenaReserv);
+            	        MinuOutput[19].setText(""+(int)MAIN.GLOBAL.spiritReserv);
+            	        MinuOutput[28].setText(""+(int)MAIN.GLOBAL.cryDJ2rel);
+            	        yourInputField[27].setText(""+(int)MAIN.GLOBAL.SSDShots);
+            	       MinuOutput[11].setText(""+(int)MAIN.GLOBAL.soulJ2rel);
+           	        
+            	        }
+        	            catch(Exception e1){
+        	            	if (i==0){yourInputField[16].setText("Number!");}
+        	            	if (i==1){yourInputField[2].setText("Number!");}
+        	            	if (i==2){yourInputField[26].setText("Number!");}
+        	            	if (i==3){yourInputField[7].setText("Number!");}
+        	            };
+        	        }}	
+        		);    
+        button[3].addActionListener(
+        	    new ActionListener() {
+        	    	
+        	        public void actionPerformed(ActionEvent e) {
+int i=0;
         	        	
+        	        	String str[]=new String[4];
+        	        	str[0]=yourInputField[16].getText();
+        	        	str[1]=yourInputField[2].getText();
+        	        	str[2]=yourInputField[26].getText();
+        	        	str[3]=yourInputField[7].getText();
+        	            try{
+        	            	MAIN.GLOBAL.adenaReserv=Double.parseDouble(str[i]);i++;MAIN.GLOBAL.soulReserv=Double.parseDouble(str[i]);i++;MAIN.GLOBAL.spiritReserv=Double.parseDouble(str[i]);i++;MAIN.GLOBAL.cryDReserv=Double.parseDouble(str[i]);
+        	      
+        	        	ssd_adena_input.Klass1.main(null);	
+            	        MinuOutput[1].setText(""+(int)MAIN.GLOBAL.cryDKogusOsta);
+            	        MinuOutput[12].setText(""+(int)MAIN.GLOBAL.soulKogusOsta);
+            	       MinuOutput[20].setText(""+(int)MAIN.GLOBAL.spiritKogusOsta);
+            	        MinuOutput[2].setText(""+(int)MAIN.GLOBAL.adenaReserv);
+            	        MinuOutput[19].setText(""+(int)MAIN.GLOBAL.spiritReserv);
+            	        MinuOutput[28].setText(""+(int)MAIN.GLOBAL.cryDJ2rel);
+            	        yourInputField[27].setText(""+(int)MAIN.GLOBAL.SSDShots);
+            	       MinuOutput[11].setText(""+(int)MAIN.GLOBAL.soulJ2rel);
+        	        
         	        }
+    	            catch(Exception e1){
+    	            	if (i==0){yourInputField[16].setText("Number!");}
+    	            	if (i==1){yourInputField[2].setText("Number!");}
+    	            	if (i==2){yourInputField[26].setText("Number!");}
+    	            	if (i==3){yourInputField[7].setText("Number!");}
+    	            };
+    	        }}	
+    		);
+        button[0].addActionListener(   ///adena->bssd nupp
+        	    new ActionListener() {
+        	    	
+        	        public void actionPerformed(ActionEvent e) {
+
+int i=0;
         	        	
-        	            String str=yourInputField[1].getText();
-        	            MinuOutput[1].setText(str);
-        	        
-        	        }
-        	        
-        	        
-        	        
-        	        
-        	    }	
-        		
-        		
+        	        	String str[]=new String[4];
+        	        	str[0]=yourInputField[16].getText();
+        	        	str[1]=yourInputField[2].getText();
+        	        	str[2]=yourInputField[26].getText();
+        	        	str[3]=yourInputField[7].getText();
+        	            try{
+        	            	MAIN.GLOBAL.adenaReserv=Double.parseDouble(str[i]);i++;MAIN.GLOBAL.soulReserv=Double.parseDouble(str[i]);i++;MAIN.GLOBAL.spiritReserv=Double.parseDouble(str[i]);i++;MAIN.GLOBAL.cryDReserv=Double.parseDouble(str[i]);
+        	        bssd_adena_input.Klass1.main(null);	
+        	        MinuOutput[1].setText(""+(int)MAIN.GLOBAL.cryDKogusOsta);
+        	        MinuOutput[12].setText(""+(int)MAIN.GLOBAL.soulKogusOsta);
+        	        MinuOutput[20].setText(""+(int)MAIN.GLOBAL.spiritKogusOsta);
+        	        MinuOutput[2].setText(""+(int)MAIN.GLOBAL.adenaReserv);
+        	        MinuOutput[19].setText(""+(int)MAIN.GLOBAL.spiritJ2rel);
+        	        MinuOutput[28].setText(""+(int)MAIN.GLOBAL.cryDJ2rel);
+        	        yourInputField[18].setText(""+(int)MAIN.GLOBAL.BSSDShots);
+           	       MinuOutput[11].setText(""+(int)MAIN.GLOBAL.soulReserv);
+        	            }
+        	            catch(Exception e1){
+        	            	if (i==0){yourInputField[16].setText("Number!");}
+        	            	if (i==1){yourInputField[2].setText("Number!");}
+        	            	if (i==2){yourInputField[26].setText("Number!");}
+        	            	if (i==3){yourInputField[7].setText("Number!");}
+        	            };
+        	        }}	
+        		);
+        button[2].addActionListener(   ///BSSD->Mats
+        	    new ActionListener() {
+        	    	
+        	        public void actionPerformed(ActionEvent e) {
+        	        	
+        	        	int i=0;
+        	        	
+        	        	String str[]=new String[4];
+        	        	str[0]=yourInputField[16].getText();
+        	        	str[1]=yourInputField[2].getText();
+        	        	str[2]=yourInputField[26].getText();
+        	        	str[3]=yourInputField[7].getText();
+        	            try{
+        	            	MAIN.GLOBAL.adenaReserv=Double.parseDouble(str[i]);i++;MAIN.GLOBAL.soulReserv=Double.parseDouble(str[i]);i++;MAIN.GLOBAL.spiritReserv=Double.parseDouble(str[i]);i++;MAIN.GLOBAL.cryDReserv=Double.parseDouble(str[i]);
+        	        bssd_adena_input.Klass1.main(null);	
+        	        MinuOutput[1].setText(""+(int)MAIN.GLOBAL.cryDKogusOsta);
+        	        MinuOutput[12].setText(""+(int)MAIN.GLOBAL.soulKogusOsta);
+        	        MinuOutput[20].setText(""+(int)MAIN.GLOBAL.spiritKogusOsta);
+        	        MinuOutput[2].setText(""+(int)MAIN.GLOBAL.adenaReserv);
+        	        MinuOutput[19].setText(""+(int)MAIN.GLOBAL.spiritJ2rel);
+        	        MinuOutput[28].setText(""+(int)MAIN.GLOBAL.cryDJ2rel);
+        	        yourInputField[18].setText(""+(int)MAIN.GLOBAL.BSSDShots);
+        	        MinuOutput[11].setText(""+(int)MAIN.GLOBAL.soulReserv);
+    	            }
+        	            catch(Exception e1){
+        	            	if (i==0){yourInputField[16].setText("Number!");}
+        	            	if (i==1){yourInputField[2].setText("Number!");}
+        	            	if (i==2){yourInputField[26].setText("Number!");}
+        	            	if (i==3){yourInputField[7].setText("Number!");}
+        	            };
+        	        }}	
         		);
         
         
-        yourInputField[1].addActionListener(
+        
+        
+        
+       
+       
+       
+       
+       
+        button[5].addActionListener(   ///CLEAR
+        	    new ActionListener() {
+        	    	
+        	        public void actionPerformed(ActionEvent e) {
+ 
+        	           
+        	        MAIN.GLOBAL.adenaReserv=0;MAIN.GLOBAL.soulReserv=0;MAIN.GLOBAL.spiritReserv=0;MAIN.GLOBAL.cryDReserv=0;
+        	        bssd_adena_input.Klass1.main(null);	
+        	        MinuOutput[2].setText("");
+        	        MinuOutput[11].setText("");
+        	        MinuOutput[19].setText("");
+        	        MinuOutput[28].setText("");
+        	        MinuOutput[12].setText("");
+        	        MinuOutput[20].setText("");
+        	        MinuOutput[1].setText("");
+        	        yourInputField[18].setText("0");
+        	        yourInputField[27].setText("0");
+        	        yourInputField[16].setText("0");
+        	        
+	            	yourInputField[2].setText("0");
+	            	
+	            	yourInputField[26].setText("0");
+	            	yourInputField[7].setText("0");
+    	            }
+        	      
+        	        }	
+        		);
+       
+        button[4].addActionListener(   ///Result -> inv
+        	    new ActionListener() {
+        	    	
+        	        public void actionPerformed(ActionEvent e) {
+ 
+        	           
+        	        MAIN.GLOBAL.adenaReserv=0;MAIN.GLOBAL.soulReserv=0;MAIN.GLOBAL.spiritReserv=0;MAIN.GLOBAL.cryDReserv=0;
+        	        bssd_adena_input.Klass1.main(null);	
+
+        	        yourInputField[2].setText(MinuOutput[11].getText());
+        	        yourInputField[16].setText(MinuOutput[2].getText());
+        	        yourInputField[26].setText(MinuOutput[19].getText());
+        	        yourInputField[7].setText(MinuOutput[28].getText());
+        	        MinuOutput[2].setText("");
+        	        MinuOutput[11].setText("");
+        	        MinuOutput[19].setText("");
+        	        MinuOutput[28].setText("");
+        	        MinuOutput[12].setText("");
+        	        MinuOutput[20].setText("");
+        	        MinuOutput[1].setText("");
+        	        yourInputField[18].setText("");
+        	        yourInputField[27].setText("");
+
+    	            }
+        	      
+        	        }	
+        		);
+       
+        
+      
+        yourInputField[16].addActionListener(
         	    new ActionListener() {
         	        public void actionPerformed(ActionEvent e) {
-        	            String str=yourInputField[1].getText();
-        	            MinuOutput[1].setText(str);
+        	        	
+        	        	
+        	            String str=yourInputField[16].getText();
+        	            try{
+        	            	double a=Double.parseDouble(str);
+        	            
+        	            	MAIN.GLOBAL.adenaReserv=a;
+        	            
+        	            
+        	            }
+        	            catch(Exception e1){
+        	            	yourInputField[16].setText("Number!"); 
+        	            };
+        	        //    MinuOutput[1].setText(str);
+        	            
+        	            
+        	            
         	        }
         	    }
         	);
         
-        yourInputField[2].addActionListener(
+   /*     yourInputField[2].addActionListener(
         	    new ActionListener() {
         	        public void actionPerformed(ActionEvent e) {
         	            String str=yourInputField[2].getText();
@@ -437,7 +631,7 @@ public class tabel {
         	        }
         	    }
         );
-        
+        */
       
         
         

@@ -1,25 +1,54 @@
 package MAIN;
 
 public class GLOBAL {
-public static int[] minginrjada = new int[3];
+/*public static int[] minginrjada = new int[3];
 	public static String[] mingistringijada = new String[3];
-	public static int ChrystalD=0;
-	public static int craft_kogus_SSD=0;
-	public static int craft_kogus_BSSD=0;
-	public static int ChrystalC=0;
-	public static int craft_kogus_SSC=0;
-	public static int craft_kogus_BSSC=0;
-	public static int ChrystalB=0;
-	public static int craft_kogus_SSB=0;
-	public static int craft_kogus_BSSB=0;
-	public static int ChrystalA=0;
-	public static int craft_kogus_SSA=0;
-	public static int craft_kogus_BSSA=0;
-	public static int ChrystalS=0;
-	public static int craft_kogus_SSS=0;
-	public static int craft_kogus_BSSS=0;
-	public static int soul_ore=0;
-	public static int spirit_ore=0;
+*/	
+	public static double cryDReserv = 51;
+	public static double spiritReserv = 1;
+	public static double soulReserv = 7;
+	public static double adenaReserv = 15000;
+	public static double BSSDRequested = 11000;
+	public static double SSDRequested = 19000;
+	
+	public static double cryDLump = 20;
+	public static double spiritLump = 1;
+	public static double soulLump = 1;
+	public static double cryDPrice = 636;
+	public static double spiritPrice = 480;
+	public static double soulPrice = 300;
+	public static double spiritReservAlguses = 0;
+	public static double cryDReservAlguses = 0;
+	public static double soulReservAlguses = 0;
+	public static double cryDKogusOsta = 0;
+	public static double spiritKogusOsta = 0;
+	public static double soulKogusOsta = 0;
+	public static double cryDJ2rel = 0;
+	public static double spiritJ2rel = 0;
+	public static double soulJ2rel = 0;	
+	public static double BSSDHits = 0;
+	public static double SSDHits = 0;
+	public static double BSSDShots = 0;
+	public static double SSDShots = 0;
+	public static double cryDKuluPerHitBSSD = 2;
+	public static double spiritKuluPerHit = 8;
+	public static double BSSDOutputAmount = 100;
+	public static double cryDKuluPerHitSSD = 3;
+	public static double soulKuluPerHit = 9;
+	public static double SSDOutputAmount = 468;
+	public static double BSSDReal = 0;
+	public static double SSDReal = 0;
+	public static double adenaKulu = 0;
+	public static String craftAdenaAssessment = "";	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	//File
 	public static String SaveFileName="L2Calc.ini";
 	public static int INI_lines=130;
@@ -40,12 +69,12 @@ public static int[] minginrjada = new int[3];
     public static boolean displaylocations=false;
     public static String locationskirjefailis="Display locations=false";
     //Buttons
-    public static String btn1="Adena->BSSD";
-    public static String btn2="Adena->SSD";
+    public static String btn1="Mats->BSSD";
+    public static String btn2="Mats->SSD";
     public static String btn3="BSSD->Mats";
     public static String btn4="SSD->Mats";
-    public static String btn5="result->inv";
-    public static String btn6="clear input";
+    public static String btn5="Result->Inv";
+    public static String btn6="Clear All";
     public static String label[] = {btn1, btn2, btn3, btn4, btn5, btn6};        /*seda ei pane INI faili*/
     //Buttons locations(column,row)
     public static String btnlocation_1="4, 3";
