@@ -56,7 +56,7 @@ public class GLOBAL {
 	public static int MinuOutputArv=28;
 	public static int labeliteArv=20;
 	//Window
-	public static String aknanimi="Sisu muutmine MAIN.GLOBAL...";
+	public static String aknanimi="L2 Calc v.1";
 	public static int width=850;
 	public static int height=350;
 	//Columns and Rows in window drawing
