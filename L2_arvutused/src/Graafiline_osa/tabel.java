@@ -15,6 +15,7 @@ import javax.swing.JLabel;
 
 
 import javax.swing.JTextField;
+import javax.swing.SwingConstants;
 
 import INI.INI_GLOBAL;
 import INI.failifuntsioonid;
@@ -58,6 +59,8 @@ public class tabel {
         labelid[8].setVisible(false);
         labelid[9].setVisible(false);
         labelid[10].setVisible(false);
+        labelid[16].setHorizontalAlignment(SwingConstants.CENTER);
+        labelid[17].setHorizontalAlignment(SwingConstants.CENTER);
 
 
       
@@ -355,6 +358,21 @@ int i=0;
 	            	
 	            	yourInputField[26].setText("0");
 	            	yourInputField[7].setText("0");
+	            	MAIN.GLOBAL.BSSDShots=0;
+	            	MAIN.GLOBAL.SSDShots=0;
+	            	MAIN.GLOBAL.spiritJ2rel=0;
+        	        MAIN.GLOBAL.cryDJ2rel=0;
+        	        
+        	        
+        	        MAIN.GLOBAL.cryDKogusOsta=0;
+        	        MAIN.GLOBAL.soulKogusOsta=0;
+        	        MAIN.GLOBAL.spiritKogusOsta=0;
+        	        MAIN.GLOBAL.adenaReserv=0;
+        	        MAIN.GLOBAL.spiritJ2rel=0;
+        	        MAIN.GLOBAL.cryDJ2rel=0;
+        	        
+        	        
+        	        
     	            }
         	      
         	        }	

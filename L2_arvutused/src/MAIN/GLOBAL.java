@@ -77,10 +77,10 @@ public class GLOBAL {
     public static String btn6="Clear All";
     public static String label[] = {btn1, btn2, btn3, btn4, btn5, btn6};        /*seda ei pane INI faili*/
     //Buttons locations(column,row)
-    public static String btnlocation_1="4, 3";
-    public static String btnlocation_2="6, 3";
-    public static String btnlocation_3="8, 3";
-    public static String btnlocation_4="2, 3";
+    public static String btnlocation_1="6, 2";
+    public static String btnlocation_2="7, 2";
+    public static String btnlocation_3="6, 3";
+    public static String btnlocation_4="7, 3";
     public static String btnlocation_5="4, 8";
     public static String btnlocation_6="6, 8";
     public static String lbllocation_1="9, 8";
