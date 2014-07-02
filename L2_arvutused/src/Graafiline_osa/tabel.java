@@ -3,7 +3,7 @@ package Graafiline_osa;
 
 
 
-import java.awt.Color;
+
 import java.awt.Font;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
@@ -17,8 +17,7 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
-import INI.INI_GLOBAL;
-import INI.failifuntsioonid;
+
 import layout.TableLayout;
 
 public class tabel {
