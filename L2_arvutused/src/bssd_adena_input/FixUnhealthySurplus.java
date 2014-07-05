@@ -3,12 +3,14 @@ package bssd_adena_input;
 public class FixUnhealthySurplus {
 	public static void start() {
 		double remainder = MAIN.GLOBAL.spiritJ2rel % MAIN.GLOBAL.spiritKuluPerHit;
+		/*
 		System.out.println("jääk on "+remainder);
 		System.out.println();
 		System.out.println();
 		System.out.println();
 		System.out.println();
 		System.out.println();
+		*/
 		if(remainder > 0) {
 			if(MAIN.GLOBAL.spiritReserv == MAIN.GLOBAL.spiritReservAlguses) {} else {				
 				MAIN.GLOBAL.spiritReserv = MAIN.GLOBAL.spiritReserv - remainder;

@@ -9,7 +9,7 @@ public class Buy {
 			ostmine++;
 			ostmine=ostmine*lump;
 			adena=adena-price*lump;
-			System.out.println("ost õnnestus");
+			//System.out.println("ost õnnestus");
 		};
 		return ostmine;
 	}

@@ -44,7 +44,7 @@ public class tabel {
         JLabel[] labelid=new JLabel[(MAIN.GLOBAL.labeliteArv+1)];
         for (int i = 1; i < (MAIN.GLOBAL.labeliteArv); i++)
         {
-        	System.out.println(i);
+        	//System.out.println(i);
         	labelid[i]=new JLabel(MAIN.GLOBAL.labeltext[i]);
         	frame.add(labelid[i],MAIN.GLOBAL.labellocation[i]);
         	}

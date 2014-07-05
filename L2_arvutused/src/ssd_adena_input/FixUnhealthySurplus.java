@@ -3,12 +3,14 @@ package ssd_adena_input;
 public class FixUnhealthySurplus {
 	public static void start() {
 		double remainder = MAIN.GLOBAL.soulJ2rel % MAIN.GLOBAL.soulKuluPerHit;
+		/*
 		System.out.println("jääk on "+remainder);
 		System.out.println();
 		System.out.println();
 		System.out.println();
 		System.out.println();
 		System.out.println();
+		*/
 		if(remainder > 0) {
 			if(MAIN.GLOBAL.soulReserv == MAIN.GLOBAL.soulReservAlguses) {} else {				
 				MAIN.GLOBAL.soulReserv = MAIN.GLOBAL.soulReserv - remainder;

@@ -18,7 +18,7 @@ public class Klass1 {
 		//Algab tulemuste korrastamine
 		J2reldused.start();
 		FixUnhealthySurplus.start();
-		
+		/*
 		//Kokkuvõte
 		System.out.println("Tuleb osta "+MAIN.GLOBAL.cryDKogusOsta+" kristalli ja "+MAIN.GLOBAL.soulKogusOsta+ "kivikest");
 		
@@ -31,7 +31,7 @@ public class Klass1 {
 
 		System.out.println("CryD järel pärast crafti: "+MAIN.GLOBAL.cryDJ2rel);
 		System.out.println("Soul järel pärast crafti: "+MAIN.GLOBAL.soulJ2rel);
-		
+		*/
 	}
 	
 }

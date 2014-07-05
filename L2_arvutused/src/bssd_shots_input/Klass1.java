@@ -21,7 +21,7 @@ public class Klass1 {
 	MAIN.GLOBAL.cryDReserv = MAIN.GLOBAL.cryDReserv + MAIN.GLOBAL.cryDKogusOsta - MAIN.GLOBAL.BSSDHits * MAIN.GLOBAL.cryDKuluPerHitBSSD;
 	MAIN.GLOBAL.spiritReserv = MAIN.GLOBAL.spiritReserv + MAIN.GLOBAL.spiritKogusOsta - MAIN.GLOBAL.BSSDHits * MAIN.GLOBAL.spiritKuluPerHit;
 	
-	System.out.println("BSSDREAL;BSSDHITS;CRYDKOGUSOSTA;SPIRITKOGUSOASTA "+MAIN.GLOBAL.BSSDReal+" "+MAIN.GLOBAL.BSSDHits+" "+MAIN.GLOBAL.cryDKogusOsta+" "+MAIN.GLOBAL.spiritKogusOsta);
+	//System.out.println("BSSDREAL;BSSDHITS;CRYDKOGUSOSTA;SPIRITKOGUSOASTA "+MAIN.GLOBAL.BSSDReal+" "+MAIN.GLOBAL.BSSDHits+" "+MAIN.GLOBAL.cryDKogusOsta+" "+MAIN.GLOBAL.spiritKogusOsta);
 	
 	MAIN.GLOBAL.adenaKulu = MAIN.GLOBAL.cryDKogusOsta * MAIN.GLOBAL.cryDPrice + MAIN.GLOBAL.spiritKogusOsta * MAIN.GLOBAL.spiritPrice;
 	MAIN.GLOBAL.adenaReserv = MAIN.GLOBAL.adenaReserv - MAIN.GLOBAL.adenaKulu; 
@@ -31,16 +31,16 @@ public class Klass1 {
 	} else {
 		MAIN.GLOBAL.craftAdenaAssessment = "GOOD";
 	}
-	System.out.println("You need to buy a further "+MAIN.GLOBAL.cryDKogusOsta+" cryD and "+MAIN.GLOBAL.spiritKogusOsta+" spirit.");
+	//System.out.println("You need to buy a further "+MAIN.GLOBAL.cryDKogusOsta+" cryD and "+MAIN.GLOBAL.spiritKogusOsta+" spirit.");
 	
 	if(MAIN.GLOBAL.craftAdenaAssessment == "GOOD") {
-		System.out.println("You will have "+MAIN.GLOBAL.adenaReserv+" adena remaining.");
+		//System.out.println("You will have "+MAIN.GLOBAL.adenaReserv+" adena remaining.");
 	} else {
 		//System.out.println("Craftiks kulub "+MAIN.GLOBAL.adenaKulu+" adenat.");
 		MAIN.GLOBAL.adenaReserv = MAIN.GLOBAL.adenaKulu; 
-		System.out.println("Craftiks kulub "+MAIN.GLOBAL.adenaReserv+" adenat.");
+		//System.out.println("Craftiks kulub "+MAIN.GLOBAL.adenaReserv+" adenat.");
 	}
-	System.out.println("You will have "+MAIN.GLOBAL.cryDReserv+" cryD and "+MAIN.GLOBAL.spiritReserv+" spirit remaining.");
+	//System.out.println("You will have "+MAIN.GLOBAL.cryDReserv+" cryD and "+MAIN.GLOBAL.spiritReserv+" spirit remaining.");
 	
 		 
 		

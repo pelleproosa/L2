@@ -20,6 +20,7 @@ public class Klass1 {
 		FixUnhealthySurplus.start();
 		
 		//Kokkuvõte
+		/*
 		System.out.println("Tuleb osta "+MAIN.GLOBAL.cryDKogusOsta+" kristalli ja "+MAIN.GLOBAL.spiritKogusOsta+ "kivikest");
 		
 		System.out.println("CryD enne crafti: "+MAIN.GLOBAL.cryDReserv);
@@ -31,7 +32,7 @@ public class Klass1 {
 
 		System.out.println("CryD järel pärast crafti: "+MAIN.GLOBAL.cryDJ2rel);
 		System.out.println("Spirit järel pärast crafti: "+MAIN.GLOBAL.spiritJ2rel);
-		
+		*/
 	}
 	
 }
