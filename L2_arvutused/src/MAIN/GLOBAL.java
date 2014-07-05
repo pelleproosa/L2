@@ -4,12 +4,12 @@ public class GLOBAL {
 /*public static int[] minginrjada = new int[3];
 	public static String[] mingistringijada = new String[3];
 */	
-	public static double cryDReserv = 51;
-	public static double spiritReserv = 1;
-	public static double soulReserv = 7;
-	public static double adenaReserv = 15000;
-	public static double BSSDRequested = 11000;
-	public static double SSDRequested = 19000;
+	public static double cryDReserv = 0;
+	public static double spiritReserv = 0;
+	public static double soulReserv = 0;
+	public static double adenaReserv = 0;
+	public static double BSSDRequested = 0;
+	public static double SSDRequested = 0;
 	
 	public static double cryDLump = 20;
 	public static double spiritLump = 1;

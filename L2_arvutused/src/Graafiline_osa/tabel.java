@@ -252,7 +252,7 @@ int i=0;
         	        	str[3]=yourInputField[4].getText();
         	            try{
         	            	MAIN.GLOBAL.adenaReserv=Double.parseDouble(str[i]);i++;MAIN.GLOBAL.soulReserv=Double.parseDouble(str[i]);i++;MAIN.GLOBAL.spiritReserv=Double.parseDouble(str[i]);i++;MAIN.GLOBAL.cryDReserv=Double.parseDouble(str[i]);
-        	        bssd_adena_input.Klass1.main(null);	
+        	        bssd_shots_input.Klass1.main(null);	
         	        MinuOutput[7].setText(""+(int)MAIN.GLOBAL.cryDKogusOsta);
         	        MinuOutput[5].setText(""+(int)MAIN.GLOBAL.soulKogusOsta);
         	        MinuOutput[6].setText(""+(int)MAIN.GLOBAL.spiritKogusOsta);
