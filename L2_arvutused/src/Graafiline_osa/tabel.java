@@ -18,6 +18,7 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
 
+
 import layout.TableLayout;
 
 public class tabel {
@@ -78,45 +79,10 @@ public class tabel {
         	}
 
           frame.add(yourInputField[i],MAIN.GLOBAL.inputlocation[i]);
-
+          
+      //    System.out.println("i="+i+" Asukoht="+MAIN.GLOBAL.inputlocation[i]);
+          yourInputField[i].setText("0");
         }
-        
-        
-        yourInputField[1].setVisible(false);
-        yourInputField[3].setVisible(false);
-        yourInputField[4].setVisible(false);
-        yourInputField[5].setVisible(false);
-        yourInputField[6].setVisible(false);
-        yourInputField[8].setVisible(false);
-        yourInputField[9].setVisible(false);
-        yourInputField[10].setVisible(false);
-        yourInputField[11].setVisible(false);
-        yourInputField[12].setVisible(false);
-        yourInputField[13].setVisible(false);
-        yourInputField[14].setVisible(false);
-        yourInputField[15].setVisible(false);
-        yourInputField[17].setVisible(false);
-        yourInputField[19].setVisible(false);
-        yourInputField[20].setVisible(false);
-        yourInputField[21].setVisible(false);
-        yourInputField[22].setVisible(false);
-        yourInputField[23].setVisible(false);
-        yourInputField[24].setVisible(false);
-        yourInputField[25].setVisible(false);
-        yourInputField[28].setVisible(false);
-        
-        
-        yourInputField[18].setText("0");
-        yourInputField[27].setText("0");
-        yourInputField[16].setText("0");
-        
-    	yourInputField[2].setText("0");
-    	
-    	yourInputField[26].setText("0");
-    	yourInputField[7].setText("0");
-        
-        
-        
         
        final  JTextField[] MinuOutput=new JTextField[(MAIN.GLOBAL.MinuOutputArv+1)];
 
@@ -138,27 +104,7 @@ public class tabel {
         	frame.add(MinuOutput[i], MAIN.GLOBAL.outputlocation[i]);
         }
  
-        MinuOutput[3].setVisible(false);
-        MinuOutput[4].setVisible(false);
-        MinuOutput[5].setVisible(false);
-        MinuOutput[6].setVisible(false);
-        MinuOutput[7].setVisible(false);
-        MinuOutput[8].setVisible(false);
-        MinuOutput[9].setVisible(false);
-        MinuOutput[10].setVisible(false);
-        MinuOutput[13].setVisible(false);
-        MinuOutput[14].setVisible(false);
-        MinuOutput[15].setVisible(false);
-        MinuOutput[16].setVisible(false);
-        MinuOutput[17].setVisible(false);
-        MinuOutput[18].setVisible(false);
-        MinuOutput[21].setVisible(false);
-        MinuOutput[22].setVisible(false);
-        MinuOutput[23].setVisible(false);
-        MinuOutput[24].setVisible(false);
-        MinuOutput[25].setVisible(false);
-        MinuOutput[26].setVisible(false);
-        MinuOutput[27].setVisible(false);
+
 
 
         frame.add(button[0], MAIN.GLOBAL.btnlocation_1);
@@ -182,7 +128,7 @@ public class tabel {
         	        	
         	        	
         	            String str=yourInputField[1].getText();
-        	            MinuOutput[1].setText(str);
+        	            MinuOutput[7].setText(str);
         	        
         	        }
         	        
@@ -201,29 +147,29 @@ public class tabel {
 int i=0;
         	        	
         	        	String str[]=new String[4];
-        	        	str[0]=yourInputField[16].getText();
+        	        	str[0]=yourInputField[1].getText();
         	        	str[1]=yourInputField[2].getText();
-        	        	str[2]=yourInputField[26].getText();
-        	        	str[3]=yourInputField[7].getText();
+        	        	str[2]=yourInputField[3].getText();
+        	        	str[3]=yourInputField[4].getText();
         	            try{
         	            	MAIN.GLOBAL.adenaReserv=Double.parseDouble(str[i]);i++;MAIN.GLOBAL.soulReserv=Double.parseDouble(str[i]);i++;MAIN.GLOBAL.spiritReserv=Double.parseDouble(str[i]);i++;MAIN.GLOBAL.cryDReserv=Double.parseDouble(str[i]);
         	      
         	        	ssd_adena_input.Klass1.main(null);	
-            	        MinuOutput[1].setText(""+(int)MAIN.GLOBAL.cryDKogusOsta);
-            	        MinuOutput[12].setText(""+(int)MAIN.GLOBAL.soulKogusOsta);
-            	       MinuOutput[20].setText(""+(int)MAIN.GLOBAL.spiritKogusOsta);
-            	        MinuOutput[2].setText(""+(int)MAIN.GLOBAL.adenaReserv);
-            	        MinuOutput[19].setText(""+(int)MAIN.GLOBAL.spiritReserv);
-            	        MinuOutput[28].setText(""+(int)MAIN.GLOBAL.cryDJ2rel);
-            	        yourInputField[27].setText(""+(int)MAIN.GLOBAL.SSDShots);
-            	       MinuOutput[11].setText(""+(int)MAIN.GLOBAL.soulJ2rel);
+            	        MinuOutput[7].setText(""+(int)MAIN.GLOBAL.cryDKogusOsta);
+            	        MinuOutput[5].setText(""+(int)MAIN.GLOBAL.soulKogusOsta);
+            	       MinuOutput[6].setText(""+(int)MAIN.GLOBAL.spiritKogusOsta);
+            	        MinuOutput[1].setText(""+(int)MAIN.GLOBAL.adenaReserv);
+            	        MinuOutput[3].setText(""+(int)MAIN.GLOBAL.spiritReserv);
+            	        MinuOutput[4].setText(""+(int)MAIN.GLOBAL.cryDJ2rel);
+            	        yourInputField[6].setText(""+(int)MAIN.GLOBAL.SSDShots);
+            	       MinuOutput[2].setText(""+(int)MAIN.GLOBAL.soulJ2rel);
            	        
             	        }
         	            catch(Exception e1){
-        	            	if (i==0){yourInputField[16].setText("Number!");}
+        	            	if (i==0){yourInputField[1].setText("Number!");}
         	            	if (i==1){yourInputField[2].setText("Number!");}
-        	            	if (i==2){yourInputField[26].setText("Number!");}
-        	            	if (i==3){yourInputField[7].setText("Number!");}
+        	            	if (i==2){yourInputField[3].setText("Number!");}
+        	            	if (i==3){yourInputField[4].setText("Number!");}
         	            };
         	        }}	
         		);    
@@ -234,29 +180,29 @@ int i=0;
 int i=0;
         	        	
         	        	String str[]=new String[4];
-        	        	str[0]=yourInputField[16].getText();
+        	        	str[0]=yourInputField[1].getText();
         	        	str[1]=yourInputField[2].getText();
-        	        	str[2]=yourInputField[26].getText();
-        	        	str[3]=yourInputField[7].getText();
+        	        	str[2]=yourInputField[3].getText();
+        	        	str[3]=yourInputField[4].getText();
         	            try{
         	            	MAIN.GLOBAL.adenaReserv=Double.parseDouble(str[i]);i++;MAIN.GLOBAL.soulReserv=Double.parseDouble(str[i]);i++;MAIN.GLOBAL.spiritReserv=Double.parseDouble(str[i]);i++;MAIN.GLOBAL.cryDReserv=Double.parseDouble(str[i]);
         	      
         	        	ssd_adena_input.Klass1.main(null);	
-            	        MinuOutput[1].setText(""+(int)MAIN.GLOBAL.cryDKogusOsta);
-            	        MinuOutput[12].setText(""+(int)MAIN.GLOBAL.soulKogusOsta);
-            	       MinuOutput[20].setText(""+(int)MAIN.GLOBAL.spiritKogusOsta);
-            	        MinuOutput[2].setText(""+(int)MAIN.GLOBAL.adenaReserv);
-            	        MinuOutput[19].setText(""+(int)MAIN.GLOBAL.spiritReserv);
-            	        MinuOutput[28].setText(""+(int)MAIN.GLOBAL.cryDJ2rel);
-            	        yourInputField[27].setText(""+(int)MAIN.GLOBAL.SSDShots);
-            	       MinuOutput[11].setText(""+(int)MAIN.GLOBAL.soulJ2rel);
+            	        MinuOutput[7].setText(""+(int)MAIN.GLOBAL.cryDKogusOsta);
+            	        MinuOutput[5].setText(""+(int)MAIN.GLOBAL.soulKogusOsta);
+            	       MinuOutput[6].setText(""+(int)MAIN.GLOBAL.spiritKogusOsta);
+            	        MinuOutput[1].setText(""+(int)MAIN.GLOBAL.adenaReserv);
+            	        MinuOutput[3].setText(""+(int)MAIN.GLOBAL.spiritReserv);
+            	        MinuOutput[4].setText(""+(int)MAIN.GLOBAL.cryDJ2rel);
+            	        yourInputField[6].setText(""+(int)MAIN.GLOBAL.SSDShots);
+            	       MinuOutput[2].setText(""+(int)MAIN.GLOBAL.soulJ2rel);
         	        
         	        }
     	            catch(Exception e1){
-    	            	if (i==0){yourInputField[16].setText("Number!");}
+    	            	if (i==0){yourInputField[1].setText("Number!");}
     	            	if (i==1){yourInputField[2].setText("Number!");}
-    	            	if (i==2){yourInputField[26].setText("Number!");}
-    	            	if (i==3){yourInputField[7].setText("Number!");}
+    	            	if (i==2){yourInputField[3].setText("Number!");}
+    	            	if (i==3){yourInputField[4].setText("Number!");}
     	            };
     	        }}	
     		);
@@ -268,27 +214,27 @@ int i=0;
 int i=0;
         	        	
         	        	String str[]=new String[4];
-        	        	str[0]=yourInputField[16].getText();
+        	        	str[0]=yourInputField[1].getText();
         	        	str[1]=yourInputField[2].getText();
-        	        	str[2]=yourInputField[26].getText();
-        	        	str[3]=yourInputField[7].getText();
+        	        	str[2]=yourInputField[3].getText();
+        	        	str[3]=yourInputField[4].getText();
         	            try{
         	            	MAIN.GLOBAL.adenaReserv=Double.parseDouble(str[i]);i++;MAIN.GLOBAL.soulReserv=Double.parseDouble(str[i]);i++;MAIN.GLOBAL.spiritReserv=Double.parseDouble(str[i]);i++;MAIN.GLOBAL.cryDReserv=Double.parseDouble(str[i]);
         	        bssd_adena_input.Klass1.main(null);	
-        	        MinuOutput[1].setText(""+(int)MAIN.GLOBAL.cryDKogusOsta);
-        	        MinuOutput[12].setText(""+(int)MAIN.GLOBAL.soulKogusOsta);
-        	        MinuOutput[20].setText(""+(int)MAIN.GLOBAL.spiritKogusOsta);
-        	        MinuOutput[2].setText(""+(int)MAIN.GLOBAL.adenaReserv);
-        	        MinuOutput[19].setText(""+(int)MAIN.GLOBAL.spiritJ2rel);
-        	        MinuOutput[28].setText(""+(int)MAIN.GLOBAL.cryDJ2rel);
-        	        yourInputField[18].setText(""+(int)MAIN.GLOBAL.BSSDShots);
-           	       MinuOutput[11].setText(""+(int)MAIN.GLOBAL.soulReserv);
+        	        MinuOutput[7].setText(""+(int)MAIN.GLOBAL.cryDKogusOsta);
+        	        MinuOutput[5].setText(""+(int)MAIN.GLOBAL.soulKogusOsta);
+        	        MinuOutput[6].setText(""+(int)MAIN.GLOBAL.spiritKogusOsta);
+        	        MinuOutput[1].setText(""+(int)MAIN.GLOBAL.adenaReserv);
+        	        MinuOutput[3].setText(""+(int)MAIN.GLOBAL.spiritJ2rel);
+        	        MinuOutput[4].setText(""+(int)MAIN.GLOBAL.cryDJ2rel);
+        	        yourInputField[5].setText(""+(int)MAIN.GLOBAL.BSSDShots);
+           	       MinuOutput[2].setText(""+(int)MAIN.GLOBAL.soulReserv);
         	            }
         	            catch(Exception e1){
-        	            	if (i==0){yourInputField[16].setText("Number!");}
+        	            	if (i==0){yourInputField[1].setText("Number!");}
         	            	if (i==1){yourInputField[2].setText("Number!");}
-        	            	if (i==2){yourInputField[26].setText("Number!");}
-        	            	if (i==3){yourInputField[7].setText("Number!");}
+        	            	if (i==2){yourInputField[3].setText("Number!");}
+        	            	if (i==3){yourInputField[4].setText("Number!");}
         	            };
         	        }}	
         		);
@@ -300,27 +246,27 @@ int i=0;
         	        	int i=0;
         	        	
         	        	String str[]=new String[4];
-        	        	str[0]=yourInputField[16].getText();
+        	        	str[0]=yourInputField[1].getText();
         	        	str[1]=yourInputField[2].getText();
-        	        	str[2]=yourInputField[26].getText();
-        	        	str[3]=yourInputField[7].getText();
+        	        	str[2]=yourInputField[3].getText();
+        	        	str[3]=yourInputField[4].getText();
         	            try{
         	            	MAIN.GLOBAL.adenaReserv=Double.parseDouble(str[i]);i++;MAIN.GLOBAL.soulReserv=Double.parseDouble(str[i]);i++;MAIN.GLOBAL.spiritReserv=Double.parseDouble(str[i]);i++;MAIN.GLOBAL.cryDReserv=Double.parseDouble(str[i]);
         	        bssd_adena_input.Klass1.main(null);	
-        	        MinuOutput[1].setText(""+(int)MAIN.GLOBAL.cryDKogusOsta);
-        	        MinuOutput[12].setText(""+(int)MAIN.GLOBAL.soulKogusOsta);
-        	        MinuOutput[20].setText(""+(int)MAIN.GLOBAL.spiritKogusOsta);
-        	        MinuOutput[2].setText(""+(int)MAIN.GLOBAL.adenaReserv);
-        	        MinuOutput[19].setText(""+(int)MAIN.GLOBAL.spiritJ2rel);
-        	        MinuOutput[28].setText(""+(int)MAIN.GLOBAL.cryDJ2rel);
-        	        yourInputField[18].setText(""+(int)MAIN.GLOBAL.BSSDShots);
-        	        MinuOutput[11].setText(""+(int)MAIN.GLOBAL.soulReserv);
+        	        MinuOutput[7].setText(""+(int)MAIN.GLOBAL.cryDKogusOsta);
+        	        MinuOutput[5].setText(""+(int)MAIN.GLOBAL.soulKogusOsta);
+        	        MinuOutput[6].setText(""+(int)MAIN.GLOBAL.spiritKogusOsta);
+        	        MinuOutput[1].setText(""+(int)MAIN.GLOBAL.adenaReserv);
+        	        MinuOutput[3].setText(""+(int)MAIN.GLOBAL.spiritJ2rel);
+        	        MinuOutput[4].setText(""+(int)MAIN.GLOBAL.cryDJ2rel);
+        	        yourInputField[5].setText(""+(int)MAIN.GLOBAL.BSSDShots);
+        	        MinuOutput[2].setText(""+(int)MAIN.GLOBAL.soulReserv);
     	            }
         	            catch(Exception e1){
-        	            	if (i==0){yourInputField[16].setText("Number!");}
+        	            	if (i==0){yourInputField[1].setText("Number!");}
         	            	if (i==1){yourInputField[2].setText("Number!");}
-        	            	if (i==2){yourInputField[26].setText("Number!");}
-        	            	if (i==3){yourInputField[7].setText("Number!");}
+        	            	if (i==2){yourInputField[3].setText("Number!");}
+        	            	if (i==3){yourInputField[4].setText("Number!");}
         	            };
         	        }}	
         		);
@@ -342,21 +288,21 @@ int i=0;
         	           
         	        MAIN.GLOBAL.adenaReserv=0;MAIN.GLOBAL.soulReserv=0;MAIN.GLOBAL.spiritReserv=0;MAIN.GLOBAL.cryDReserv=0;
         	        bssd_adena_input.Klass1.main(null);	
-        	        MinuOutput[2].setText("");
-        	        MinuOutput[11].setText("");
-        	        MinuOutput[19].setText("");
-        	        MinuOutput[28].setText("");
-        	        MinuOutput[12].setText("");
-        	        MinuOutput[20].setText("");
         	        MinuOutput[1].setText("");
-        	        yourInputField[18].setText("0");
-        	        yourInputField[27].setText("0");
-        	        yourInputField[16].setText("0");
+        	        MinuOutput[2].setText("");
+        	        MinuOutput[3].setText("");
+        	        MinuOutput[4].setText("");
+        	        MinuOutput[5].setText("");
+        	        MinuOutput[6].setText("");
+        	        MinuOutput[7].setText("");
+        	        yourInputField[5].setText("0");
+        	        yourInputField[6].setText("0");
+        	        yourInputField[1].setText("0");
         	        
 	            	yourInputField[2].setText("0");
 	            	
-	            	yourInputField[26].setText("0");
-	            	yourInputField[7].setText("0");
+	            	yourInputField[3].setText("0");
+	            	yourInputField[4].setText("0");
 	            	MAIN.GLOBAL.BSSDShots=0;
 	            	MAIN.GLOBAL.SSDShots=0;
 	            	MAIN.GLOBAL.spiritJ2rel=0;
@@ -386,19 +332,19 @@ int i=0;
         	        MAIN.GLOBAL.adenaReserv=0;MAIN.GLOBAL.soulReserv=0;MAIN.GLOBAL.spiritReserv=0;MAIN.GLOBAL.cryDReserv=0;
         	        bssd_adena_input.Klass1.main(null);	
 
-        	        yourInputField[2].setText(MinuOutput[11].getText());
-        	        yourInputField[16].setText(MinuOutput[2].getText());
-        	        yourInputField[26].setText(MinuOutput[19].getText());
-        	        yourInputField[7].setText(MinuOutput[28].getText());
-        	        MinuOutput[2].setText("");
-        	        MinuOutput[11].setText("");
-        	        MinuOutput[19].setText("");
-        	        MinuOutput[28].setText("");
-        	        MinuOutput[12].setText("");
-        	        MinuOutput[20].setText("");
+        	        yourInputField[2].setText(MinuOutput[2].getText());
+        	        yourInputField[1].setText(MinuOutput[1].getText());
+        	        yourInputField[3].setText(MinuOutput[3].getText());
+        	        yourInputField[4].setText(MinuOutput[4].getText());
         	        MinuOutput[1].setText("");
-        	        yourInputField[18].setText("");
-        	        yourInputField[27].setText("");
+        	        MinuOutput[2].setText("");
+        	        MinuOutput[3].setText("");
+        	        MinuOutput[4].setText("");
+        	        MinuOutput[5].setText("");
+        	        MinuOutput[6].setText("");
+        	        MinuOutput[7].setText("");
+        	        yourInputField[5].setText("");
+        	        yourInputField[6].setText("");
 
     	            }
         	      
@@ -407,12 +353,12 @@ int i=0;
        
         
       
-        yourInputField[16].addActionListener(
+        yourInputField[1].addActionListener(
         	    new ActionListener() {
         	        public void actionPerformed(ActionEvent e) {
         	        	
         	        	
-        	            String str=yourInputField[16].getText();
+        	            String str=yourInputField[1].getText();
         	            try{
         	            	double a=Double.parseDouble(str);
         	            
@@ -421,9 +367,9 @@ int i=0;
         	            
         	            }
         	            catch(Exception e1){
-        	            	yourInputField[16].setText("Number!"); 
+        	            	yourInputField[1].setText("Number!"); 
         	            };
-        	        //    MinuOutput[1].setText(str);
+        	        //    MinuOutput[7].setText(str);
         	            
         	            
         	            
@@ -431,226 +377,7 @@ int i=0;
         	    }
         	);
         
-   /*     yourInputField[2].addActionListener(
-        	    new ActionListener() {
-        	        public void actionPerformed(ActionEvent e) {
-        	            String str=yourInputField[2].getText();
-        	            MinuOutput[2].setText(str);
-        	        }
-        	    }
-        	);
-        yourInputField[3].addActionListener(
-        	    new ActionListener() {
-        	        public void actionPerformed(ActionEvent e) {
-        	            String str=yourInputField[3].getText();
-        	            MinuOutput[3].setText(str);
-        	        }
-        	    }
-        	);
-        yourInputField[4].addActionListener(
-        	    new ActionListener() {
-        	        public void actionPerformed(ActionEvent e) {
-        	            String str=yourInputField[4].getText();
-        	            MinuOutput[4].setText(str);
-        	        }
-        	    }
-        	);
-        yourInputField[5].addActionListener(
-        	    new ActionListener() {
-        	        public void actionPerformed(ActionEvent e) {
-        	            String str=yourInputField[5].getText();
-        	            MinuOutput[5].setText(str);
-        	        }
-        	    }
-        	);
-        yourInputField[6].addActionListener(
-        	    new ActionListener() {
-        	        public void actionPerformed(ActionEvent e) {
-        	            String str=yourInputField[6].getText();
-        	            MinuOutput[6].setText(str);
-        	        }
-        	    }
-        	);
-        yourInputField[7].addActionListener(
-        	    new ActionListener() {
-        	        public void actionPerformed(ActionEvent e) {
-        	            String str=yourInputField[7].getText();
-        	            MinuOutput[7].setText(str);
-        	        }
-        	    }
-        	);
-        yourInputField[8].addActionListener(
-        	    new ActionListener() {
-        	        public void actionPerformed(ActionEvent e) {
-        	            String str=yourInputField[8].getText();
-        	            MinuOutput[8].setText(str);
-        	        }
-        	    }
-        	);
-        yourInputField[9].addActionListener(
-        	    new ActionListener() {
-        	        public void actionPerformed(ActionEvent e) {
-        	            String str=yourInputField[9].getText();
-        	            MinuOutput[9].setText(str);
-        	        }
-        	    }
-        	);
-        yourInputField[10].addActionListener(
-        	    new ActionListener() {
-        	        public void actionPerformed(ActionEvent e) {
-        	            String str=yourInputField[10].getText();
-        	            MinuOutput[10].setText(str);
-        	        }
-        	    }
-        	);
-        yourInputField[11].addActionListener(
-        	    new ActionListener() {
-        	        public void actionPerformed(ActionEvent e) {
-        	            String str=yourInputField[11].getText();
-        	            MinuOutput[11].setText(str);
-        	        }
-        	    }
-        	);
-        yourInputField[12].addActionListener(
-        	    new ActionListener() {
-        	        public void actionPerformed(ActionEvent e) {
-        	            String str=yourInputField[12].getText();
-        	            MinuOutput[12].setText(str);
-        	        }
-        	    }
-        	);
-        yourInputField[13].addActionListener(
-        	    new ActionListener() {
-        	        public void actionPerformed(ActionEvent e) {
-        	            String str=yourInputField[13].getText();
-        	            MinuOutput[13].setText(str);
-        	        }
-        	    }
-        	);
-        yourInputField[14].addActionListener(
-        	    new ActionListener() {
-        	        public void actionPerformed(ActionEvent e) {
-        	            String str=yourInputField[14].getText();
-        	            MinuOutput[14].setText(str);
-        	        }
-        	    }
-        	);
-        yourInputField[15].addActionListener(
-        	    new ActionListener() {
-        	        public void actionPerformed(ActionEvent e) {
-        	            String str=yourInputField[15].getText();
-        	            MinuOutput[15].setText(str);
-        	        }
-        	    }
-        	);
-        yourInputField[16].addActionListener(
-        	    new ActionListener() {
-        	        public void actionPerformed(ActionEvent e) {
-        	            String str=yourInputField[16].getText();
-        	            MinuOutput[16].setText(str);
-        	        }
-        	    }
-        	);
-        yourInputField[17].addActionListener(
-        	    new ActionListener() {
-        	        public void actionPerformed(ActionEvent e) {
-        	            String str=yourInputField[17].getText();
-        	            MinuOutput[17].setText(str);
-        	        }
-        	    }
-        	);
-        yourInputField[18].addActionListener(
-        	    new ActionListener() {
-        	        public void actionPerformed(ActionEvent e) {
-        	            String str=yourInputField[18].getText();
-        	            MinuOutput[18].setText(str);
-        	        }
-        	    }
-        	);
-        yourInputField[19].addActionListener(
-        	    new ActionListener() {
-        	        public void actionPerformed(ActionEvent e) {
-        	            String str=yourInputField[19].getText();
-        	            MinuOutput[19].setText(str);
-        	        }
-        	    }
-        	);
-        yourInputField[20].addActionListener(
-        	    new ActionListener() {
-        	        public void actionPerformed(ActionEvent e) {
-        	            String str=yourInputField[20].getText();
-        	            MinuOutput[20].setText(str);
-        	        }
-        	    }
-        	);
-        yourInputField[21].addActionListener(
-        	    new ActionListener() {
-        	        public void actionPerformed(ActionEvent e) {
-        	            String str=yourInputField[21].getText();
-        	            MinuOutput[21].setText(str);
-        	        }
-        	    }
-        	);
-        yourInputField[22].addActionListener(
-        	    new ActionListener() {
-        	        public void actionPerformed(ActionEvent e) {
-        	            String str=yourInputField[22].getText();
-        	            MinuOutput[22].setText(str);
-        	        }
-        	    }
-        	);
-        yourInputField[23].addActionListener(
-        	    new ActionListener() {
-        	        public void actionPerformed(ActionEvent e) {
-        	            String str=yourInputField[23].getText();
-        	            MinuOutput[23].setText(str);
-        	        }
-        	    }
-        	);
-        yourInputField[24].addActionListener(
-        	    new ActionListener() {
-        	        public void actionPerformed(ActionEvent e) {
-        	            String str=yourInputField[24].getText();
-        	            MinuOutput[24].setText(str);
-        	        }
-        	    }
-        	);
-        yourInputField[25].addActionListener(
-        	    new ActionListener() {
-        	        public void actionPerformed(ActionEvent e) {
-        	            String str=yourInputField[25].getText();
-        	            MinuOutput[25].setText(str);
-        	        }
-        	    }
-        	);
-        yourInputField[26].addActionListener(
-        	    new ActionListener() {
-        	        public void actionPerformed(ActionEvent e) {
-        	            String str=yourInputField[26].getText();
-        	            MinuOutput[26].setText(str);
-        	        }
-        	    }
-        	);
 
-        yourInputField[27].addActionListener(
-        	    new ActionListener() {
-        	        public void actionPerformed(ActionEvent e) {
-        	            String str=yourInputField[27].getText();
-        	            MinuOutput[27].setText(str);
-        	        }
-        	    }
-        	); 
-        yourInputField[28].addActionListener(
-        	    new ActionListener() {
-        	        public void actionPerformed(ActionEvent e) {
-        	            String str=yourInputField[28].getText();
-        	            MinuOutput[28].setText(str);
-        	        }
-        	    }
-        );
-        */
-      
-        
         
         
         

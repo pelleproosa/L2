@@ -52,8 +52,8 @@ public class GLOBAL {
 	//File
 	public static String SaveFileName="L2Calc.ini";
 	public static int INI_lines=130;
-	public static int yourInputFieldArv=28;
-	public static int MinuOutputArv=28;
+	public static int yourInputFieldArv=6;
+	public static int MinuOutputArv=7;
 	public static int labeliteArv=20;
 	//Window
 	public static String aknanimi="L2 Calc v.1";
@@ -96,15 +96,15 @@ public class GLOBAL {
  //   SSDRequested‏
     
 	public static String[] inputlocation={"10, 9",
-											"8, 7","2, 1","4, 7","4, 8","4, 9",
-											"7, 7","4, 1","5, 4","5, 5","5, 6",
+											"1, 1","2, 1","3, 1","4, 1","6, 5",
+											"7, 5","4, 8","5, 4","5, 5","5, 6",
 											"5, 7","5, 8","5, 9","6, 1","8, 6",
-											"1, 1","6, 4","6, 5","6, 6","6, 7",
+											"8, 7","6, 4","4, 9","6, 6","6, 7",
 											"6, 8","6, 9","7, 1","8, 5","8, 9",
-											"3, 1","7, 5","7, 6"};
+											"4, 7","7, 7","7, 6"};
 	public static String[] outputlocation={"10, 10",
-										   "4, 6","1, 5","1, 4","1, 6","1, 7",
-										   "1, 8","1, 9","9, 5","8, 8","2, 4",
+										   "1, 5","2, 5","3, 5","4, 5","2, 6",
+										   "3, 6","4, 6","9, 5","8, 8","2, 4",
 										   "2, 5","2, 6","2, 7","2, 8","2, 9",
 										   "9, 6","7, 9","3, 4","3, 5","3, 6",
 										   "3, 7","3, 8","3, 9","9, 9","7, 8",
