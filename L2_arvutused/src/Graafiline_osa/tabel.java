@@ -4,6 +4,7 @@ package Graafiline_osa;
 
 
 
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
@@ -18,6 +19,12 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
 
+
+
+
+
+
+import javax.swing.text.Caret;
 
 import layout.TableLayout;
 
@@ -103,7 +110,9 @@ public class tabel {
         	  MinuOutput[i].setEditable(false);}
         	frame.add(MinuOutput[i], MAIN.GLOBAL.outputlocation[i]);
         }
- 
+        MinuOutput[1].setForeground(Color.GREEN);
+        MinuOutput[1].setCaretColor(Color.GREEN);
+        MinuOutput[1].setBackground(Color.darkGray);
 
 
 
@@ -140,28 +149,39 @@ public class tabel {
         		
         		);
  */       
-        button[1].addActionListener(
+        button[2].addActionListener(             // BSSD  -MATS
         	    new ActionListener() {
         	    	
         	        public void actionPerformed(ActionEvent e) {
 int i=0;
         	        	
-        	        	String str[]=new String[4];
+        	        	String str[]=new String[5];
         	        	str[0]=yourInputField[1].getText();
         	        	str[1]=yourInputField[2].getText();
         	        	str[2]=yourInputField[3].getText();
         	        	str[3]=yourInputField[4].getText();
+        	        	str[4]=yourInputField[5].getText();
         	            try{
-        	            	MAIN.GLOBAL.adenaReserv=Double.parseDouble(str[i]);i++;MAIN.GLOBAL.soulReserv=Double.parseDouble(str[i]);i++;MAIN.GLOBAL.spiritReserv=Double.parseDouble(str[i]);i++;MAIN.GLOBAL.cryDReserv=Double.parseDouble(str[i]);
+        	            	
+        	            	System.out.println("bssd mats");
+        	            	MAIN.GLOBAL.adenaReserv=Double.parseDouble(str[i]);
+        	            	i++;
+        	            	MAIN.GLOBAL.soulReserv=Double.parseDouble(str[i]);
+        	            	i++;
+        	            	MAIN.GLOBAL.spiritReserv=Double.parseDouble(str[i]);
+        	            	i++;
+        	            	MAIN.GLOBAL.cryDReserv=Double.parseDouble(str[i]);
+        	            	i++;
+        	            	MAIN.GLOBAL.BSSDRequested=Double.parseDouble(str[i]);
         	      
-        	        	ssd_adena_input.Klass1.main(null);	
+        	        	bssd_shots_input.Klass1.main(null);	
             	        MinuOutput[7].setText(""+(int)MAIN.GLOBAL.cryDKogusOsta);
             	        MinuOutput[5].setText(""+(int)MAIN.GLOBAL.soulKogusOsta);
             	       MinuOutput[6].setText(""+(int)MAIN.GLOBAL.spiritKogusOsta);
             	        MinuOutput[1].setText(""+(int)MAIN.GLOBAL.adenaReserv);
             	        MinuOutput[3].setText(""+(int)MAIN.GLOBAL.spiritReserv);
             	        MinuOutput[4].setText(""+(int)MAIN.GLOBAL.cryDJ2rel);
-            	        yourInputField[6].setText(""+(int)MAIN.GLOBAL.SSDShots);
+            	        yourInputField[5].setText(""+(int)MAIN.GLOBAL.BSSDReal);
             	       MinuOutput[2].setText(""+(int)MAIN.GLOBAL.soulJ2rel);
            	        
             	        }
@@ -170,31 +190,42 @@ int i=0;
         	            	if (i==1){yourInputField[2].setText("Number!");}
         	            	if (i==2){yourInputField[3].setText("Number!");}
         	            	if (i==3){yourInputField[4].setText("Number!");}
+        	            	if (i==4){yourInputField[5].setText("Number!");}
         	            };
         	        }}	
         		);    
-        button[3].addActionListener(
+        button[3].addActionListener(  //SSD-MATS
         	    new ActionListener() {
         	    	
         	        public void actionPerformed(ActionEvent e) {
 int i=0;
         	        	
-        	        	String str[]=new String[4];
+        	        	String str[]=new String[5];
         	        	str[0]=yourInputField[1].getText();
         	        	str[1]=yourInputField[2].getText();
         	        	str[2]=yourInputField[3].getText();
         	        	str[3]=yourInputField[4].getText();
+        	        	str[4]=yourInputField[6].getText();
         	            try{
-        	            	MAIN.GLOBAL.adenaReserv=Double.parseDouble(str[i]);i++;MAIN.GLOBAL.soulReserv=Double.parseDouble(str[i]);i++;MAIN.GLOBAL.spiritReserv=Double.parseDouble(str[i]);i++;MAIN.GLOBAL.cryDReserv=Double.parseDouble(str[i]);
+        	            	
+        	            	MAIN.GLOBAL.adenaReserv=Double.parseDouble(str[i]);
+        	            	i++;
+        	            	MAIN.GLOBAL.soulReserv=Double.parseDouble(str[i]);
+        	            	i++;
+        	            	MAIN.GLOBAL.spiritReserv=Double.parseDouble(str[i]);
+        	            	i++;
+        	            	MAIN.GLOBAL.cryDReserv=Double.parseDouble(str[i]);
+        	            	i++;
+        	            	MAIN.GLOBAL.SSDRequested=Double.parseDouble(str[i]);
         	      
-        	        	ssd_adena_input.Klass1.main(null);	
+        	        	ssd_shots_input.Klass1.main(null);	
             	        MinuOutput[7].setText(""+(int)MAIN.GLOBAL.cryDKogusOsta);
             	        MinuOutput[5].setText(""+(int)MAIN.GLOBAL.soulKogusOsta);
             	       MinuOutput[6].setText(""+(int)MAIN.GLOBAL.spiritKogusOsta);
             	        MinuOutput[1].setText(""+(int)MAIN.GLOBAL.adenaReserv);
             	        MinuOutput[3].setText(""+(int)MAIN.GLOBAL.spiritReserv);
             	        MinuOutput[4].setText(""+(int)MAIN.GLOBAL.cryDJ2rel);
-            	        yourInputField[6].setText(""+(int)MAIN.GLOBAL.SSDShots);
+            	        yourInputField[6].setText(""+(int)MAIN.GLOBAL.SSDReal);
             	       MinuOutput[2].setText(""+(int)MAIN.GLOBAL.soulJ2rel);
         	        
         	        }
@@ -203,10 +234,11 @@ int i=0;
     	            	if (i==1){yourInputField[2].setText("Number!");}
     	            	if (i==2){yourInputField[3].setText("Number!");}
     	            	if (i==3){yourInputField[4].setText("Number!");}
+    	            	if (i==4){yourInputField[6].setText("Number!");}
     	            };
     	        }}	
     		);
-        button[0].addActionListener(   ///adena->bssd nupp
+        button[0].addActionListener(   ///MATS BSSD
         	    new ActionListener() {
         	    	
         	        public void actionPerformed(ActionEvent e) {
@@ -218,7 +250,9 @@ int i=0;
         	        	str[1]=yourInputField[2].getText();
         	        	str[2]=yourInputField[3].getText();
         	        	str[3]=yourInputField[4].getText();
+        	        	
         	            try{
+        	            	
         	            	MAIN.GLOBAL.adenaReserv=Double.parseDouble(str[i]);i++;MAIN.GLOBAL.soulReserv=Double.parseDouble(str[i]);i++;MAIN.GLOBAL.spiritReserv=Double.parseDouble(str[i]);i++;MAIN.GLOBAL.cryDReserv=Double.parseDouble(str[i]);
         	        bssd_adena_input.Klass1.main(null);	
         	        MinuOutput[7].setText(""+(int)MAIN.GLOBAL.cryDKogusOsta);
@@ -235,10 +269,11 @@ int i=0;
         	            	if (i==1){yourInputField[2].setText("Number!");}
         	            	if (i==2){yourInputField[3].setText("Number!");}
         	            	if (i==3){yourInputField[4].setText("Number!");}
+
         	            };
         	        }}	
         		);
-        button[2].addActionListener(   ///BSSD->Mats
+        button[1].addActionListener(   ///Mats-SSD
         	    new ActionListener() {
         	    	
         	        public void actionPerformed(ActionEvent e) {
@@ -250,16 +285,27 @@ int i=0;
         	        	str[1]=yourInputField[2].getText();
         	        	str[2]=yourInputField[3].getText();
         	        	str[3]=yourInputField[4].getText();
+        	        	
+
         	            try{
-        	            	MAIN.GLOBAL.adenaReserv=Double.parseDouble(str[i]);i++;MAIN.GLOBAL.soulReserv=Double.parseDouble(str[i]);i++;MAIN.GLOBAL.spiritReserv=Double.parseDouble(str[i]);i++;MAIN.GLOBAL.cryDReserv=Double.parseDouble(str[i]);
-        	        bssd_shots_input.Klass1.main(null);	
+        	            	
+        	            	MAIN.GLOBAL.adenaReserv=Double.parseDouble(str[0]);
+        	            	i++;
+        	            	MAIN.GLOBAL.soulReserv=Double.parseDouble(str[1]);
+        	            	i++;
+        	            	MAIN.GLOBAL.spiritReserv=Double.parseDouble(str[2]);
+        	            	i++;
+        	            	MAIN.GLOBAL.cryDReserv=Double.parseDouble(str[3]);
+        	            	i++;
+        	            	MAIN.GLOBAL.BSSDRequested=Double.parseDouble(str[4]);
+        	        ssd_adena_input.Klass1.main(null);	
         	        MinuOutput[7].setText(""+(int)MAIN.GLOBAL.cryDKogusOsta);
         	        MinuOutput[5].setText(""+(int)MAIN.GLOBAL.soulKogusOsta);
         	        MinuOutput[6].setText(""+(int)MAIN.GLOBAL.spiritKogusOsta);
         	        MinuOutput[1].setText(""+(int)MAIN.GLOBAL.adenaReserv);
         	        MinuOutput[3].setText(""+(int)MAIN.GLOBAL.spiritJ2rel);
         	        MinuOutput[4].setText(""+(int)MAIN.GLOBAL.cryDJ2rel);
-        	        yourInputField[5].setText(""+(int)MAIN.GLOBAL.BSSDShots);
+        	        yourInputField[5].setText(""+(int)MAIN.GLOBAL.SSDShots);
         	        MinuOutput[2].setText(""+(int)MAIN.GLOBAL.soulReserv);
     	            }
         	            catch(Exception e1){
@@ -267,6 +313,8 @@ int i=0;
         	            	if (i==1){yourInputField[2].setText("Number!");}
         	            	if (i==2){yourInputField[3].setText("Number!");}
         	            	if (i==3){yourInputField[4].setText("Number!");}
+        	            	
+        	            	
         	            };
         	        }}	
         		);
@@ -352,7 +400,7 @@ int i=0;
         		);
        
         
-      
+      /*
         yourInputField[1].addActionListener(
         	    new ActionListener() {
         	        public void actionPerformed(ActionEvent e) {
@@ -369,6 +417,9 @@ int i=0;
         	            catch(Exception e1){
         	            	yourInputField[1].setText("Number!"); 
         	            };
+        	            
+        	            
+        	            
         	        //    MinuOutput[7].setText(str);
         	            
         	            
@@ -376,6 +427,7 @@ int i=0;
         	        }
         	    }
         	);
+       */
         
 
         
