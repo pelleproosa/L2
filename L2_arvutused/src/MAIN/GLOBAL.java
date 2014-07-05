@@ -110,6 +110,8 @@ public class GLOBAL {
 										   "3, 7","3, 8","3, 9","9, 9","7, 8",
 										   "6, 9","4, 4","4, 5"};
 
-
-	public static boolean mingiboolean=false;
+// Timer
+	public static long stardiaeg=0;
+	public static long stopaeg=0;
+	public static boolean timerunning=false;
 }

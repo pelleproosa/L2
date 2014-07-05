@@ -17,12 +17,11 @@ public class MAIN {
 	 * @throws Exception 
 	 */
 	public static void main(String[] args) throws Exception {
-		// Vahetest START
-	//Funktsioonid.TulbadReadDoubleJadasse("{75, 75, 75, 75, 75, 200, 75, 75, 75, 75}", "{75, 75, 75, 75, 75, 75, 75, 75, 75, 75}");
-	//System.exit(0);       
-		// Vahetest END
+Funktsioonid.time();
+System.exit(0);
 		
 		GLOBAL.SaveFileName=System.getProperty("user.dir")+"\\"+"L2Calc.ini";
+		
 	//	System.out.println(System.getProperty("user.dir")+"\\"+"L2Calc.ini");
 		// System.out.println(System.getProperty("user.home")+"\\Desktop\\");
 

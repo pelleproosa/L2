@@ -1,5 +1,8 @@
 package MAIN;
 
+import java.sql.Date;
+import java.text.SimpleDateFormat;
+
 
 
 public class Funktsioonid {
@@ -25,21 +28,11 @@ public class Funktsioonid {
 		asukoht1=0;
 		b=a;
 
-		//System.out.println("Enne loopi");
-		//System.out.println(b);
-		
-		
-		
-		
-		
 		
 		while(loetud==false){
-		//	System.out.println("Suures loobis");
-		// Tühikute eemaldamine  START
+
 						while (true){
-						//	System.out.println("Väikses loobis");
-				
-							//indexOf return -1 if String does not contain specified word
+
 							if(b.indexOf(lipuke[1]) != -1){        //leidus tühik
 								asukoht2=b.indexOf(lipuke[1]);     //märgistan viimase koha enne tyhikut
 								b=b.substring(asukoht1, asukoht2); //võtan stringi kuni tühikuni
@@ -49,26 +42,18 @@ public class Funktsioonid {
 								b=b+a;
 								a=b;
 								asukoht1=0;
-								//System.out.println(a);
-							}else{ //tühikut ei leidnud
+
+							}else{ 
 								break;
 							}			
 
 						}
-						//if(tulp){System.out.println("Tulp");}
-						//if(rida){System.out.println("Rida");}
-						//System.out.println("Peale tühikute eraldamist");
-						//System.out.println(a);
-						//System.out.println("");
-						//System.exit(0);
-		// Tühikute eemaldamine  END
+
 		asukoht1=0;
 		
 		
 		while (true){
-					//System.out.println("Double sisestuse loobis");
-			
-					//indexOf return -1 if String does not contain specified word
+
 					if(b.indexOf(lipuke[2]) != -1){        	//leidus koma
 						asukoht2=b.indexOf(lipuke[2]);     	//märgistan viimase koha enne koma
 						b=b.substring((asukoht1+1), asukoht2); 	//võtan stringi peale loogilist kuni komani
@@ -84,81 +69,66 @@ public class Funktsioonid {
 						asukoht2=a.length();					//
 	           
 						b=a;
-						//System.out.println(a);
 					}else{                          // koma ei leidnud
 					//	System.out.println("else");
 						if((a.length())>2){ 						// Sisu on rohkem kui kaks loogilist sulgu {}
 						//	System.out.println("a>2");
 							b=a;
-						//	System.out.println(b);
-						//	System.out.println(a);
-	    		   
 							asukoht2=((b.length())-1);
 							b=b.substring(1,asukoht2);
 							a=b;
-						//	System.out.println(b);
 							if(tulp){ if(tulpRidaLugeja==9){tulp=false; rida=true;  column[tulpRidaLugeja]=Double.parseDouble(b);/*System.out.println("tulp==false, kümnes väärtus="+column[tulpRidaLugeja]);*/tulpRidaLugeja=0;a=text2;b=a;break;}} 
 							if(rida){ if(tulpRidaLugeja==9){rida=false;}  row[tulpRidaLugeja]=Double.parseDouble(b);}
-	    		   
-	    		   
-							// võtab viimase numbri loogiliste vahelt
-	    	   
+
 						}
-						//System.out.println("break");
 						break;
 
 					}			
 			}
-	//	System.out.println("Double sisestusest väljas");
-		
-		
-		
-		
-		
+
 		if((!tulp)&(!rida)){loetud=true;/*System.out.println("loetud==true");*/break;}
-		
-		
-		
-		
-		
-		
-		
+
 		}
-		
-	   
+
 		double c[][]={
 				{column[0],column[1],column[2],column[3],column[4],column[5],column[6],column[7],column[8],column[9]},
 					  {row[0],row[1],row[2],row[3],row[4],row[5],row[6],row[7],row[8],row[9]}
 		};
 		GLOBAL.size=c;                //omistasin väärtuse Globalisse tagasi
-		/*
-		
-		8  {10, 75, 75, 75, 10, 200, 10, 1, 1, 1}
-		9  {10, 75, 75, 75, 75, 75, 10, 1, 1, 1}
-		
-		
-		
-		*/
-		
-		
-		
-		
 
 	}
 	
-	
-	
 	public static void TulbadReadstringideks()
 	{
-		String tulbad="{"+(int)GLOBAL.size[0][0]+", "+(int)GLOBAL.size[0][1]+", "+(int)GLOBAL.size[0][2]+", "+(int)GLOBAL.size[0][3]+", "+(int)GLOBAL.size[0][4]+", "+(int)GLOBAL.size[0][5]+", "+(int)GLOBAL.size[0][6]+", "+(int)GLOBAL.size[0][7]+", "+(int)GLOBAL.size[0][8]+", "+(int)GLOBAL.size[0][9]+"}";
-		String read="{"+(int)GLOBAL.size[1][0]+", "+(int)GLOBAL.size[1][1]+", "+(int)GLOBAL.size[1][2]+", "+(int)GLOBAL.size[1][3]+", "+(int)GLOBAL.size[1][4]+", "+(int)GLOBAL.size[1][5]+", "+(int)GLOBAL.size[1][6]+", "+(int)GLOBAL.size[1][7]+", "+(int)GLOBAL.size[1][8]+", "+(int)GLOBAL.size[1][9]+"}";
+		String tulbad="{"+(int)GLOBAL.size[0][0]+
+					  ", "+(int)GLOBAL.size[0][1]+
+					  ", "+(int)GLOBAL.size[0][2]+
+					  ", "+(int)GLOBAL.size[0][3]+
+					  ", "+(int)GLOBAL.size[0][4]+
+					  ", "+(int)GLOBAL.size[0][5]+
+					  ", "+(int)GLOBAL.size[0][6]+
+					  ", "+(int)GLOBAL.size[0][7]+
+					  ", "+(int)GLOBAL.size[0][8]+
+					  ", "+(int)GLOBAL.size[0][9]+"}";
+		String read="{"+(int)GLOBAL.size[1][0]+
+					", "+(int)GLOBAL.size[1][1]+
+					", "+(int)GLOBAL.size[1][2]+
+					", "+(int)GLOBAL.size[1][3]+
+					", "+(int)GLOBAL.size[1][4]+
+					", "+(int)GLOBAL.size[1][5]+
+					", "+(int)GLOBAL.size[1][6]+
+					", "+(int)GLOBAL.size[1][7]+
+					", "+(int)GLOBAL.size[1][8]+
+					", "+(int)GLOBAL.size[1][9]+"}";
 		GLOBAL.tulbadFunktsioonist=tulbad;
 		GLOBAL.readFunktsioonist=read;
-	//	System.out.println(tulbad);
-	//	System.out.println(read);
-	//	int a=(int)GLOBAL.size[0][0];
 	}
-	
-	
-	
+	public static void time()
+	{
+		long yourmilliseconds = System.currentTimeMillis();
+        SimpleDateFormat sdf = new SimpleDateFormat("MMM dd,yyyy HH:mm");
+
+        Date resultdate = new Date(yourmilliseconds);
+        System.out.println(sdf.format(resultdate));
+	}
 }
