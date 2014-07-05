@@ -17,8 +17,7 @@ public class MAIN {
 	 * @throws Exception 
 	 */
 	public static void main(String[] args) throws Exception {
-Funktsioonid.time();
-System.exit(0);
+
 		
 		GLOBAL.SaveFileName=System.getProperty("user.dir")+"\\"+"L2Calc.ini";
 		

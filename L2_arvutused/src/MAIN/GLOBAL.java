@@ -52,8 +52,8 @@ public class GLOBAL {
 	//File
 	public static String SaveFileName="L2Calc.ini";
 	public static int INI_lines=130;
-	public static int yourInputFieldArv=6;
-	public static int MinuOutputArv=7;
+	public static int yourInputFieldArv=8;
+	public static int MinuOutputArv=8;
 	public static int labeliteArv=20;
 	//Window
 	public static String aknanimi="L2 Calc v.1";
@@ -75,19 +75,28 @@ public class GLOBAL {
     public static String btn4="SSD->Mats";
     public static String btn5="Result->Inv";
     public static String btn6="Clear All";
-    public static String label[] = {btn1, btn2, btn3, btn4, btn5, btn6};        /*seda ei pane INI faili*/
+    public static String btn7="Start/Stop";
+    public static String btn8="Calculate";
+    public static String label[] = {btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8};        /*seda ei pane INI faili*/
     //Buttons locations(column,row)
     public static String btnlocation_1="6, 2";
     public static String btnlocation_2="7, 2";
     public static String btnlocation_3="6, 3";
     public static String btnlocation_4="7, 3";
-    public static String btnlocation_5="4, 8";
-    public static String btnlocation_6="6, 8";
+    public static String btnlocation_5="4, 5";
+    public static String btnlocation_6="5, 5";
+    public static String btnlocation_7="2, 9";
+    public static String btnlocation_8="4, 9";
     public static String lbllocation_1="9, 8";
     public static String lbl1string="MAIN.GLOBAL.lbl1string";
-    public static String[] labellocation={"","0,0","0,1","1,3","0,3","0,4","0,5","0,6","0,7","0,8","0,9",
-    									  	 "1,0","2,0","3,0","4,0","5,0","6,0","7,0","8,0","9,0"};
-    public static String[] labeltext={"ei kasuta","lbl1","Inventory","lbl3","lbl4","lbl5","Results","Buy","lbl8","lbl9","lbl10","Adena","Soul.O","Spirit.O","Cry.D","lbl15","BSSD","SSD","lbl18","lbl19"};
+    public static String[] labellocation={"","1,8","0,1","3,8","5,8","3,7",
+    										 "0,3","0,4","0,9","0,8","0,9",
+    									  	 "1,0","2,0","3,0","4,0","5,0",
+    									  	 "6,0","7,0","8,0","9,0"};
+    public static String[] labeltext={"ei kasuta","Before","Inventory","After","Adena/h","Profit Calc",
+    											  "Results","Buy","Adena INPUT","lbl9","lbl10",
+    											  "Adena","Soul.O","Spirit.O","Cry.D","lbl15",
+    											  "BSSD","SSD","lbl18","lbl19"};
     		
  
  
@@ -96,15 +105,15 @@ public class GLOBAL {
  //   SSDRequested‏
     
 	public static String[] inputlocation={"10, 9",
-											"1, 1","2, 1","3, 1","4, 1","6, 5",
-											"7, 5","4, 8","5, 4","5, 5","5, 6",
+											"1, 1","2, 1","3, 1","4, 1","6, 4",
+											"7, 4","1, 9","3, 9","5, 5","5, 6",
 											"5, 7","5, 8","5, 9","6, 1","8, 6",
 											"8, 7","6, 4","4, 9","6, 6","6, 7",
 											"6, 8","6, 9","7, 1","8, 5","8, 9",
 											"4, 7","7, 7","7, 6"};
 	public static String[] outputlocation={"10, 10",
-										   "1, 5","2, 5","3, 5","4, 5","2, 6",
-										   "3, 6","4, 6","9, 5","8, 8","2, 4",
+										   "1, 3","2, 3","3, 3","4, 3","2, 4",
+										   "3, 4","4, 4","5, 9","8, 8","2, 4",
 										   "2, 5","2, 6","2, 7","2, 8","2, 9",
 										   "9, 6","7, 9","3, 4","3, 5","3, 6",
 										   "3, 7","3, 8","3, 9","9, 9","7, 8",
@@ -112,6 +121,17 @@ public class GLOBAL {
 
 // Timer
 	public static long stardiaeg=0;
-	public static long stopaeg=0;
+	public static String stardiaegstring="";
+	public static long stoppaeg=0;
+	public static String stoppaegstring="";
+	public static long tulemus=0;
+	public static String tulemusstring="";
 	public static boolean timerunning=false;
+	public static int sekundid=0;
+	public static int minutid=0;
+	public static int tunnid=0;
+	public static int h24=0;
+	public static int adenaenne=0;
+	public static int adenahiljem=0;
+	
 }

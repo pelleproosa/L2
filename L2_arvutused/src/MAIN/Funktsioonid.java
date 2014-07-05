@@ -1,6 +1,7 @@
 package MAIN;
 
 import java.sql.Date;
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 
 
@@ -125,11 +126,67 @@ public class Funktsioonid {
 	}
 	public static void time()
 	{
-		
-		long yourmilliseconds = System.currentTimeMillis();
-        SimpleDateFormat sdf = new SimpleDateFormat("MMM dd,yyyy HH:mm");
 
-        Date resultdate = new Date(yourmilliseconds);
-        System.out.println(sdf.format(resultdate));
+		if (!GLOBAL.timerunning){
+			System.out.println("Start");
+		GLOBAL.stardiaeg = System.currentTimeMillis();
+       // SimpleDateFormat sdf = new SimpleDateFormat("dd MMM,yyyy HH:mm");
+		SimpleDateFormat startformaat = new SimpleDateFormat("HH:mm:ss");
+
+        Date resultdate = new Date(GLOBAL.stardiaeg);
+        GLOBAL.stardiaegstring=""+(startformaat.format(resultdate));
+        //System.out.println(GLOBAL.stardiaegstring);
+        GLOBAL.timerunning=true;
+        //System.out.println("Start done");
+		}else{
+			System.out.println("Stopp");
+		GLOBAL.stoppaeg=System.currentTimeMillis();
+		SimpleDateFormat stoppformaat = new SimpleDateFormat("HH:mm:ss");
+        Date resultdate = new Date(GLOBAL.stoppaeg);
+        GLOBAL.stoppaegstring=""+(stoppformaat.format(resultdate));
+        //System.out.println(GLOBAL.stoppaegstring);
+        GLOBAL.tulemus=(GLOBAL.stoppaeg-GLOBAL.stardiaeg)/1000;				/// tulemus sekundites
+        DecimalFormat df = new DecimalFormat("000000");
+        GLOBAL.tulemus=Long.parseLong(df.format(GLOBAL.tulemus));       
+        GLOBAL.sekundid=(int)GLOBAL.tulemus;
+        
+        
+        
+        if (GLOBAL.sekundid>86400){                                         // kui sekundeid jagub nii palju, et saab 24h
+        	GLOBAL.h24=Integer.parseInt(df.format((GLOBAL.sekundid/86400)));//päevade täisarv saadakse sekunditest
+        	GLOBAL.sekundid=(GLOBAL.sekundid-(GLOBAL.h24*86400));			   // võtan sekunditest päevad maha
+        }
+        if (GLOBAL.sekundid>3600){                                         // kui sekundeid jagub nii palju, et saab 1h
+        	GLOBAL.tunnid=Integer.parseInt(df.format((GLOBAL.sekundid/3600)));//tundide täisarv saadakse sekunditest
+        	GLOBAL.sekundid=(GLOBAL.sekundid-(GLOBAL.tunnid*3600));			   // võtan sekunditest tunnid maha
+        }
+        if (GLOBAL.sekundid>60){                                         // kui sekundeid jagub nii palju, et saab 1min
+        	GLOBAL.minutid=Integer.parseInt(df.format((GLOBAL.sekundid/60)));//minutite täisarv saadakse sekunditest
+        	GLOBAL.sekundid=(GLOBAL.sekundid-(GLOBAL.minutid*60));			   // võtan sekunditest minutid maha
+        }
+       //System.out.println(GLOBAL.tulemus);
+        //GLOBAL.tulemus=Long.parseLong(df.format((GLOBAL.tulemus/3600)));     // tulemus tundides
+        //GLOBAL.tulemus=(GLOBAL.tulemus/3600);     // tulemus tundides
+        
+        
+        
+        
+        
+        System.out.println("Spent time is : "+GLOBAL.h24+" Days and "+GLOBAL.tunnid+"h "+GLOBAL.minutid+"min "+GLOBAL.sekundid+"sek");
+        
+        
+        
+        GLOBAL.timerunning=false;
+		}
+	}
+	public static void profitcalc(){
+		if(GLOBAL.adenahiljem>0){
+			
+			System.out.println("Calculate sees"+GLOBAL.tulemus);
+			DecimalFormat df = new DecimalFormat("000000");
+		GLOBAL.tulemus=(Long.parseLong(df.format(3600*((((long)(GLOBAL.adenahiljem-GLOBAL.adenaenne))/GLOBAL.tulemus)))));       
+		GLOBAL.tulemusstring=(""+GLOBAL.tulemus);
+		}
+		
 	}
 }

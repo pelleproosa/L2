@@ -26,6 +26,8 @@ import javax.swing.SwingConstants;
 
 import javax.swing.text.Caret;
 
+import MAIN.Funktsioonid;
+import MAIN.GLOBAL;
 import layout.TableLayout;
 
 public class tabel {
@@ -55,19 +57,21 @@ public class tabel {
         	//System.out.println(i);
         	labelid[i]=new JLabel(MAIN.GLOBAL.labeltext[i]);
         	frame.add(labelid[i],MAIN.GLOBAL.labellocation[i]);
+        	
         	}
-        labelid[1].setVisible(false);
-        labelid[15].setVisible(false);
-        labelid[18].setVisible(false);
-        labelid[19].setVisible(false);
-        labelid[3].setVisible(false);
-        labelid[4].setVisible(false);
-        labelid[5].setVisible(false);
-        labelid[8].setVisible(false);
+       labelid[1].setHorizontalAlignment(SwingConstants.CENTER);
+       labelid[3].setHorizontalAlignment(SwingConstants.CENTER);
+       labelid[4].setHorizontalAlignment(SwingConstants.CENTER);
+       //frame.add(new JLabel("<html>Text color: <font color='red'>red</font></html>"));
+       labelid[5].setForeground(Color.RED);
+       // labelid[8].setVisible(false);
         labelid[9].setVisible(false);
         labelid[10].setVisible(false);
+        labelid[15].setVisible(false);
         labelid[16].setHorizontalAlignment(SwingConstants.CENTER);
         labelid[17].setHorizontalAlignment(SwingConstants.CENTER);
+        labelid[18].setVisible(false);
+        labelid[19].setVisible(false);
 
 
       
@@ -113,7 +117,9 @@ public class tabel {
         MinuOutput[1].setForeground(Color.GREEN);
         MinuOutput[1].setCaretColor(Color.GREEN);
         MinuOutput[1].setBackground(Color.darkGray);
-
+        MinuOutput[8].setForeground(Color.GREEN);
+        MinuOutput[8].setCaretColor(Color.GREEN);
+        MinuOutput[8].setBackground(Color.darkGray);
 
 
         frame.add(button[0], MAIN.GLOBAL.btnlocation_1);
@@ -122,6 +128,8 @@ public class tabel {
         frame.add(button[3], MAIN.GLOBAL.btnlocation_4);
         frame.add(button[4], MAIN.GLOBAL.btnlocation_5);
         frame.add(button[5], MAIN.GLOBAL.btnlocation_6);
+        frame.add(button[6], MAIN.GLOBAL.btnlocation_7);
+        frame.add(button[7], MAIN.GLOBAL.btnlocation_8);
         
 /*        button[0].addActionListener(
         	    new ActionListener() {
@@ -343,14 +351,17 @@ int i=0;
         	        MinuOutput[5].setText("");
         	        MinuOutput[6].setText("");
         	        MinuOutput[7].setText("");
+        	        MinuOutput[8].setText("");
+        	        yourInputField[1].setText("0");
+        	        yourInputField[2].setText("0");
+        	        yourInputField[3].setText("0");
+        	        yourInputField[4].setText("0");
         	        yourInputField[5].setText("0");
         	        yourInputField[6].setText("0");
-        	        yourInputField[1].setText("0");
+        	        yourInputField[7].setText("0");
+        	        yourInputField[8].setText("0");
         	        
-	            	yourInputField[2].setText("0");
 	            	
-	            	yourInputField[3].setText("0");
-	            	yourInputField[4].setText("0");
 	            	MAIN.GLOBAL.BSSDShots=0;
 	            	MAIN.GLOBAL.SSDShots=0;
 	            	MAIN.GLOBAL.spiritJ2rel=0;
@@ -398,7 +409,37 @@ int i=0;
         	      
         	        }	
         		);
-       
+        button[6].addActionListener(             // BSSD  -MATS
+        	    new ActionListener() {
+        	    	
+        	        public void actionPerformed(ActionEvent e) {
+        	        	MAIN.GLOBAL.adenaenne=Integer.parseInt(yourInputField[7].getText());
+        	        Funktsioonid.time();
+        	        if(MAIN.GLOBAL.timerunning==true){
+        	        	
+        	        
+        	        	
+        	        	MAIN.GLOBAL.tulemusstring="Time running";
+        	        	MinuOutput[8].setText(MAIN.GLOBAL.tulemusstring);}
+        	        }}	
+        		);    
+        button[7].addActionListener(             // BSSD  -MATS
+        	    new ActionListener() {
+        	    	
+        	        public void actionPerformed(ActionEvent e) {
+        	        System.out.println("nupp 8");
+        	        if(MAIN.GLOBAL.timerunning==false){
+        	        	MAIN.GLOBAL.adenahiljem=Integer.parseInt(yourInputField[8].getText());
+        	        	Funktsioonid.profitcalc();
+        	        MinuOutput[8].setText(MAIN.GLOBAL.tulemusstring);
+        	        
+        	        	
+        	        	
+        	        }else{
+        	        	MinuOutput[8].setText("Time running");
+        	        }
+        	        }}	
+        		);    
         
       /*
         yourInputField[1].addActionListener(
