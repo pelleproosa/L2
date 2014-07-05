@@ -125,6 +125,7 @@ public class Funktsioonid {
 	}
 	public static void time()
 	{
+		
 		long yourmilliseconds = System.currentTimeMillis();
         SimpleDateFormat sdf = new SimpleDateFormat("MMM dd,yyyy HH:mm");
 
