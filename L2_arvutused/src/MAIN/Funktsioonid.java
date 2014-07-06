@@ -109,7 +109,7 @@ public class Funktsioonid {
 	{
 
 		if (!GLOBAL.timerunning){
-			System.out.println("Start");
+			//System.out.println("Start");
 		GLOBAL.stardiaeg = System.currentTimeMillis();
        // SimpleDateFormat sdf = new SimpleDateFormat("dd MMM,yyyy HH:mm");
 		SimpleDateFormat startformaat = new SimpleDateFormat("HH:mm:ss");
@@ -120,7 +120,7 @@ public class Funktsioonid {
         GLOBAL.timerunning=true;
         //System.out.println("Start done");
 		}else{
-			System.out.println("Stopp");
+			//System.out.println("Stopp");
 		GLOBAL.stoppaeg=System.currentTimeMillis();
 		SimpleDateFormat stoppformaat = new SimpleDateFormat("HH:mm:ss");
         Date resultdate = new Date(GLOBAL.stoppaeg);
@@ -153,8 +153,8 @@ public class Funktsioonid {
         
         
         
-        System.out.println("Spent time is : "+GLOBAL.h24+" Days and "+GLOBAL.tunnid+"h "+GLOBAL.minutid+"min "+GLOBAL.sekundid+"sek");
-       
+       // System.out.println("Spent time is : "+GLOBAL.h24+" Days and "+GLOBAL.tunnid+"h "+GLOBAL.minutid+"min "+GLOBAL.sekundid+"sek");
+       GLOBAL.ajavahemikpp=(GLOBAL.h24+"D "+GLOBAL.tunnid+"h "+GLOBAL.minutid+"m "+GLOBAL.sekundid+"s");
         
         
         GLOBAL.timerunning=false;
@@ -163,11 +163,19 @@ public class Funktsioonid {
 	public static void profitcalc(){    // võtab  Funktsioonid.time(); omistatud GLOBAL.adenaenne ja Global.tulemus. Võtab juurde uue Global.adenahiljem ja väljastab arvutatud tulu kulusid arvestamata.
 		if(GLOBAL.adenahiljem>0){
 			
-			System.out.println("Calculate sees"+GLOBAL.tulemus);
+			//System.out.println("Calculate sees"+GLOBAL.tulemus);
 			DecimalFormat df = new DecimalFormat("000000");
-		GLOBAL.tulemus=(Long.parseLong(df.format(3600*((((long)(GLOBAL.adenahiljem-GLOBAL.adenaenne))/GLOBAL.tulemus)))));
-		
-		int kogukulu=GLOBAL.ssdkulupp+GLOBAL.bssdkulupp+GLOBAL.hppot1kulupp+GLOBAL.hppot2kulupp+GLOBAL.alarcitykulupp+GLOBAL.mhastekulupp+GLOBAL.hastekulupp;
+			int a=(GLOBAL.adenahiljem-GLOBAL.adenaenne)/(int)GLOBAL.tulemus;
+			a=a*3600;
+			int kogukulu=GLOBAL.ssdkulupp+GLOBAL.bssdkulupp+GLOBAL.hppot1kulupp+GLOBAL.hppot2kulupp+GLOBAL.alarcitykulupp+GLOBAL.mhastekulupp+GLOBAL.hastekulupp;
+			System.out.println(kogukulu);
+			kogukulu=(kogukulu)/(int)GLOBAL.tulemus;
+			System.out.println(kogukulu);
+			kogukulu=kogukulu*3600;
+			System.out.println(kogukulu);
+		GLOBAL.tulemus=(long)(a);
+		GLOBAL.tulemus=Long.parseLong(df.format((GLOBAL.tulemus)));
+		System.out.println(GLOBAL.tulemus);
 		
 GLOBAL.tulemus=(GLOBAL.tulemus-((long)(kogukulu)));
 		

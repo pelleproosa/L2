@@ -355,6 +355,7 @@ int i=0;
         	        MinuOutput[6].setText("");
         	        MinuOutput[7].setText("");
         	        MinuOutput[8].setText("");
+        	        MinuOutput[9].setText("");
         	        yourInputField[1].setText("0");
         	        yourInputField[2].setText("0");
         	        yourInputField[3].setText("0");
@@ -394,8 +395,8 @@ int i=0;
         	        MAIN.GLOBAL.adenaReserv=0;MAIN.GLOBAL.soulReserv=0;MAIN.GLOBAL.spiritReserv=0;MAIN.GLOBAL.cryDReserv=0;
         	        bssd_adena_input.Klass1.main(null);	
 
-        	        yourInputField[2].setText(MinuOutput[2].getText());
         	        yourInputField[1].setText(MinuOutput[1].getText());
+        	        yourInputField[2].setText(MinuOutput[2].getText());
         	        yourInputField[3].setText(MinuOutput[3].getText());
         	        yourInputField[4].setText(MinuOutput[4].getText());
         	        MinuOutput[1].setText("");
@@ -416,13 +417,15 @@ int i=0;
         	    new ActionListener() {
         	    	
         	        public void actionPerformed(ActionEvent e) {
-        	        	MAIN.GLOBAL.adenaenne=Integer.parseInt(yourInputField[7].getText());
+        	        	
         	        Funktsioonid.time();
+        	        MinuOutput[9].setText(MAIN.GLOBAL.ajavahemikpp);
         	        if(MAIN.GLOBAL.timerunning==true){
         	        	
         	        
         	        	
         	        	MAIN.GLOBAL.tulemusstring="Time running";
+        	        	MinuOutput[8].setText(MAIN.GLOBAL.tulemusstring);}else{MAIN.GLOBAL.tulemusstring="";
         	        	MinuOutput[8].setText(MAIN.GLOBAL.tulemusstring);}
         	        }}	
         		);    
@@ -430,8 +433,9 @@ int i=0;
         	    new ActionListener() {
         	    	
         	        public void actionPerformed(ActionEvent e) {
-        	        System.out.println("nupp 8");
+        	       // System.out.println("nupp 8");
         	        if(MAIN.GLOBAL.timerunning==false){
+        	        	MAIN.GLOBAL.adenaenne=Integer.parseInt(yourInputField[7].getText());
         	        	MAIN.GLOBAL.adenahiljem=Integer.parseInt(yourInputField[8].getText());
         	        	
         	        	int x=9;
@@ -447,13 +451,13 @@ int i=0;
         	        		i2=Integer.parseInt(yourInputField[x].getText());
         	        		x++;
         	        		i3=Integer.parseInt(yourInputField[x].getText());
-        	        		if(x==11){MAIN.GLOBAL.ssdkulupp=(i1*i2)-(i3*i2);}
-        	        		if(x==14){MAIN.GLOBAL.bssdkulupp=(i1*i2)-(i3*i2);}
-        	        		if(x==17){MAIN.GLOBAL.hppot1kulupp=(i1*i2)-(i3*i2);}
-        	        		if(x==20){MAIN.GLOBAL.hppot2kulupp=(i1*i2)-(i3*i2);}
-        	        		if(x==23){MAIN.GLOBAL.alarcitykulupp=(i1*i2)-(i3*i2);}
-        	        		if(x==26){MAIN.GLOBAL.mhastekulupp=(i1*i2)-(i3*i2);}
-        	        		if(x==26){MAIN.GLOBAL.hastekulupp=(i1*i2)-(i3*i2);}
+        	        		if(x==11){MAIN.GLOBAL.ssdkulupp=(i1*i2)-(i3*i2);System.out.println(MAIN.GLOBAL.ssdkulupp);}
+        	        		if(x==14){MAIN.GLOBAL.bssdkulupp=(i1*i2)-(i3*i2);System.out.println(MAIN.GLOBAL.bssdkulupp);}
+        	        		if(x==17){MAIN.GLOBAL.hppot1kulupp=(i1*i2)-(i3*i2);System.out.println(MAIN.GLOBAL.hppot1kulupp);}
+        	        		if(x==20){MAIN.GLOBAL.hppot2kulupp=(i1*i2)-(i3*i2);System.out.println(MAIN.GLOBAL.hppot2kulupp);}
+        	        		if(x==23){MAIN.GLOBAL.alarcitykulupp=(i1*i2)-(i3*i2);System.out.println(MAIN.GLOBAL.alarcitykulupp);}
+        	        		if(x==26){MAIN.GLOBAL.mhastekulupp=(i1*i2)-(i3*i2);System.out.println(MAIN.GLOBAL.mhastekulupp);}
+        	        		if(x==26){MAIN.GLOBAL.hastekulupp=(i1*i2)-(i3*i2);System.out.println(MAIN.GLOBAL.hastekulupp);}
         	        		x++;
         	        	}	
         	        	catch(Exception e1){

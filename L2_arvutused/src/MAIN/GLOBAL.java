@@ -61,7 +61,7 @@ public class GLOBAL {
 	public static String SaveFileName="L2Calc.ini";
 	public static int INI_lines=16;
 	public static int yourInputFieldArv=29;
-	public static int MinuOutputArv=8;
+	public static int MinuOutputArv=9;
 	public static int labeliteArv=25;
 	//Window
 	public static String aknanimi="L2 Calc v.1";
@@ -69,7 +69,7 @@ public class GLOBAL {
 	public static int height=700;
 	//Columns and Rows in window drawing
     public static double size[][] = {
-    	{90, 90, 90, 90, 90, 90, 90, 90, 90, 90}, // Columns selle rea saab ees 0: String tulbad=""+GLOBAL.size[0][..];
+    	{90, 90, 90, 90, 90, 110, 90, 90, 90, 90}, // Columns selle rea saab ees 0: String tulbad=""+GLOBAL.size[0][..];
     	{30, 30, 30, 30, 30, 30, 30, 30, 30, 30,
     	 30, 30, 30, 30, 30, 30, 30, 30, 30, 30} // Rows     selle rea saab ees 1: String tulbad=""+GLOBAL.size[1][..];
     								};
@@ -124,7 +124,7 @@ public class GLOBAL {
 											"3, 15","1, 16","2, 16","3,16"};
 	public static String[] outputlocation={"10, 10",
 										   "1, 3","2, 3","3, 3","4, 3","2, 4",
-										   "3, 4","4, 4","6, 9","8, 8","2, 4",
+										   "3, 4","4, 4","6, 9","5, 9","2, 4",
 										   "2, 5","2, 6","2, 7","2, 8","2, 9",
 										   "9, 6","7, 9","3, 4","3, 5","3, 6",
 										   "3, 7","3, 8","3, 9","9, 9","7, 8",
@@ -144,7 +144,7 @@ public class GLOBAL {
 	public static int h24=0;
 	public static int adenaenne=0;
 	public static int adenahiljem=0;
-	
+	public static String ajavahemikpp="";
 	public static int ssdkulupp=0;
 	public static int bssdkulupp=0;
 	public static int hppot1kulupp=0;
