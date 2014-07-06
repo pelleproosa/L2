@@ -25,23 +25,23 @@ public class INI_GLOBAL {
 		i++;
 		//#Price per 1 item#
 		i++;
-		MAIN.GLOBAL.yksBssD=Integer.parseInt(MAIN.Funktsioonid.tulemstringist(tulem[i]));
+		MAIN.GLOBAL.yksBssD=Double.parseDouble(MAIN.Funktsioonid.tulemstringist(tulem[i]));
 		i++;
-		MAIN.GLOBAL.yksssD=Integer.parseInt(MAIN.Funktsioonid.tulemstringist(tulem[i]));
+		MAIN.GLOBAL.yksssD=Double.parseDouble(MAIN.Funktsioonid.tulemstringist(tulem[i]));
 		i++;
-		MAIN.GLOBAL.yksCrystalD=Integer.parseInt(MAIN.Funktsioonid.tulemstringist(tulem[i]));
+		MAIN.GLOBAL.yksCrystalD=Double.parseDouble(MAIN.Funktsioonid.tulemstringist(tulem[i]));
 		i++;
-		MAIN.GLOBAL.yksSpiritOre=Integer.parseInt(MAIN.Funktsioonid.tulemstringist(tulem[i]));
+		MAIN.GLOBAL.yksSpiritOre=Double.parseDouble(MAIN.Funktsioonid.tulemstringist(tulem[i]));
 		i++;
-		MAIN.GLOBAL.yksHPpot1=Integer.parseInt(MAIN.Funktsioonid.tulemstringist(tulem[i]));
+		MAIN.GLOBAL.yksHPpot1=Double.parseDouble(MAIN.Funktsioonid.tulemstringist(tulem[i]));
 		i++;
-		MAIN.GLOBAL.yksHPpot2=Integer.parseInt(MAIN.Funktsioonid.tulemstringist(tulem[i]));
+		MAIN.GLOBAL.yksHPpot2=Double.parseDouble(MAIN.Funktsioonid.tulemstringist(tulem[i]));
 		i++;
-		MAIN.GLOBAL.yksAlarcity=Integer.parseInt(MAIN.Funktsioonid.tulemstringist(tulem[i]));
+		MAIN.GLOBAL.yksAlarcity=Double.parseDouble(MAIN.Funktsioonid.tulemstringist(tulem[i]));
 		i++;
-		MAIN.GLOBAL.yksMHaste=Integer.parseInt(MAIN.Funktsioonid.tulemstringist(tulem[i]));
+		MAIN.GLOBAL.yksMHaste=Double.parseDouble(MAIN.Funktsioonid.tulemstringist(tulem[i]));
 		i++;
-		MAIN.GLOBAL.yksHaste=Integer.parseInt(MAIN.Funktsioonid.tulemstringist(tulem[i]));
+		MAIN.GLOBAL.yksHaste=Double.parseDouble(MAIN.Funktsioonid.tulemstringist(tulem[i]));
 		
 	//	failifuntsioonid.Fail_Kirjuta((MAIN.GLOBAL.SaveFileName), tulem, "rewrite",MAIN.GLOBAL.INI_lines);
 	} 
@@ -69,6 +69,7 @@ public class INI_GLOBAL {
 				"Alarcity potion="+MAIN.GLOBAL.yksAlarcity,
 				"Magic Haste potion="+MAIN.GLOBAL.yksMHaste,
 				"Haste potion="+MAIN.GLOBAL.yksHaste,
+				
 				"#END#"
 				};
 

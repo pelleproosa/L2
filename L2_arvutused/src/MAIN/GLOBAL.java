@@ -41,15 +41,15 @@ public class GLOBAL {
 	public static double adenaKulu = 0;
 	public static String craftAdenaAssessment = "";	
 // hinnadpp
-	public static int yksBssD=0;
-	public static int yksssD=0;
-	public static int yksHPpot1=0;
-	public static int yksHPpot2=0;
-	public static int yksAlarcity=0;
-	public static int yksMHaste=0;
-	public static int yksHaste=0;
-	public static int yksSpiritOre=0;
-	public static int yksCrystalD=0;
+	public static double yksBssD=51.12;
+	public static double yksssD=9.85;
+	public static double yksHPpot1=0;
+	public static double yksHPpot2=0;
+	public static double yksAlarcity=0;
+	public static double yksMHaste=0;
+	public static double yksHaste=0;
+	public static double yksSpiritOre=0;
+	public static double yksCrystalD=0;
 	
 	
 	
@@ -131,26 +131,27 @@ public class GLOBAL {
 										   "6, 9","4, 4","4, 5"};
 
 // Timer
-	public static long stardiaeg=0;
+	public static double stardiaeg=0;
 	public static String stardiaegstring="";
-	public static long stoppaeg=0;
+	public static double stoppaeg=0;
 	public static String stoppaegstring="";
-	public static long tulemus=0;
+	public static double tulemus=0;
 	public static String tulemusstring="";
 	public static boolean timerunning=false;
-	public static int sekundid=0;
-	public static int minutid=0;
-	public static int tunnid=0;
-	public static int h24=0;
-	public static int adenaenne=0;
-	public static int adenahiljem=0;
+	public static double sekundid=0;
+	public static double minutid=0;
+	public static double tunnid=0;
+	public static double h24=0;
+	public static double adenaenne=0;
+	public static double adenahiljem=0;
 	public static String ajavahemikpp="";
-	public static int ssdkulupp=0;
-	public static int bssdkulupp=0;
-	public static int hppot1kulupp=0;
-	public static int hppot2kulupp=0;
-	public static int alarcitykulupp=0;
-	public static int mhastekulupp=0;
-	public static int hastekulupp=0;
+	public static double ssdkulupp=0;
+	public static double bssdkulupp=0;
+	public static double hppot1kulupp=0;
+	public static double hppot2kulupp=0;
+	public static double alarcitykulupp=0;
+	public static double mhastekulupp=0;
+	public static double hastekulupp=0;
+
 	
 }

@@ -97,6 +97,40 @@ public class tabel {
       //    System.out.println("i="+i+" Asukoht="+MAIN.GLOBAL.inputlocation[i]);
           yourInputField[i].setText("0");
         }
+        yourInputField[10].setText(""+GLOBAL.yksBssD);
+        yourInputField[13].setText(""+GLOBAL.yksssD);
+        
+        
+        yourInputField[7].setBackground(Color.GREEN);
+        yourInputField[9].setBackground(Color.GREEN);
+        yourInputField[12].setBackground(Color.GREEN);
+        yourInputField[15].setBackground(Color.GREEN);
+        yourInputField[18].setBackground(Color.GREEN);
+        yourInputField[21].setBackground(Color.GREEN);
+        yourInputField[24].setBackground(Color.GREEN);
+        yourInputField[27].setBackground(Color.GREEN);
+        
+        yourInputField[8].setBackground(Color.ORANGE);
+    	yourInputField[11].setBackground(Color.ORANGE);
+        yourInputField[14].setBackground(Color.ORANGE);
+        yourInputField[17].setBackground(Color.ORANGE);
+        yourInputField[20].setBackground(Color.ORANGE);
+        yourInputField[23].setBackground(Color.ORANGE);
+        yourInputField[26].setBackground(Color.ORANGE);
+        yourInputField[29].setBackground(Color.ORANGE);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
        final  JTextField[] MinuOutput=new JTextField[(MAIN.GLOBAL.MinuOutputArv+1)];
 
@@ -133,7 +167,9 @@ public class tabel {
         frame.add(button[5], MAIN.GLOBAL.btnlocation_6);
         frame.add(button[6], MAIN.GLOBAL.btnlocation_7);
         frame.add(button[7], MAIN.GLOBAL.btnlocation_8);
-        
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////  ALGAVAD NUPPUDE INITSIALISEERIMISED JNE                 //////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*        button[0].addActionListener(
         	    new ActionListener() {
         	    	
@@ -364,7 +400,20 @@ int i=0;
         	        yourInputField[6].setText("0");
         	        yourInputField[7].setText("0");
         	        yourInputField[8].setText("0");
-        	        
+        	        yourInputField[9].setText("0");
+        	        yourInputField[11].setText("0");
+        	        yourInputField[12].setText("0");
+        	        yourInputField[14].setText("0");
+        	        yourInputField[15].setText("0");
+        	        yourInputField[17].setText("0");
+        	        yourInputField[18].setText("0");
+        	        yourInputField[20].setText("0");
+        	        yourInputField[21].setText("0");
+        	        yourInputField[23].setText("0");
+        	        yourInputField[24].setText("0");
+        	        yourInputField[26].setText("0");
+        	        yourInputField[27].setText("0");
+        	        yourInputField[29].setText("0");
 	            	
 	            	MAIN.GLOBAL.BSSDShots=0;
 	            	MAIN.GLOBAL.SSDShots=0;
@@ -418,15 +467,37 @@ int i=0;
         	    	
         	        public void actionPerformed(ActionEvent e) {
         	        	
+        	        	
+        	        	
+        	        	
+        	        	
         	        Funktsioonid.time();
         	        MinuOutput[9].setText(MAIN.GLOBAL.ajavahemikpp);
-        	        if(MAIN.GLOBAL.timerunning==true){
-        	        	
-        	        
-        	        	
+        	        if(MAIN.GLOBAL.timerunning==true)
+        	        	{
+        	        	yourInputField[7].setBackground(Color.ORANGE);
+        	        	yourInputField[9].setBackground(Color.ORANGE);
+        	            yourInputField[12].setBackground(Color.ORANGE);
+        	            yourInputField[15].setBackground(Color.ORANGE);
+        	            yourInputField[18].setBackground(Color.ORANGE);
+        	            yourInputField[21].setBackground(Color.ORANGE);
+        	            yourInputField[24].setBackground(Color.ORANGE);
+        	            yourInputField[27].setBackground(Color.ORANGE);
         	        	MAIN.GLOBAL.tulemusstring="Time running";
-        	        	MinuOutput[8].setText(MAIN.GLOBAL.tulemusstring);}else{MAIN.GLOBAL.tulemusstring="";
-        	        	MinuOutput[8].setText(MAIN.GLOBAL.tulemusstring);}
+        	        	MinuOutput[8].setText(MAIN.GLOBAL.tulemusstring);
+        	        	}else
+        	        		{
+        	        		yourInputField[8].setBackground(Color.GREEN);
+        	            	yourInputField[11].setBackground(Color.GREEN);
+        	                yourInputField[14].setBackground(Color.GREEN);
+        	                yourInputField[17].setBackground(Color.GREEN);
+        	                yourInputField[20].setBackground(Color.GREEN);
+        	                yourInputField[23].setBackground(Color.GREEN);
+        	                yourInputField[26].setBackground(Color.GREEN);
+        	                yourInputField[29].setBackground(Color.GREEN);
+        	        		MAIN.GLOBAL.tulemusstring="Time stopped";
+        	        		MinuOutput[8].setText(MAIN.GLOBAL.tulemusstring);
+        	        		}
         	        }}	
         		);    
         button[7].addActionListener(             // CALCULATE
@@ -434,7 +505,15 @@ int i=0;
         	    	
         	        public void actionPerformed(ActionEvent e) {
         	       // System.out.println("nupp 8");
-        	        if(MAIN.GLOBAL.timerunning==false){
+        	        if((MAIN.GLOBAL.timerunning==false)&(MAIN.GLOBAL.tulemus>0)){
+        	        	yourInputField[8].setBackground(Color.ORANGE);
+        	        	yourInputField[11].setBackground(Color.ORANGE);
+        	            yourInputField[14].setBackground(Color.ORANGE);
+        	            yourInputField[17].setBackground(Color.ORANGE);
+        	            yourInputField[20].setBackground(Color.ORANGE);
+        	            yourInputField[23].setBackground(Color.ORANGE);
+        	            yourInputField[26].setBackground(Color.ORANGE);
+        	            yourInputField[29].setBackground(Color.ORANGE);
         	        	MAIN.GLOBAL.adenaenne=Integer.parseInt(yourInputField[7].getText());
         	        	MAIN.GLOBAL.adenahiljem=Integer.parseInt(yourInputField[8].getText());
         	        	
@@ -443,16 +522,17 @@ int i=0;
         	        	while (true){
         	        		
         	        	try{              //kulu arvutus
-        	        	int i1=0;
-        	        	int i2=0;
-        	        	int i3=0;
-        	        		i1=Integer.parseInt(yourInputField[x].getText());
+        	        	double i1=0;
+        	        	double i2=0;
+        	        	double i3=0;
+        	        		i1=Double.parseDouble(yourInputField[x].getText());
         	        		x++;
-        	        		i2=Integer.parseInt(yourInputField[x].getText());
+        	        		i2=Double.parseDouble(yourInputField[x].getText());
         	        		x++;
-        	        		i3=Integer.parseInt(yourInputField[x].getText());
+        	        		i3=Double.parseDouble(yourInputField[x].getText());
         	        		if(x==11){MAIN.GLOBAL.ssdkulupp=(i1*i2)-(i3*i2);System.out.println(MAIN.GLOBAL.ssdkulupp);}
-        	        		if(x==14){MAIN.GLOBAL.bssdkulupp=(i1*i2)-(i3*i2);System.out.println(MAIN.GLOBAL.bssdkulupp);}
+        	        		//System.out.println("i1="+i1+" i2="+i2+" i3="+i3);//System.exit(0);
+        	        		if(x==14){MAIN.GLOBAL.bssdkulupp=((i1*i2)-(i3*i2));System.out.println(MAIN.GLOBAL.bssdkulupp);}
         	        		if(x==17){MAIN.GLOBAL.hppot1kulupp=(i1*i2)-(i3*i2);System.out.println(MAIN.GLOBAL.hppot1kulupp);}
         	        		if(x==20){MAIN.GLOBAL.hppot2kulupp=(i1*i2)-(i3*i2);System.out.println(MAIN.GLOBAL.hppot2kulupp);}
         	        		if(x==23){MAIN.GLOBAL.alarcitykulupp=(i1*i2)-(i3*i2);System.out.println(MAIN.GLOBAL.alarcitykulupp);}

@@ -2,7 +2,9 @@ package MAIN;
 
 import java.sql.Date;
 import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import java.text.SimpleDateFormat;
+import java.util.Locale;
 
 
 
@@ -112,40 +114,48 @@ public class Funktsioonid {
 			//System.out.println("Start");
 		GLOBAL.stardiaeg = System.currentTimeMillis();
        // SimpleDateFormat sdf = new SimpleDateFormat("dd MMM,yyyy HH:mm");
-		SimpleDateFormat startformaat = new SimpleDateFormat("HH:mm:ss");
+		//SimpleDateFormat startformaat = new SimpleDateFormat("HH:mm:ss");
 
-        Date resultdate = new Date(GLOBAL.stardiaeg);
-        GLOBAL.stardiaegstring=""+(startformaat.format(resultdate));
+        //Date resultdate = new Date(GLOBAL.stardiaeg);
+        //GLOBAL.stardiaegstring=""+(startformaat.format(resultdate));
         //System.out.println(GLOBAL.stardiaegstring);
         GLOBAL.timerunning=true;
         //System.out.println("Start done");
 		}else{
 			//System.out.println("Stopp");
 		GLOBAL.stoppaeg=System.currentTimeMillis();
-		SimpleDateFormat stoppformaat = new SimpleDateFormat("HH:mm:ss");
-        Date resultdate = new Date(GLOBAL.stoppaeg);
-        GLOBAL.stoppaegstring=""+(stoppformaat.format(resultdate));
+		//GLOBAL.stoppaeg=
+		//SimpleDateFormat stoppformaat = new SimpleDateFormat("HH:mm:ss");
+        //Date resultdate = new Date(stoppaeg);
+        //GLOBAL.stoppaegstring=""+(stoppformaat.format(resultdate));
         //System.out.println(GLOBAL.stoppaegstring);
         GLOBAL.tulemus=(GLOBAL.stoppaeg-GLOBAL.stardiaeg)/1000;				/// tulemus sekundites
-        DecimalFormat df = new DecimalFormat("000000");
-        GLOBAL.tulemus=Long.parseLong(df.format(GLOBAL.tulemus));       
-        GLOBAL.sekundid=(int)GLOBAL.tulemus;
+
+        DecimalFormatSymbols decimalSymbol = new DecimalFormatSymbols(Locale.getDefault());
+        decimalSymbol.setDecimalSeparator('.');
+        decimalSymbol.setGroupingSeparator(',');
+        DecimalFormat nullkomakohta = new DecimalFormat("###",decimalSymbol);
+        DecimalFormat kakskomakohta = new DecimalFormat("#.00",decimalSymbol);
+        String s=(kakskomakohta.format(GLOBAL.tulemus)); 
+        GLOBAL.tulemus=Double.parseDouble(s);
+
+        GLOBAL.sekundid=GLOBAL.tulemus;
         
         
         
         if (GLOBAL.sekundid>86400){                                         // kui sekundeid jagub nii palju, et saab 24h
-        	GLOBAL.h24=Integer.parseInt(df.format((GLOBAL.sekundid/86400)));//päevade täisarv saadakse sekunditest
+        	GLOBAL.h24=Double.parseDouble(nullkomakohta.format((GLOBAL.sekundid/86400)));//päevade täisarv saadakse sekunditest
         	GLOBAL.sekundid=(GLOBAL.sekundid-(GLOBAL.h24*86400));			   // võtan sekunditest päevad maha
         }
         if (GLOBAL.sekundid>3600){                                         // kui sekundeid jagub nii palju, et saab 1h
-        	GLOBAL.tunnid=Integer.parseInt(df.format((GLOBAL.sekundid/3600)));//tundide täisarv saadakse sekunditest
+        	GLOBAL.tunnid=Double.parseDouble(nullkomakohta.format((GLOBAL.sekundid/3600)));//tundide täisarv saadakse sekunditest
         	GLOBAL.sekundid=(GLOBAL.sekundid-(GLOBAL.tunnid*3600));			   // võtan sekunditest tunnid maha
         }
         if (GLOBAL.sekundid>60){                                         // kui sekundeid jagub nii palju, et saab 1min
-        	GLOBAL.minutid=Integer.parseInt(df.format((GLOBAL.sekundid/60)));//minutite täisarv saadakse sekunditest
+        	GLOBAL.minutid=Double.parseDouble(nullkomakohta.format((GLOBAL.sekundid/60)));//minutite täisarv saadakse sekunditest
         	GLOBAL.sekundid=(GLOBAL.sekundid-(GLOBAL.minutid*60));			   // võtan sekunditest minutid maha
         }
-       //System.out.println(GLOBAL.tulemus);
+       System.out.println("sekundeid kulus : "+GLOBAL.tulemus);
         //GLOBAL.tulemus=Long.parseLong(df.format((GLOBAL.tulemus/3600)));     // tulemus tundides
         //GLOBAL.tulemus=(GLOBAL.tulemus/3600);     // tulemus tundides
         
@@ -154,32 +164,44 @@ public class Funktsioonid {
         
         
        // System.out.println("Spent time is : "+GLOBAL.h24+" Days and "+GLOBAL.tunnid+"h "+GLOBAL.minutid+"min "+GLOBAL.sekundid+"sek");
-       GLOBAL.ajavahemikpp=(GLOBAL.h24+"D "+GLOBAL.tunnid+"h "+GLOBAL.minutid+"m "+GLOBAL.sekundid+"s");
+
+       GLOBAL.ajavahemikpp=((int)(GLOBAL.h24)+"d "+(int)GLOBAL.tunnid+"h "+(int)GLOBAL.minutid+"m "+(int)GLOBAL.sekundid+"s");
         
         
         GLOBAL.timerunning=false;
 		}
 	}
 	public static void profitcalc(){    // võtab  Funktsioonid.time(); omistatud GLOBAL.adenaenne ja Global.tulemus. Võtab juurde uue Global.adenahiljem ja väljastab arvutatud tulu kulusid arvestamata.
-		if(GLOBAL.adenahiljem>0){
+		if(GLOBAL.tulemus>0){
 			
 			//System.out.println("Calculate sees"+GLOBAL.tulemus);
-			DecimalFormat df = new DecimalFormat("000000");
-			int a=(GLOBAL.adenahiljem-GLOBAL.adenaenne)/(int)GLOBAL.tulemus;
+			
+			
+			DecimalFormatSymbols decimalSymbol = new DecimalFormatSymbols(Locale.getDefault());
+	        decimalSymbol.setDecimalSeparator('.');
+	        decimalSymbol.setGroupingSeparator(',');
+	        DecimalFormat nullkomakohta = new DecimalFormat("###",decimalSymbol);
+	        DecimalFormat kakskomakohta = new DecimalFormat("#.00",decimalSymbol);
+			
+			
+			double a=(GLOBAL.adenahiljem-GLOBAL.adenaenne)/GLOBAL.tulemus;
 			a=a*3600;
-			int kogukulu=GLOBAL.ssdkulupp+GLOBAL.bssdkulupp+GLOBAL.hppot1kulupp+GLOBAL.hppot2kulupp+GLOBAL.alarcitykulupp+GLOBAL.mhastekulupp+GLOBAL.hastekulupp;
-			System.out.println(kogukulu);
-			kogukulu=(kogukulu)/(int)GLOBAL.tulemus;
-			System.out.println(kogukulu);
+			double kogukulu=GLOBAL.ssdkulupp+GLOBAL.bssdkulupp+GLOBAL.hppot1kulupp+GLOBAL.hppot2kulupp+GLOBAL.alarcitykulupp+GLOBAL.mhastekulupp+GLOBAL.hastekulupp;
+			System.out.println("kogukulu : "+kogukulu);
+			kogukulu=(kogukulu)/GLOBAL.tulemus;
+			//System.out.println(kogukulu);
 			kogukulu=kogukulu*3600;
-			System.out.println(kogukulu);
-		GLOBAL.tulemus=(long)(a);
-		GLOBAL.tulemus=Long.parseLong(df.format((GLOBAL.tulemus)));
+			//System.out.println(kogukulu);
+		GLOBAL.tulemus=a;
+		GLOBAL.tulemus=Double.parseDouble(kakskomakohta.format((GLOBAL.tulemus)));
+		kogukulu=Double.parseDouble(kakskomakohta.format((kogukulu)));
 		System.out.println(GLOBAL.tulemus);
 		
-GLOBAL.tulemus=(GLOBAL.tulemus-((long)(kogukulu)));
-		
-		GLOBAL.tulemusstring=(""+GLOBAL.tulemus);
+GLOBAL.tulemus=(GLOBAL.tulemus-(kogukulu));
+GLOBAL.tulemus=Double.parseDouble(kakskomakohta.format((GLOBAL.tulemus)));
+		GLOBAL.tulemusstring=(nullkomakohta.format((GLOBAL.tulemus)));
+		}else{
+			GLOBAL.tulemusstring="Start/Stop";
 		}
 		
 	}
