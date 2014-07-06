@@ -412,7 +412,7 @@ int i=0;
         	      
         	        }	
         		);
-        button[6].addActionListener(             // BSSD  -MATS
+        button[6].addActionListener(             // start/stop
         	    new ActionListener() {
         	    	
         	        public void actionPerformed(ActionEvent e) {
@@ -426,13 +426,45 @@ int i=0;
         	        	MinuOutput[8].setText(MAIN.GLOBAL.tulemusstring);}
         	        }}	
         		);    
-        button[7].addActionListener(             // BSSD  -MATS
+        button[7].addActionListener(             // CALCULATE
         	    new ActionListener() {
         	    	
         	        public void actionPerformed(ActionEvent e) {
         	        System.out.println("nupp 8");
         	        if(MAIN.GLOBAL.timerunning==false){
         	        	MAIN.GLOBAL.adenahiljem=Integer.parseInt(yourInputField[8].getText());
+        	        	
+        	        	int x=9;
+        	        	
+        	        	while (true){
+        	        		
+        	        	try{              //kulu arvutus
+        	        	int i1=0;
+        	        	int i2=0;
+        	        	int i3=0;
+        	        		i1=Integer.parseInt(yourInputField[x].getText());
+        	        		x++;
+        	        		i2=Integer.parseInt(yourInputField[x].getText());
+        	        		x++;
+        	        		i3=Integer.parseInt(yourInputField[x].getText());
+        	        		if(x==11){MAIN.GLOBAL.ssdkulupp=(i1*i2)-(i3*i2);}
+        	        		if(x==14){MAIN.GLOBAL.bssdkulupp=(i1*i2)-(i3*i2);}
+        	        		if(x==17){MAIN.GLOBAL.hppot1kulupp=(i1*i2)-(i3*i2);}
+        	        		if(x==20){MAIN.GLOBAL.hppot2kulupp=(i1*i2)-(i3*i2);}
+        	        		if(x==23){MAIN.GLOBAL.alarcitykulupp=(i1*i2)-(i3*i2);}
+        	        		if(x==26){MAIN.GLOBAL.mhastekulupp=(i1*i2)-(i3*i2);}
+        	        		if(x==26){MAIN.GLOBAL.hastekulupp=(i1*i2)-(i3*i2);}
+        	        		x++;
+        	        	}	
+        	        	catch(Exception e1){
+        	        		yourInputField[x].setText("Number!");
+        	        		
+        	        	}
+        	        	if(x>25){break;}
+        	        	}
+        	        	
+        	        	
+        	        	
         	        	Funktsioonid.profitcalc();
         	        MinuOutput[8].setText(MAIN.GLOBAL.tulemusstring);
         	        

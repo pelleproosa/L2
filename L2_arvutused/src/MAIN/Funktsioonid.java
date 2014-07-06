@@ -165,7 +165,12 @@ public class Funktsioonid {
 			
 			System.out.println("Calculate sees"+GLOBAL.tulemus);
 			DecimalFormat df = new DecimalFormat("000000");
-		GLOBAL.tulemus=(Long.parseLong(df.format(3600*((((long)(GLOBAL.adenahiljem-GLOBAL.adenaenne))/GLOBAL.tulemus)))));       
+		GLOBAL.tulemus=(Long.parseLong(df.format(3600*((((long)(GLOBAL.adenahiljem-GLOBAL.adenaenne))/GLOBAL.tulemus)))));
+		
+		int kogukulu=GLOBAL.ssdkulupp+GLOBAL.bssdkulupp+GLOBAL.hppot1kulupp+GLOBAL.hppot2kulupp+GLOBAL.alarcitykulupp+GLOBAL.mhastekulupp+GLOBAL.hastekulupp;
+		
+GLOBAL.tulemus=(GLOBAL.tulemus-((long)(kogukulu)));
+		
 		GLOBAL.tulemusstring=(""+GLOBAL.tulemus);
 		}
 		

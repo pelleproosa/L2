@@ -145,4 +145,12 @@ public class GLOBAL {
 	public static int adenaenne=0;
 	public static int adenahiljem=0;
 	
+	public static int ssdkulupp=0;
+	public static int bssdkulupp=0;
+	public static int hppot1kulupp=0;
+	public static int hppot2kulupp=0;
+	public static int alarcitykulupp=0;
+	public static int mhastekulupp=0;
+	public static int hastekulupp=0;
+	
 }
