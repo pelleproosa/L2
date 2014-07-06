@@ -9,6 +9,7 @@ import java.awt.Font;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -39,7 +40,7 @@ public class tabel {
         frame.setLayout(new TableLayout(MAIN.GLOBAL.size));
         String[] label=MAIN.GLOBAL.label;
         
-        JButton button[] = new JButton[label.length];
+        final JButton button[] = new JButton[label.length];
         for (int i = 0; i < label.length; i++) {
             button[i] = new JButton(label[i]);
             button[i].setMargin(new Insets(0,0,0,0));
@@ -51,7 +52,7 @@ public class tabel {
         
 
         
-        JLabel[] labelid=new JLabel[(MAIN.GLOBAL.labeliteArv+1)];
+        final JLabel[] labelid=new JLabel[(MAIN.GLOBAL.labeliteArv+1)];
         for (int i = 1; i < (MAIN.GLOBAL.labeliteArv); i++)
         {
         	//System.out.println(i);
@@ -62,19 +63,19 @@ public class tabel {
        labelid[1].setHorizontalAlignment(SwingConstants.CENTER);
        labelid[3].setHorizontalAlignment(SwingConstants.CENTER);
        labelid[4].setHorizontalAlignment(SwingConstants.CENTER);
-       //frame.add(new JLabel("<html>Text color: <font color='red'>red</font></html>"));
+
        labelid[5].setHorizontalAlignment(SwingConstants.RIGHT);
        labelid[5].setForeground(Color.RED);
-       // labelid[8].setVisible(false);
+
         labelid[9].setForeground(Color.RED);
-//        labelid[10].setVisible(false);
-//        labelid[15].setVisible(false);
+
         labelid[16].setHorizontalAlignment(SwingConstants.CENTER);
         labelid[17].setHorizontalAlignment(SwingConstants.CENTER);
         labelid[20].setHorizontalAlignment(SwingConstants.CENTER);
         labelid[21].setHorizontalAlignment(SwingConstants.CENTER);
-//        labelid[18].setVisible(false);
-//        labelid[19].setVisible(false);
+        labelid[25].setVisible(false);
+        labelid[25].setHorizontalAlignment(SwingConstants.CENTER);
+
 
 
       
@@ -119,7 +120,8 @@ public class tabel {
         yourInputField[26].setBackground(Color.ORANGE);
         yourInputField[29].setBackground(Color.ORANGE);
         
-        
+        yourInputField[30].setVisible(false);
+        yourInputField[30].setText("");
         
         
         
@@ -167,10 +169,12 @@ public class tabel {
         frame.add(button[5], MAIN.GLOBAL.btnlocation_6);
         frame.add(button[6], MAIN.GLOBAL.btnlocation_7);
         frame.add(button[7], MAIN.GLOBAL.btnlocation_8);
+        frame.add(button[8], MAIN.GLOBAL.btnlocation_9);
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////  ALGAVAD NUPPUDE INITSIALISEERIMISED JNE                 //////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/*        button[0].addActionListener(
+        button[8].setVisible(false);
+        /*        button[0].addActionListener(
         	    new ActionListener() {
         	    	
         	        public void actionPerformed(ActionEvent e) {
@@ -551,15 +555,31 @@ int i=0;
         	        	
         	        	Funktsioonid.profitcalc();
         	        MinuOutput[8].setText(MAIN.GLOBAL.tulemusstring);
-        	        
-        	        	
+        	        labelid[25].setVisible(true);
+        	        yourInputField[30].setVisible(true);
+        	        button[8].setVisible(true);
         	        	
         	        }else{
         	        	MinuOutput[8].setText("Time running");
         	        }
         	        }}	
         		);    
-        
+        button[8].addActionListener(             // CALCULATE
+        	    new ActionListener() {
+        	    	
+        	        public void actionPerformed(ActionEvent e) {
+        	        	String s=yourInputField[30].getText()+"="+GLOBAL.tulemusstring+"a/h. Measured time length="+GLOBAL.ajavahemikpp;
+        	        	try {
+							INI.failifuntsioonid.scoreadd(s);
+		        	        labelid[25].setText("Saved to 'Score.txt'");
+		        	        yourInputField[30].setVisible(false);
+		        	        button[8].setVisible(false);
+						} catch (IOException e1) {
+							// TODO Auto-generated catch block
+							e1.printStackTrace();
+						}
+        	        }}	
+        		);    
       /*
         yourInputField[1].addActionListener(
         	    new ActionListener() {

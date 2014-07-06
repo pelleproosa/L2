@@ -15,6 +15,7 @@ import java.io.FileWriter;
 import java.io.File;
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.IOException;
 public class failifuntsioonid
 {
 
@@ -102,7 +103,37 @@ public static void peitu()
 {
 	
 }
+public static void scoreadd(String Score) throws IOException
+{
+	boolean olemas=false;
+	File f=new File(System.getProperty("user.dir")+"\\"+"Score.txt");
+	if (!f.exists())
+	{
+		if ( !f.createNewFile() ) 
+		{
+		
+		}
+	}else
+	{
+	olemas=true;	
+	}
 	
+
+	BufferedWriter output;
+	output = new BufferedWriter(new FileWriter(System.getProperty("user.dir")+"\\"+"Score.txt",true));
+	
+if(olemas){output.newLine();}
+output.write(Score);
+
+
+
+        output.close();
+	
+	
+	
+	
+	
+}
 	
 }
 
