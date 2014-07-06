@@ -2,6 +2,6 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="D:/eclipseprojektid/JAR/tablelayout.jar"/>
+	<classpathentry kind="lib" path="D:/Minu asjad/eclipse/JAR failid/tablelayout.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

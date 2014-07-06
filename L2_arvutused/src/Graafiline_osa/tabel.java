@@ -63,15 +63,18 @@ public class tabel {
        labelid[3].setHorizontalAlignment(SwingConstants.CENTER);
        labelid[4].setHorizontalAlignment(SwingConstants.CENTER);
        //frame.add(new JLabel("<html>Text color: <font color='red'>red</font></html>"));
+       labelid[5].setHorizontalAlignment(SwingConstants.RIGHT);
        labelid[5].setForeground(Color.RED);
        // labelid[8].setVisible(false);
-        labelid[9].setVisible(false);
-        labelid[10].setVisible(false);
-        labelid[15].setVisible(false);
+        labelid[9].setForeground(Color.RED);
+//        labelid[10].setVisible(false);
+//        labelid[15].setVisible(false);
         labelid[16].setHorizontalAlignment(SwingConstants.CENTER);
         labelid[17].setHorizontalAlignment(SwingConstants.CENTER);
-        labelid[18].setVisible(false);
-        labelid[19].setVisible(false);
+        labelid[20].setHorizontalAlignment(SwingConstants.CENTER);
+        labelid[21].setHorizontalAlignment(SwingConstants.CENTER);
+//        labelid[18].setVisible(false);
+//        labelid[19].setVisible(false);
 
 
       
