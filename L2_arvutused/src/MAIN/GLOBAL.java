@@ -43,13 +43,13 @@ public class GLOBAL {
 // hinnadpp
 	public static double yksBssD=51.12;
 	public static double yksssD=9.85;
-	public static double yksHPpot1=0;
+	public static double yksHPpot1=429;
 	public static double yksHPpot2=0;
-	public static double yksAlarcity=0;
+	public static double yksAlarcity=3120;
 	public static double yksMHaste=0;
-	public static double yksHaste=0;
+	public static double yksHaste=1560;
 	public static double yksSpiritOre=0;
-	public static double yksCrystalD=0;
+	public static double yksCrystalD=636;
 	
 	
 	
