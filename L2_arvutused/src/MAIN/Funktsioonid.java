@@ -26,9 +26,6 @@ public class Funktsioonid {
 		asukoht1=0;
 		b=a;
 
-		
-
-
 						while (true){
 
 							if(b.indexOf(lipuke[1]) != -1){        //leidus tühik
@@ -44,10 +41,7 @@ public class Funktsioonid {
 							}else{ 									//ei leidunud tyhikut
 								break;
 							}			
-
 						}
-
-
 		asukoht2=asukoht1=0;
 		
 		while (true){
@@ -62,21 +56,6 @@ public class Funktsioonid {
 
 					}			
 			}
-		
-		
-		
-		
-		
-		
-		
-		
-
-
-
-		
-
-
-
 		return b;
 
 	}
@@ -142,18 +121,25 @@ public class Funktsioonid {
         GLOBAL.sekundid=GLOBAL.tulemus;
         
         
-        
+   double j22k=0;     
         if (GLOBAL.sekundid>86400){                                         // kui sekundeid jagub nii palju, et saab 24h
-        	GLOBAL.h24=Double.parseDouble(nullkomakohta.format((GLOBAL.sekundid/86400)));//päevade täisarv saadakse sekunditest
-        	GLOBAL.sekundid=(GLOBAL.sekundid-(GLOBAL.h24*86400));			   // võtan sekunditest päevad maha
+        	j22k=GLOBAL.sekundid % 86400;
+        	GLOBAL.h24=Double.parseDouble(nullkomakohta.format(((GLOBAL.sekundid-j22k)/86400)));//päevade täisarv saadakse sekunditest
+        	GLOBAL.sekundid=j22k;
+        			//(GLOBAL.sekundid-(GLOBAL.h24*86400));			   // võtan sekunditest päevad maha
         }
         if (GLOBAL.sekundid>3600){                                         // kui sekundeid jagub nii palju, et saab 1h
-        	GLOBAL.tunnid=Double.parseDouble(nullkomakohta.format((GLOBAL.sekundid/3600)));//tundide täisarv saadakse sekunditest
-        	GLOBAL.sekundid=(GLOBAL.sekundid-(GLOBAL.tunnid*3600));			   // võtan sekunditest tunnid maha
+        	j22k=GLOBAL.sekundid % 3600;
+        	GLOBAL.tunnid=Double.parseDouble(nullkomakohta.format(((GLOBAL.sekundid-j22k)/3600)));//tundide täisarv saadakse sekunditest
+        	GLOBAL.sekundid=j22k;
+        			//(GLOBAL.sekundid-(GLOBAL.tunnid*3600));			   // võtan sekunditest tunnid maha
         }
         if (GLOBAL.sekundid>60){                                         // kui sekundeid jagub nii palju, et saab 1min
-        	GLOBAL.minutid=Double.parseDouble(nullkomakohta.format((GLOBAL.sekundid/60)));//minutite täisarv saadakse sekunditest
-        	GLOBAL.sekundid=(GLOBAL.sekundid-(GLOBAL.minutid*60));			   // võtan sekunditest minutid maha
+        	j22k=GLOBAL.sekundid % 60;
+        	GLOBAL.minutid=Double.parseDouble(nullkomakohta.format(((GLOBAL.sekundid-j22k)/60)));//minutite täisarv saadakse sekunditest
+        	System.out.println(GLOBAL.minutid);
+        	GLOBAL.sekundid=j22k;
+        			//(GLOBAL.sekundid-(GLOBAL.minutid*60));			   // võtan sekunditest minutid maha
         }
        System.out.println("sekundeid kulus : "+GLOBAL.tulemus);
         //GLOBAL.tulemus=Long.parseLong(df.format((GLOBAL.tulemus/3600)));     // tulemus tundides
@@ -205,4 +191,9 @@ GLOBAL.tulemus=Double.parseDouble(kakskomakohta.format((GLOBAL.tulemus)));
 		}
 		
 	}
+	
+
+	
+	
+	
 }

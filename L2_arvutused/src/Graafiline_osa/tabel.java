@@ -568,7 +568,7 @@ int i=0;
         	    new ActionListener() {
         	    	
         	        public void actionPerformed(ActionEvent e) {
-        	        	String s=yourInputField[30].getText()+"="+GLOBAL.tulemusstring+"a/h. Measured time length="+GLOBAL.ajavahemikpp;
+        	        	String s=yourInputField[30].getText()+"="+GLOBAL.tulemusstring+"a/h. Average from("+GLOBAL.ajavahemikpp+")";
         	        	try {
 							INI.failifuntsioonid.scoreadd(s);
 		        	        labelid[25].setText("Saved to 'Score.txt'");
