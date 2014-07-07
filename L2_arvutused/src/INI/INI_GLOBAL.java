@@ -10,6 +10,18 @@ public class INI_GLOBAL {
 	public static void start(String[] args) throws Exception {
 		// TODO Auto-generated method stub
 		String[] tulem = new String[MAIN.GLOBAL.INI_lines];
+		try{
+		tulem=failifuntsioonid.LoeFaili_Aadress_Algus_L6pp(MAIN.GLOBAL.SaveFileName);
+		String s="Window name="+MAIN.GLOBAL.aknanimi;
+		if (!(s.equalsIgnoreCase(tulem[2]))){
+		
+			System.out.println("Kohe kustutab ini");
+			System.out.println("GLOBAL.aknanimi="+MAIN.GLOBAL.aknanimi);
+			System.out.println("tulem[2]="+tulem[2]);
+			failifuntsioonid.kustutaini();
+		}
+		}catch(Exception viga){}
+		
 	try {
 		int i=0;
 		tulem=failifuntsioonid.LoeFaili_Aadress_Algus_L6pp(MAIN.GLOBAL.SaveFileName);
@@ -17,7 +29,10 @@ public class INI_GLOBAL {
 		i++;
 		MAIN.GLOBAL.SaveFileName=(MAIN.Funktsioonid.tulemstringist(tulem[i]));
 		i++;
-		MAIN.GLOBAL.aknanimi=tulem[i];
+		
+		
+		//MAIN.GLOBAL.aknanimi=tulem[i];		//Versioonikontroll algus
+
 		i++;
 		MAIN.GLOBAL.width=Integer.parseInt(MAIN.Funktsioonid.tulemstringist(tulem[i]));
 		i++;

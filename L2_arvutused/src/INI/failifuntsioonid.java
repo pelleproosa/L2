@@ -51,7 +51,7 @@ while (i<sisu_suurus){
 }
 
 	        output.close();
-        
+	        
 	        
 	        return true;
 	}																												//Fail_Kirjuta lõpp
@@ -134,6 +134,49 @@ output.write(Score);
 	
 	
 }
+
+
+
+public static void kustutaini() throws IOException
+{
+	boolean olemas=false;
+	File ini=new File(System.getProperty("user.dir")+"\\"+"L2Calc.ini");
+
 	
+	try{
+		 
+		
+
+		if(ini.delete()){
+			//System.out.println(ini.getName() + " is deleted!");
+		}else{
+			System.out.println("Delete operation failed.");
+		}
+
+	}catch(Exception e){
+
+		e.printStackTrace();
+
+	}
+
+
+
+
+     
+	
+	
+	
+	
+	
+}
+
+
+
+
+
+
+
+
+
 }
 
