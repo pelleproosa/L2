@@ -50,6 +50,9 @@ public class GLOBAL {
 	public static double yksHaste=1560;
 	public static double yksSpiritOre=0;
 	public static double yksCrystalD=636;
+	public static double yksbluess=3;
+	public static double yksgreenss=5;
+	public static double yksredss=10;
 	
 	
 	
@@ -60,9 +63,9 @@ public class GLOBAL {
 	//File
 	public static String SaveFileName="L2Calc.ini";
 	public static int INI_lines=16;
-	public static int yourInputFieldArv=33;
+	public static int yourInputFieldArv=42;
 	public static int MinuOutputArv=33;
-	public static int labeliteArv=31;
+	public static int labeliteArv=34;
 	//Window
 	public static String aknanimi="L2 Calc v.5";
 	public static int width=1050;
@@ -113,17 +116,19 @@ public class GLOBAL {
     public static String lbllocation_1="9, 8";
     public static String lbl1string="MAIN.GLOBAL.lbl1string";
     public static String[] labellocation={"","1,8","0,1","3,8","6,8","2,7",
-    										 "0,3","0,4","0,9","3,7","0,12",
+    										 "0,3","0,4","0,9","3,7","0,12",			//10
     									  	 "1,0","2,0","3,0","4,0","0,13",
-    									  	 "6,0","7,0","0,10","0,11","2,8",
+    									  	 "6,0","7,0","0,10","0,11","2,8",			//20
     									  	 "5,8","0,14","0,15","0,16","5,10",
-    									  	 "6, 11","7, 11","4, 11","5, 11","5, 14"};
+    									  	 "6, 11","7, 11","4, 11","5, 11","5, 14",	//30
+    									  	 "0, 17","0, 18","0, 19"};
     public static String[] labeltext={"ei kasuta","Before Start","Inventory","After Stop","Adena/h","PROFIT ",
-    											  "Results","Buy","Adena INPUT","CALCULATOR","HP pot.1",
+    											  "Results","Buy","Adena INPUT","CALCULATOR","HP pot.1",						//10
     											  "Adena","Soul.O","Spirit.O","Cry.D","HP pot.2",
-    											  "BSSD","SSD","Spiritshots","SoulShots","1 item Price",
+    											  "BSSD","SSD","Spiritshots","SoulShots","1 item Price",						//20
     											  "Spent time","Alarcity pot","M. Haste","Haste","SAVE RESULT TO 'Score.txt'",
-    											  "adena/h","Average from","Char name", "Location","SCORE.TXT"};
+    											  "adena/h","Average from","Char name", "Location","SCORE.TXT",					//30
+    											  "Blue stone","Green stone","Red stone"};				
     		
  
  
@@ -133,12 +138,14 @@ public class GLOBAL {
     
 	public static String[] inputlocation={"10, 9",
 											"1, 1","2, 1","3, 1","4, 1","6, 4",
-											"7, 4","1, 9","3, 9","1, 10","2, 10",
+											"7, 4","1, 9","3, 9","1, 10","2, 10",		//10
 											"3, 10","1, 11","2, 11","3, 11","1, 12",
-											"2, 12","3, 12","1, 13","2, 13","3, 13",
+											"2, 12","3, 12","1, 13","2, 13","3, 13",	//20
 											"1, 14","2, 14","3, 14","1, 15","2, 15",
-											"3, 15","1, 16","2, 16","3,16","4, 12",
-											"5, 12","6, 12","7, 12"};
+											"3, 15","1, 16","2, 16","3,16","4, 12",		//30
+											"5, 12","6, 12","7, 12","1, 17","2, 17",
+											"3, 17","1, 18","2, 18","3, 18","1, 19",	//40
+											"2, 19","3, 19"};
 	public static String[] outputlocation={"10, 10",
 										   "1, 3","2, 3","3, 3","4, 3","2, 4",
 										   "3, 4","4, 4","6, 9","5, 9","4, 15",			//10

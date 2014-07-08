@@ -86,6 +86,9 @@ public class tabel {
         labelid[29].setHorizontalAlignment(SwingConstants.CENTER);
         labelid[30].setHorizontalAlignment(SwingConstants.CENTER);
         labelid[30].setForeground(Color.MAGENTA);
+        labelid[31].setForeground(Color.BLUE);
+        labelid[32].setForeground(Color.GREEN);
+        labelid[33].setForeground(Color.RED);
 
 
 
@@ -116,6 +119,12 @@ public class tabel {
         yourInputField[22].setText(""+GLOBAL.yksAlarcity);
         yourInputField[25].setText(""+GLOBAL.yksMHaste);
         yourInputField[28].setText(""+GLOBAL.yksHaste);
+        yourInputField[35].setText(""+GLOBAL.yksbluess);
+        yourInputField[38].setText(""+GLOBAL.yksgreenss);
+        yourInputField[41].setText(""+GLOBAL.yksredss);
+        yourInputField[35].setEditable(false);
+        yourInputField[38].setEditable(false);
+        yourInputField[41].setEditable(false);
         
         
         
@@ -127,6 +136,11 @@ public class tabel {
         yourInputField[21].setBackground(Color.GREEN);
         yourInputField[24].setBackground(Color.GREEN);
         yourInputField[27].setBackground(Color.GREEN);
+        yourInputField[34].setBackground(Color.BLUE);
+        yourInputField[34].setForeground(Color.WHITE);
+        yourInputField[37].setBackground(Color.GREEN);
+        yourInputField[40].setBackground(Color.RED);
+        yourInputField[40].setForeground(Color.WHITE);
         
         yourInputField[8].setBackground(Color.ORANGE);
     	yourInputField[11].setBackground(Color.ORANGE);
@@ -136,11 +150,21 @@ public class tabel {
         yourInputField[23].setBackground(Color.ORANGE);
         yourInputField[26].setBackground(Color.ORANGE);
         yourInputField[29].setBackground(Color.ORANGE);
+        yourInputField[36].setBackground(Color.BLUE);
+        yourInputField[36].setForeground(Color.WHITE);
+        yourInputField[39].setBackground(Color.GREEN);
+        yourInputField[42].setBackground(Color.RED);
+        yourInputField[42].setForeground(Color.WHITE);
         
 //        yourInputField[30].setVisible(false);
 //        yourInputField[31].setVisible(false);
 //        yourInputField[32].setVisible(false);
 //        yourInputField[33].setVisible(false);
+        yourInputField[35].setBackground(Color.BLUE);
+        yourInputField[35].setForeground(Color.WHITE);
+        yourInputField[38].setBackground(Color.GREEN);
+        yourInputField[41].setBackground(Color.RED);
+        yourInputField[41].setForeground(Color.WHITE);
         yourInputField[30].setText("");
         yourInputField[31].setText("");
         yourInputField[32].setText("0");
@@ -522,6 +546,7 @@ int i=0;
         	            yourInputField[21].setBackground(Color.ORANGE);
         	            yourInputField[24].setBackground(Color.ORANGE);
         	            yourInputField[27].setBackground(Color.ORANGE);
+
         	        	MAIN.GLOBAL.tulemusstring="Time running";
         	        	MinuOutput[8].setText(MAIN.GLOBAL.tulemusstring);
         	        	}else
@@ -534,6 +559,7 @@ int i=0;
         	                yourInputField[23].setBackground(Color.GREEN);
         	                yourInputField[26].setBackground(Color.GREEN);
         	                yourInputField[29].setBackground(Color.GREEN);
+
         	        		MAIN.GLOBAL.tulemusstring="Time stopped";
         	        		MinuOutput[8].setText(MAIN.GLOBAL.tulemusstring);
         	        		}
@@ -553,6 +579,7 @@ int i=0;
         	            yourInputField[23].setBackground(Color.ORANGE);
         	            yourInputField[26].setBackground(Color.ORANGE);
         	            yourInputField[29].setBackground(Color.ORANGE);
+
         	        	MAIN.GLOBAL.adenaenne=Integer.parseInt(yourInputField[7].getText());
         	        	MAIN.GLOBAL.adenahiljem=Integer.parseInt(yourInputField[8].getText());
         	        	
