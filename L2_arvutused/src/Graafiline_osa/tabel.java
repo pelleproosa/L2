@@ -75,7 +75,7 @@ public class tabel {
         labelid[21].setHorizontalAlignment(SwingConstants.CENTER);
 //        labelid[25].setVisible(false);
         labelid[25].setHorizontalAlignment(SwingConstants.CENTER);
-        labelid[25].setForeground(Color.GREEN);
+        labelid[25].setForeground(Color.BLUE);
 //        labelid[26].setVisible(false);
         labelid[26].setHorizontalAlignment(SwingConstants.CENTER);
 //        labelid[27].setVisible(false);
@@ -84,6 +84,8 @@ public class tabel {
         labelid[28].setHorizontalAlignment(SwingConstants.CENTER);
 //        labelid[29].setVisible(false);
         labelid[29].setHorizontalAlignment(SwingConstants.CENTER);
+        labelid[30].setHorizontalAlignment(SwingConstants.CENTER);
+        labelid[30].setForeground(Color.MAGENTA);
 
 
 
@@ -180,6 +182,12 @@ public class tabel {
         MinuOutput[8].setForeground(Color.GREEN);
         MinuOutput[8].setCaretColor(Color.GREEN);
         MinuOutput[8].setBackground(Color.darkGray);
+        MinuOutput[18].setForeground(Color.BLUE);
+        MinuOutput[19].setForeground(Color.BLUE);
+        MinuOutput[20].setForeground(Color.BLUE);
+        MinuOutput[21].setForeground(Color.BLUE);
+       
+        		
 
 
         frame.add(button[0], MAIN.GLOBAL.btnlocation_1);
@@ -193,6 +201,9 @@ public class tabel {
         frame.add(button[8], MAIN.GLOBAL.btnlocation_9);
         frame.add(button[9], MAIN.GLOBAL.btnlocation_10);
         frame.add(button[10], MAIN.GLOBAL.btnlocation_11);
+        frame.add(button[11], MAIN.GLOBAL.btnlocation_12);
+        frame.add(button[12], MAIN.GLOBAL.btnlocation_13);
+        frame.add(button[13], MAIN.GLOBAL.btnlocation_14);
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////  ALGAVAD NUPPUDE INITSIALISEERIMISED JNE                 //////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
