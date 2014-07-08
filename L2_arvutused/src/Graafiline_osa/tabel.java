@@ -73,8 +73,17 @@ public class tabel {
         labelid[17].setHorizontalAlignment(SwingConstants.CENTER);
         labelid[20].setHorizontalAlignment(SwingConstants.CENTER);
         labelid[21].setHorizontalAlignment(SwingConstants.CENTER);
-        labelid[25].setVisible(false);
+//        labelid[25].setVisible(false);
         labelid[25].setHorizontalAlignment(SwingConstants.CENTER);
+        labelid[25].setForeground(Color.GREEN);
+//        labelid[26].setVisible(false);
+        labelid[26].setHorizontalAlignment(SwingConstants.CENTER);
+//        labelid[27].setVisible(false);
+        labelid[27].setHorizontalAlignment(SwingConstants.CENTER);
+//        labelid[28].setVisible(false);
+        labelid[28].setHorizontalAlignment(SwingConstants.CENTER);
+//        labelid[29].setVisible(false);
+        labelid[29].setHorizontalAlignment(SwingConstants.CENTER);
 
 
 
@@ -100,6 +109,12 @@ public class tabel {
         }
         yourInputField[10].setText(""+GLOBAL.yksBssD);
         yourInputField[13].setText(""+GLOBAL.yksssD);
+        yourInputField[16].setText(""+GLOBAL.yksHPpot1);
+        yourInputField[19].setText(""+GLOBAL.yksHPpot2);
+        yourInputField[22].setText(""+GLOBAL.yksAlarcity);
+        yourInputField[25].setText(""+GLOBAL.yksMHaste);
+        yourInputField[28].setText(""+GLOBAL.yksHaste);
+        
         
         
         yourInputField[7].setBackground(Color.GREEN);
@@ -120,8 +135,14 @@ public class tabel {
         yourInputField[26].setBackground(Color.ORANGE);
         yourInputField[29].setBackground(Color.ORANGE);
         
-        yourInputField[30].setVisible(false);
+//        yourInputField[30].setVisible(false);
+//        yourInputField[31].setVisible(false);
+//        yourInputField[32].setVisible(false);
+//        yourInputField[33].setVisible(false);
         yourInputField[30].setText("");
+        yourInputField[31].setText("");
+        yourInputField[32].setText("0");
+        yourInputField[33].setText("0d 0h 0m 0s");
         
         
         
@@ -170,10 +191,13 @@ public class tabel {
         frame.add(button[6], MAIN.GLOBAL.btnlocation_7);
         frame.add(button[7], MAIN.GLOBAL.btnlocation_8);
         frame.add(button[8], MAIN.GLOBAL.btnlocation_9);
+        frame.add(button[9], MAIN.GLOBAL.btnlocation_10);
+        frame.add(button[10], MAIN.GLOBAL.btnlocation_11);
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////  ALGAVAD NUPPUDE INITSIALISEERIMISED JNE                 //////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        button[8].setVisible(false);
+   //     button[8].setVisible(false);
+    //    button[10].setVisible(false);
         /*        button[0].addActionListener(
         	    new ActionListener() {
         	    	
@@ -348,7 +372,7 @@ int i=0;
         	            	i++;
         	            	MAIN.GLOBAL.cryDReserv=Double.parseDouble(str[3]);
         	            	i++;
-        	            	MAIN.GLOBAL.BSSDRequested=Double.parseDouble(str[4]);
+        	            	//MAIN.GLOBAL.BSSDRequested=Double.parseDouble(str[4]);
         	        ssd_adena_input.Klass1.main(null);	
         	        MinuOutput[7].setText(""+(int)MAIN.GLOBAL.cryDKogusOsta);
         	        MinuOutput[5].setText(""+(int)MAIN.GLOBAL.soulKogusOsta);
@@ -356,7 +380,7 @@ int i=0;
         	        MinuOutput[1].setText(""+(int)MAIN.GLOBAL.adenaReserv);
         	        MinuOutput[3].setText(""+(int)MAIN.GLOBAL.spiritJ2rel);
         	        MinuOutput[4].setText(""+(int)MAIN.GLOBAL.cryDJ2rel);
-        	        yourInputField[5].setText(""+(int)MAIN.GLOBAL.SSDShots);
+        	        yourInputField[6].setText(""+(int)MAIN.GLOBAL.SSDShots);
         	        MinuOutput[2].setText(""+(int)MAIN.GLOBAL.soulReserv);
     	            }
         	            catch(Exception e1){
@@ -555,31 +579,68 @@ int i=0;
         	        	
         	        	Funktsioonid.profitcalc();
         	        MinuOutput[8].setText(MAIN.GLOBAL.tulemusstring);
-        	        labelid[25].setVisible(true);
-        	        yourInputField[30].setVisible(true);
-        	        button[8].setVisible(true);
+        	 //       labelid[25].setVisible(true);
+        	 //       labelid[26].setVisible(true);
+        	 //       labelid[27].setVisible(true);
+        	 //       labelid[28].setVisible(true);
+        	 //       labelid[29].setVisible(true);
+        	//        yourInputField[30].setVisible(true);
+        	//        yourInputField[31].setVisible(true);
+        	//        yourInputField[32].setVisible(true);
+        	        yourInputField[32].setText(GLOBAL.tulemusstring);
+        	//       yourInputField[33].setVisible(true);
+        	        yourInputField[33].setText(GLOBAL.ajavahemikpp);
+        	  //      button[8].setVisible(true);
+        	  //      button[10].setVisible(true);
         	        	
         	        }else{
         	        	MinuOutput[8].setText("Time running");
         	        }
         	        }}	
         		);    
-        button[8].addActionListener(             // CALCULATE
+        button[8].addActionListener(             // save
         	    new ActionListener() {
         	    	
         	        public void actionPerformed(ActionEvent e) {
-        	        	String s=yourInputField[30].getText()+"="+GLOBAL.tulemusstring+"a/h. Average from("+GLOBAL.ajavahemikpp+")";
+        	        	String s=yourInputField[30].getText()+"#/#"+yourInputField[31].getText()+"#/#"+yourInputField[32].getText()+"#/#"+yourInputField[33].getText();
         	        	try {
 							INI.failifuntsioonid.scoreadd(s);
 		        	        labelid[25].setText("Saved to 'Score.txt'");
-		        	        yourInputField[30].setVisible(false);
-		        	        button[8].setVisible(false);
+		        	     //   yourInputField[30].setVisible(false);
+		        	     //   yourInputField[31].setVisible(false);
+		        	     //   yourInputField[32].setVisible(false);
+		        	     //   yourInputField[33].setVisible(false);
+		        	     //   button[8].setVisible(false);
 						} catch (IOException e1) {
 							// TODO Auto-generated catch block
 							e1.printStackTrace();
 						}
         	        }}	
+        		);
+        
+        button[9].addActionListener(             // Reset Calc.ini
+        	    new ActionListener() {
+        	    	
+        	        public void actionPerformed(ActionEvent e) {
+        	        	
+        	        	try {
+							INI.failifuntsioonid.kustutaini();
+						} catch (IOException e1) {
+							// TODO Auto-generated catch block
+							System.out.println("Nupp reset calc ei saanud Calc.ini kustutamisega hakkama");
+						}
+        	        	
+        	        	try {
+							INI.INI_GLOBAL.start(args);
+						} catch (Exception e1) {
+							// TODO Auto-generated catch block
+							System.out.println("Nupp reset calc juhtus mingi jama käivitades INI.INI_GLOBAL.start");
+						}
+        	        	
+
+        	        }}	
         		);    
+        
       /*
         yourInputField[1].addActionListener(
         	    new ActionListener() {

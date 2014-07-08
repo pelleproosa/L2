@@ -16,6 +16,7 @@ import java.io.File;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 public class failifuntsioonid
 {
 
@@ -171,7 +172,26 @@ public static void kustutaini() throws IOException
 }
 
 
+public static ArrayList<String> LoeFaili_ScoreTXT(String Read_File_Name) throws Exception {
+	// Construct BufferedReader from FileReader
+	BufferedReader br = new BufferedReader(new FileReader(Read_File_Name));
+ 
+	ArrayList<String> rida = new ArrayList<String>();
+	
+	String s=null;
+	int i=0;
+	while ((s = br.readLine()) != null) {
+		
+		rida.add(s);
+		
+		i++;
+	}
+ 
+	br.close();
+	
+	return rida;
 
+}
 
 
 

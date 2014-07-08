@@ -46,7 +46,7 @@ public class GLOBAL {
 	public static double yksHPpot1=429;
 	public static double yksHPpot2=0;
 	public static double yksAlarcity=3120;
-	public static double yksMHaste=0;
+	public static double yksMHaste=3120;
 	public static double yksHaste=1560;
 	public static double yksSpiritOre=0;
 	public static double yksCrystalD=636;
@@ -60,16 +60,16 @@ public class GLOBAL {
 	//File
 	public static String SaveFileName="L2Calc.ini";
 	public static int INI_lines=16;
-	public static int yourInputFieldArv=30;
+	public static int yourInputFieldArv=33;
 	public static int MinuOutputArv=9;
-	public static int labeliteArv=26;
+	public static int labeliteArv=30;
 	//Window
 	public static String aknanimi="L2 Calc v.5";
-	public static int width=850;
+	public static int width=1050;
 	public static int height=700;
 	//Columns and Rows in window drawing
     public static double size[][] = {
-    	{90, 90, 90, 90, 90, 200, 90, 90, 90, 90}, // Columns selle rea saab ees 0: String tulbad=""+GLOBAL.size[0][..];
+    	{90, 90, 90, 90, 90, 200, 90, 90, 90, 90, 90, 90}, // Columns selle rea saab ees 0: String tulbad=""+GLOBAL.size[0][..];
     	{30, 30, 30, 30, 30, 30, 30, 30, 30, 30,
     	 30, 30, 30, 30, 30, 30, 30, 30, 30, 30} // Rows     selle rea saab ees 1: String tulbad=""+GLOBAL.size[1][..];
     								};
@@ -87,7 +87,10 @@ public class GLOBAL {
     public static String btn7="Start/Stop";
     public static String btn8="Calculate";
     public static String btn9="Save";
-    public static String label[] = {btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9};        /*seda ei pane INI faili*/
+    public static String btn10="Reset Calc.ini";
+    public static String btn11="Delete";
+    
+    public static String label[] = {btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn10, btn11};        /*seda ei pane INI faili*/
     //Buttons locations(column,row)
     public static String btnlocation_1="6, 2";
     public static String btnlocation_2="7, 2";
@@ -97,19 +100,23 @@ public class GLOBAL {
     public static String btnlocation_6="5, 5";
     public static String btnlocation_7="2, 9";
     public static String btnlocation_8="4, 9";
-    public static String btnlocation_9="6, 13";
+    public static String btnlocation_9="8, 12";
+    public static String btnlocation_10="7, 9";
+    public static String btnlocation_11="9, 12";
     public static String lbllocation_1="9, 8";
     public static String lbl1string="MAIN.GLOBAL.lbl1string";
     public static String[] labellocation={"","1,8","0,1","3,8","6,8","2,7",
     										 "0,3","0,4","0,9","3,7","0,12",
     									  	 "1,0","2,0","3,0","4,0","0,13",
     									  	 "6,0","7,0","0,10","0,11","2,8",
-    									  	 "5,8","0,14","0,15","0,16","5,12"};
+    									  	 "5,8","0,14","0,15","0,16","5,10",
+    									  	 "6, 11","7, 11","4, 11","5, 11"};
     public static String[] labeltext={"ei kasuta","Before Start","Inventory","After Stop","Adena/h","PROFIT ",
     											  "Results","Buy","Adena INPUT","CALCULATOR","HP pot.1",
     											  "Adena","Soul.O","Spirit.O","Cry.D","HP pot.2",
     											  "BSSD","SSD","Spiritshots","SoulShots","1 item Price",
-    											  "Spent time","Alarcity pot","M. Haste","Haste","Save result to 'score.txt'"};
+    											  "Spent time","Alarcity pot","M. Haste","Haste","SAVE RESULT TO 'Score.txt'",
+    											  "adena/h","Average from","Char name", "Location"};
     		
  
  
@@ -123,7 +130,8 @@ public class GLOBAL {
 											"3, 10","1, 11","2, 11","3, 11","1, 12",
 											"2, 12","3, 12","1, 13","2, 13","3, 13",
 											"1, 14","2, 14","3, 14","1, 15","2, 15",
-											"3, 15","1, 16","2, 16","3,16","5,13"};
+											"3, 15","1, 16","2, 16","3,16","4, 12",
+											"5, 12","6, 12","7, 12"};
 	public static String[] outputlocation={"10, 10",
 										   "1, 3","2, 3","3, 3","4, 3","2, 4",
 										   "3, 4","4, 4","6, 9","5, 9","2, 4",
