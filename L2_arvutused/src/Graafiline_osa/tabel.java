@@ -11,6 +11,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 
+import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -25,6 +26,7 @@ import javax.swing.SwingConstants;
 
 
 
+import javax.swing.border.Border;
 import javax.swing.text.Caret;
 
 import MAIN.Funktsioonid;
@@ -87,7 +89,7 @@ public class tabel {
         labelid[30].setHorizontalAlignment(SwingConstants.CENTER);
         labelid[30].setForeground(Color.MAGENTA);
         labelid[31].setForeground(Color.BLUE);
-        labelid[32].setForeground(Color.GREEN);
+        labelid[32].setForeground(Color.decode("0x006400"));
         labelid[33].setForeground(Color.RED);
 
 
@@ -138,7 +140,8 @@ public class tabel {
         yourInputField[27].setBackground(Color.GREEN);
         yourInputField[34].setBackground(Color.BLUE);
         yourInputField[34].setForeground(Color.WHITE);
-        yourInputField[37].setBackground(Color.GREEN);
+        yourInputField[37].setBackground(Color.decode("0x006400"));
+        yourInputField[37].setForeground(Color.WHITE);
         yourInputField[40].setBackground(Color.RED);
         yourInputField[40].setForeground(Color.WHITE);
         
@@ -152,7 +155,8 @@ public class tabel {
         yourInputField[29].setBackground(Color.ORANGE);
         yourInputField[36].setBackground(Color.BLUE);
         yourInputField[36].setForeground(Color.WHITE);
-        yourInputField[39].setBackground(Color.GREEN);
+        yourInputField[39].setBackground(Color.decode("0x006400"));
+        yourInputField[39].setForeground(Color.WHITE);
         yourInputField[42].setBackground(Color.RED);
         yourInputField[42].setForeground(Color.WHITE);
         
@@ -162,7 +166,8 @@ public class tabel {
 //        yourInputField[33].setVisible(false);
         yourInputField[35].setBackground(Color.BLUE);
         yourInputField[35].setForeground(Color.WHITE);
-        yourInputField[38].setBackground(Color.GREEN);
+        yourInputField[38].setBackground(Color.decode("0x006400"));
+        yourInputField[38].setForeground(Color.WHITE);
         yourInputField[41].setBackground(Color.RED);
         yourInputField[41].setForeground(Color.WHITE);
         yourInputField[30].setText("");
@@ -210,6 +215,16 @@ public class tabel {
         MinuOutput[19].setForeground(Color.BLUE);
         MinuOutput[20].setForeground(Color.BLUE);
         MinuOutput[21].setForeground(Color.BLUE);
+        Border punaneraam = BorderFactory.createLineBorder(Color.RED, 1);
+
+        MinuOutput[18].setBorder(punaneraam);
+        MinuOutput[19].setBorder(punaneraam);
+        MinuOutput[20].setBorder(punaneraam);
+        MinuOutput[21].setBorder(punaneraam);
+        MinuOutput[18].setBackground(Color.WHITE);
+        MinuOutput[19].setBackground(Color.WHITE);
+        MinuOutput[20].setBackground(Color.WHITE);
+        MinuOutput[21].setBackground(Color.WHITE);
        
         		
 

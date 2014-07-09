@@ -177,6 +177,10 @@ public class GLOBAL {
 	public static double alarcitykulupp=0;
 	public static double mhastekulupp=0;
 	public static double hastekulupp=0;
+	public static double bluesspp=0;
+	public static double greensspp=0;
+	public static double redsspp=0;
+	public static double stonesAAvaluepp=0;
 
 	
 }
