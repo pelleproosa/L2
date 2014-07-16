@@ -640,28 +640,39 @@ int i=0;
         	        		i2=Double.parseDouble(yourInputField[x].getText());
         	        		x++;
         	        		i3=Double.parseDouble(yourInputField[x].getText());
-        	        		if(x==11){MAIN.GLOBAL.ssdkulupp=(i1*i2)-(i3*i2);System.out.println(MAIN.GLOBAL.ssdkulupp);}
+        	        		if(x==11){MAIN.GLOBAL.ssdkulupp=(i1*i2)-(i3*i2);//System.out.println("ssd: "+MAIN.GLOBAL.ssdkulupp);
+        	        		}
+        	        		
         	        		//System.out.println("i1="+i1+" i2="+i2+" i3="+i3);//System.exit(0);
-        	        		if(x==14){MAIN.GLOBAL.bssdkulupp=((i1*i2)-(i3*i2));System.out.println(MAIN.GLOBAL.bssdkulupp);}
-        	        		if(x==17){MAIN.GLOBAL.hppot1kulupp=(i1*i2)-(i3*i2);System.out.println(MAIN.GLOBAL.hppot1kulupp);}
-        	        		if(x==20){MAIN.GLOBAL.hppot2kulupp=(i1*i2)-(i3*i2);System.out.println(MAIN.GLOBAL.hppot2kulupp);}
-        	        		if(x==23){MAIN.GLOBAL.alarcitykulupp=(i1*i2)-(i3*i2);System.out.println(MAIN.GLOBAL.alarcitykulupp);}
-        	        		if(x==26){MAIN.GLOBAL.mhastekulupp=(i1*i2)-(i3*i2);System.out.println(MAIN.GLOBAL.mhastekulupp);}
-        	        		if(x==26){MAIN.GLOBAL.hastekulupp=(i1*i2)-(i3*i2);System.out.println(MAIN.GLOBAL.hastekulupp);}
+        	        		if(x==14){MAIN.GLOBAL.bssdkulupp=((i1*i2)-(i3*i2));//System.out.println("bssd: "+MAIN.GLOBAL.bssdkulupp);
+        	        		}
+        	        		
+        	        		if(x==17){MAIN.GLOBAL.hppot1kulupp=(i1*i2)-(i3*i2);//System.out.println("hp1: "+MAIN.GLOBAL.hppot1kulupp);
+        	        		}
+        	        		
+        	        		if(x==20){MAIN.GLOBAL.hppot2kulupp=(i1*i2)-(i3*i2);//System.out.println("hp2: "+MAIN.GLOBAL.hppot2kulupp);
+        	        		}
+        	        		if(x==23){MAIN.GLOBAL.alarcitykulupp=(i1*i2)-(i3*i2);//System.out.println("alarcity: "+MAIN.GLOBAL.alarcitykulupp);
+        	        		}
+        	        		if(x==26){MAIN.GLOBAL.mhastekulupp=(i1*i2)-(i3*i2);//System.out.println("mhaste: "+MAIN.GLOBAL.mhastekulupp);
+        	        		}
+        	        		if(x==27){MAIN.GLOBAL.hastekulupp=(i1*i2)-(i3*i2);//System.out.println("haste: "+MAIN.GLOBAL.hastekulupp);
+        	        		}
+        	        		
         	        		x++;
         	        	}	
         	        	catch(Exception e1){
         	        		yourInputField[x].setText("Number!");
         	        		
         	        	}
-        	        	if(x>25){break;}
+        	        	if(x>27){break;}
         	        	}
         	        	
         	        	
         	        	
         	        	Funktsioonid.profitcalc();
         	        		
-        	        MinuOutput[8].setText("8"+MAIN.GLOBAL.tulemusstring);
+        	        MinuOutput[8].setText(""+MAIN.GLOBAL.tulemusstring);
         	        MinuOutput[20].setText(""+(int)GLOBAL.kogutulu);
         	
         	        yourInputField[32].setText("32"+GLOBAL.tulemusstring);
@@ -673,7 +684,9 @@ int i=0;
         	        
         	        MinuOutput[21].setText(""+(int)GLOBAL.stonesAAvaluepp);	
         	        }else{
+        	        	if(MAIN.GLOBAL.timerunning){
         	        	MinuOutput[8].setText("Time running");
+        	        	}
         	        }
         	        }}	
         		);    

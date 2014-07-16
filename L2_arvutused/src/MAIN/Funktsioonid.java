@@ -90,24 +90,12 @@ public class Funktsioonid {
 	{
 
 		if (!GLOBAL.timerunning){
-			//System.out.println("Start");
-		GLOBAL.stardiaeg = System.currentTimeMillis();
-       // SimpleDateFormat sdf = new SimpleDateFormat("dd MMM,yyyy HH:mm");
-		//SimpleDateFormat startformaat = new SimpleDateFormat("HH:mm:ss");
 
-        //Date resultdate = new Date(GLOBAL.stardiaeg);
-        //GLOBAL.stardiaegstring=""+(startformaat.format(resultdate));
-        //System.out.println(GLOBAL.stardiaegstring);
+		GLOBAL.stardiaeg = System.currentTimeMillis();
+
         GLOBAL.timerunning=true;
-        //System.out.println("Start done");
 		}else{
-			//System.out.println("Stopp");
 		GLOBAL.stoppaeg=System.currentTimeMillis();
-		//GLOBAL.stoppaeg=
-		//SimpleDateFormat stoppformaat = new SimpleDateFormat("HH:mm:ss");
-        //Date resultdate = new Date(stoppaeg);
-        //GLOBAL.stoppaegstring=""+(stoppformaat.format(resultdate));
-        //System.out.println(GLOBAL.stoppaegstring);
         GLOBAL.tulemus=(GLOBAL.stoppaeg-GLOBAL.stardiaeg)/1000;				/// tulemus sekundites
 
         DecimalFormatSymbols decimalSymbol = new DecimalFormatSymbols(Locale.getDefault());
@@ -144,14 +132,7 @@ public class Funktsioonid {
         }
        System.out.println("sekundeid kulus : "+GLOBAL.sekundid);
         //GLOBAL.tulemus=Long.parseLong(df.format((GLOBAL.tulemus/3600)));     // tulemus tundides
-        //GLOBAL.tulemus=(GLOBAL.tulemus/3600);     // tulemus tundides
-        
-        
-        
-        
-        
-       // System.out.println("Spent time is : "+GLOBAL.h24+" Days and "+GLOBAL.tunnid+"h "+GLOBAL.minutid+"min "+GLOBAL.sekundid+"sek");
-
+       
        GLOBAL.ajavahemikpp=((int)(GLOBAL.h24)+"d "+(int)GLOBAL.tunnid+"h "+(int)GLOBAL.minutid+"m "+(int)GLOBAL.sekundid+"s");
         
         
@@ -173,8 +154,8 @@ public class Funktsioonid {
 			
 			double a=(GLOBAL.adenahiljem-GLOBAL.adenaenne)/GLOBAL.tulemus;
 			a=a*3600;
+			//System.out.println("a : "+a);
 			double kogukulu=GLOBAL.ssdkulupp+GLOBAL.bssdkulupp+GLOBAL.hppot1kulupp+GLOBAL.hppot2kulupp+GLOBAL.alarcitykulupp+GLOBAL.mhastekulupp+GLOBAL.hastekulupp;
-			System.out.println("kogukulu : "+kogukulu);
 			GLOBAL.kogutulu=Double.parseDouble(nullkomakohta.format(((GLOBAL.adenahiljem-GLOBAL.adenaenne)-kogukulu)));
 			
 			kogukulu=(kogukulu)/GLOBAL.tulemus;
@@ -184,11 +165,12 @@ public class Funktsioonid {
 		GLOBAL.tulemus=a;
 		GLOBAL.tulemus=Double.parseDouble(kakskomakohta.format((GLOBAL.tulemus)));
 		kogukulu=Double.parseDouble(kakskomakohta.format((kogukulu)));
-		System.out.println(GLOBAL.tulemus);
+		//System.out.println("kogukulu : "+kogukulu);
 		
 GLOBAL.tulemus=(GLOBAL.tulemus-(kogukulu));
 GLOBAL.tulemus=Double.parseDouble(kakskomakohta.format((GLOBAL.tulemus)));
 		GLOBAL.tulemusstring=(nullkomakohta.format((GLOBAL.tulemus)));
+		//System.out.println(GLOBAL.tulemusstring);
 		}else{
 			GLOBAL.tulemusstring="Start/Stop";
 		}
