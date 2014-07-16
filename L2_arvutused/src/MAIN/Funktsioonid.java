@@ -119,6 +119,7 @@ public class Funktsioonid {
         GLOBAL.tulemus=Double.parseDouble(s);
 
         GLOBAL.sekundid=GLOBAL.tulemus;
+        GLOBAL.tulemussekundites=GLOBAL.sekundid;
         
         
    double j22k=0;     
@@ -137,11 +138,11 @@ public class Funktsioonid {
         if (GLOBAL.sekundid>60){                                         // kui sekundeid jagub nii palju, et saab 1min
         	j22k=GLOBAL.sekundid % 60;
         	GLOBAL.minutid=Double.parseDouble(nullkomakohta.format(((GLOBAL.sekundid-j22k)/60)));//minutite täisarv saadakse sekunditest
-        	System.out.println(GLOBAL.minutid);
+        	//System.out.println(GLOBAL.minutid);
         	GLOBAL.sekundid=j22k;
         			//(GLOBAL.sekundid-(GLOBAL.minutid*60));			   // võtan sekunditest minutid maha
         }
-       System.out.println("sekundeid kulus : "+GLOBAL.tulemus);
+       System.out.println("sekundeid kulus : "+GLOBAL.sekundid);
         //GLOBAL.tulemus=Long.parseLong(df.format((GLOBAL.tulemus/3600)));     // tulemus tundides
         //GLOBAL.tulemus=(GLOBAL.tulemus/3600);     // tulemus tundides
         
@@ -174,6 +175,8 @@ public class Funktsioonid {
 			a=a*3600;
 			double kogukulu=GLOBAL.ssdkulupp+GLOBAL.bssdkulupp+GLOBAL.hppot1kulupp+GLOBAL.hppot2kulupp+GLOBAL.alarcitykulupp+GLOBAL.mhastekulupp+GLOBAL.hastekulupp;
 			System.out.println("kogukulu : "+kogukulu);
+			GLOBAL.kogutulu=Double.parseDouble(nullkomakohta.format(((GLOBAL.adenahiljem-GLOBAL.adenaenne)-kogukulu)));
+			
 			kogukulu=(kogukulu)/GLOBAL.tulemus;
 			//System.out.println(kogukulu);
 			kogukulu=kogukulu*3600;

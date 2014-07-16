@@ -127,6 +127,26 @@ public class tabel {
         yourInputField[35].setEditable(false);
         yourInputField[38].setEditable(false);
         yourInputField[41].setEditable(false);
+        yourInputField[30].setEditable(false);
+        yourInputField[31].setEditable(false);
+        yourInputField[32].setEditable(false);
+        yourInputField[33].setEditable(false);
+        //yourInputField[34].setEditable(false);
+       yourInputField[43].setEditable(false);
+       yourInputField[44].setEditable(false);
+       yourInputField[45].setEditable(false);
+       yourInputField[46].setEditable(false);
+       yourInputField[48].setEditable(false);
+       yourInputField[49].setEditable(false);
+       yourInputField[50].setEditable(false);
+       yourInputField[51].setEditable(false);
+       yourInputField[52].setEditable(false);
+       yourInputField[53].setEditable(false);
+       yourInputField[54].setEditable(false);
+       yourInputField[55].setEditable(false);
+       yourInputField[56].setEditable(false);
+       yourInputField[57].setEditable(false);
+       yourInputField[58].setEditable(false);
         
         
         
@@ -170,10 +190,10 @@ public class tabel {
         yourInputField[38].setForeground(Color.WHITE);
         yourInputField[41].setBackground(Color.RED);
         yourInputField[41].setForeground(Color.WHITE);
-        yourInputField[30].setText("");
-        yourInputField[31].setText("");
-        yourInputField[32].setText("0");
-        yourInputField[33].setText("0d 0h 0m 0s");
+        yourInputField[30].setText("30");
+        yourInputField[31].setText("31");
+        yourInputField[32].setText("32");
+        yourInputField[33].setText("33");
         
         
         
@@ -221,6 +241,10 @@ public class tabel {
         MinuOutput[19].setBorder(punaneraam);
         MinuOutput[20].setBorder(punaneraam);
         MinuOutput[21].setBorder(punaneraam);
+        yourInputField[47].setBorder(punaneraam);
+        yourInputField[48].setBorder(punaneraam);
+        yourInputField[49].setBorder(punaneraam);
+        yourInputField[50].setBorder(punaneraam);
         MinuOutput[18].setBackground(Color.WHITE);
         MinuOutput[19].setBackground(Color.WHITE);
         MinuOutput[20].setBackground(Color.WHITE);
@@ -243,6 +267,7 @@ public class tabel {
         frame.add(button[11], MAIN.GLOBAL.btnlocation_12);
         frame.add(button[12], MAIN.GLOBAL.btnlocation_13);
         frame.add(button[13], MAIN.GLOBAL.btnlocation_14);
+        frame.add(button[14], MAIN.GLOBAL.btnlocation_15);
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////  ALGAVAD NUPPUDE INITSIALISEERIMISED JNE                 //////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -564,6 +589,8 @@ int i=0;
 
         	        	MAIN.GLOBAL.tulemusstring="Time running";
         	        	MinuOutput[8].setText(MAIN.GLOBAL.tulemusstring);
+        	        	
+        	        	
         	        	}else
         	        		{
         	        		yourInputField[8].setBackground(Color.GREEN);
@@ -577,6 +604,8 @@ int i=0;
 
         	        		MAIN.GLOBAL.tulemusstring="Time stopped";
         	        		MinuOutput[8].setText(MAIN.GLOBAL.tulemusstring);
+        	        		yourInputField[47].setText(GLOBAL.ajavahemikpp);
+        	        		System.out.println(GLOBAL.ajavahemikpp);
         	        		}
         	        }}	
         		);    
@@ -631,21 +660,18 @@ int i=0;
         	        	
         	        	
         	        	Funktsioonid.profitcalc();
-        	        MinuOutput[8].setText(MAIN.GLOBAL.tulemusstring);
-        	 //       labelid[25].setVisible(true);
-        	 //       labelid[26].setVisible(true);
-        	 //       labelid[27].setVisible(true);
-        	 //       labelid[28].setVisible(true);
-        	 //       labelid[29].setVisible(true);
-        	//        yourInputField[30].setVisible(true);
-        	//        yourInputField[31].setVisible(true);
-        	//        yourInputField[32].setVisible(true);
-        	        yourInputField[32].setText(GLOBAL.tulemusstring);
-        	//       yourInputField[33].setVisible(true);
-        	        yourInputField[33].setText(GLOBAL.ajavahemikpp);
-        	  //      button[8].setVisible(true);
-        	  //      button[10].setVisible(true);
-        	        	
+        	        		
+        	        MinuOutput[8].setText("8"+MAIN.GLOBAL.tulemusstring);
+        	        MinuOutput[20].setText(""+(int)GLOBAL.kogutulu);
+        	
+        	        yourInputField[32].setText("32"+GLOBAL.tulemusstring);
+
+        	        yourInputField[33].setText("33"+GLOBAL.ajavahemikpp);
+        	        GLOBAL.stonesAAvaluepp=((Double.parseDouble(yourInputField[36].getText())-Double.parseDouble(yourInputField[34].getText()))*Double.parseDouble(yourInputField[35].getText()));
+        	        GLOBAL.stonesAAvaluepp=GLOBAL.stonesAAvaluepp+((Double.parseDouble(yourInputField[39].getText())-Double.parseDouble(yourInputField[37].getText()))*Double.parseDouble(yourInputField[38].getText()));
+        	        GLOBAL.stonesAAvaluepp=GLOBAL.stonesAAvaluepp+((Double.parseDouble(yourInputField[42].getText())-Double.parseDouble(yourInputField[40].getText()))*Double.parseDouble(yourInputField[41].getText()));
+        	        
+        	        MinuOutput[21].setText(""+(int)GLOBAL.stonesAAvaluepp);	
         	        }else{
         	        	MinuOutput[8].setText("Time running");
         	        }

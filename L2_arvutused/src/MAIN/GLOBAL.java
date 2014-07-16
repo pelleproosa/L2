@@ -63,16 +63,16 @@ public class GLOBAL {
 	//File
 	public static String SaveFileName="L2Calc.ini";
 	public static int INI_lines=16;
-	public static int yourInputFieldArv=42;
+	public static int yourInputFieldArv=58;
 	public static int MinuOutputArv=33;
-	public static int labeliteArv=34;
+	public static int labeliteArv=35;
 	//Window
 	public static String aknanimi="L2 Calc v.5";
-	public static int width=1050;
+	public static int width=1450;
 	public static int height=700;
 	//Columns and Rows in window drawing
     public static double size[][] = {
-    	{90, 90, 90, 90, 90, 200, 90, 90, 90, 90, 90, 90}, // Columns selle rea saab ees 0: String tulbad=""+GLOBAL.size[0][..];
+    	{90, 90, 90, 90, 90, 200, 90, 90, 90, 90, 90, 20,90,90,90}, // Columns selle rea saab ees 0: String tulbad=""+GLOBAL.size[0][..];
     	{30, 30, 30, 30, 30, 30, 30, 30, 30, 30,
     	 30, 30, 30, 30, 30, 30, 30, 30, 30, 30} // Rows     selle rea saab ees 1: String tulbad=""+GLOBAL.size[1][..];
     								};
@@ -89,14 +89,15 @@ public class GLOBAL {
     public static String btn6="Clear All";
     public static String btn7="Start/Stop";
     public static String btn8="Calculate";
-    public static String btn9="Save";
+    public static String btn9="Save/Recalc";
     public static String btn10="Reset Calc.ini";
     public static String btn11="Delete";
     public static String btn12="Up";
     public static String btn13="Down";
-    public static String btn14="Edit";
+    public static String btn14="Cancel";
+    public static String btn15="Show currently spent time";
     
-    public static String label[] = {btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn10, btn11, btn12, btn13, btn14};        /*seda ei pane INI faili*/
+    public static String label[] = {btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn10, btn11, btn12, btn13, btn14, btn15};        /*seda ei pane INI faili*/
     //Buttons locations(column,row)
     public static String btnlocation_1="6, 2";
     public static String btnlocation_2="7, 2";
@@ -106,29 +107,30 @@ public class GLOBAL {
     public static String btnlocation_6="5, 5";
     public static String btnlocation_7="2, 9";
     public static String btnlocation_8="4, 9";
-    public static String btnlocation_9="8, 12";
+    public static String btnlocation_9="12, 15";
     public static String btnlocation_10="7, 9";
-    public static String btnlocation_11="9, 12";
-    public static String btnlocation_12="8, 16";
-    public static String btnlocation_13="8, 18";
-    public static String btnlocation_14="8, 17";
+    public static String btnlocation_11="13, 15";
+    public static String btnlocation_12="12, 14";
+    public static String btnlocation_13="12, 16";
+    public static String btnlocation_14="14, 15";
+    public static String btnlocation_15="5, 8";
     
     public static String lbllocation_1="9, 8";
     public static String lbl1string="MAIN.GLOBAL.lbl1string";
-    public static String[] labellocation={"","1,8","0,1","3,8","6,8","2,7",
+    public static String[] labellocation={"","1,8","0,1","3,8","9,12","2,7",
     										 "0,3","0,4","0,9","3,7","0,12",			//10
     									  	 "1,0","2,0","3,0","4,0","0,13",
     									  	 "6,0","7,0","0,10","0,11","2,8",			//20
-    									  	 "5,8","0,14","0,15","0,16","5,10",
-    									  	 "6, 11","7, 11","4, 11","5, 11","5, 14",	//30
-    									  	 "0, 17","0, 18","0, 19"};
+    									  	 "10,12","0,14","0,15","0,16","11,12",
+    									  	 "6, 12","8, 12","4, 12","5, 12","5, 11",	//30
+    									  	 "0, 17","0, 18","0, 19","7,12"};
     public static String[] labeltext={"ei kasuta","Before Start","Inventory","After Stop","Adena/h","PROFIT ",
     											  "Results","Buy","Adena INPUT","CALCULATOR","HP pot.1",						//10
     											  "Adena","Soul.O","Spirit.O","Cry.D","HP pot.2",
     											  "BSSD","SSD","Spiritshots","SoulShots","1 item Price",						//20
-    											  "Spent time","Alarcity pot","M. Haste","Haste","SAVE RESULT TO 'Score.txt'",
-    											  "adena/h","Average from","Char name", "Location","SCORE.TXT",					//30
-    											  "Blue stone","Green stone","Red stone"};				
+    											  "AncientAdena/h","Alarcity pot","M. Haste","Haste","Nr",
+    											  "Adena","Time","Char name", "Location","SCORE.TXT",					//30
+    											  "Blue stone","Green stone","Red stone","Ancient Adena"};				
     		
  
  
@@ -142,17 +144,20 @@ public class GLOBAL {
 											"3, 10","1, 11","2, 11","3, 11","1, 12",
 											"2, 12","3, 12","1, 13","2, 13","3, 13",	//20
 											"1, 14","2, 14","3, 14","1, 15","2, 15",
-											"3, 15","1, 16","2, 16","3,16","4, 12",		//30
-											"5, 12","6, 12","7, 12","1, 17","2, 17",
+											"3, 15","1, 16","2, 16","3,16","8, 13",		//30
+											"9, 13","10, 13","11, 13","1, 17","2, 17",
 											"3, 17","1, 18","2, 18","3, 18","1, 19",	//40
-											"2, 19","3, 19"};
+											"2, 19","3, 19","8,14","9,14","10,14",
+											"11,14","8,15","9,15","10,15","11,15",		//50
+											"8,16","9,16","10,16","11,16","8,17",
+											"9,17","10,17","11,17"};
 	public static String[] outputlocation={"10, 10",
 										   "1, 3","2, 3","3, 3","4, 3","2, 4",
-										   "3, 4","4, 4","6, 9","5, 9","4, 15",			//10
-										   "5, 15","6, 15","7, 15","4, 16","5, 16",
-										   "6, 16","7, 16","4, 17","5, 17","6, 17",		//20
-										   "7, 17",",4, 18","5, 18","6, 18","7, 18",
-										   "4, 19","5, 19","6, 19","7, 19","",			//30
+										   "3, 4","4, 4","6, 9","5, 9","4, 13",			//10
+										   "5, 13","6, 13","7, 13","4, 14","5, 14",
+										   "6, 14","7, 14","4, 15","5, 15","6, 15",		//20
+										   "7, 15",",4, 16","5, 16","6, 16","7, 16",
+										   "4, 17","5, 17","6, 17","7, 17","",			//30
 										   "","",""};
 
 // Timer
@@ -161,6 +166,7 @@ public class GLOBAL {
 	public static double stoppaeg=0;
 	public static String stoppaegstring="";
 	public static double tulemus=0;
+	public static double tulemussekundites=0;
 	public static String tulemusstring="";
 	public static boolean timerunning=false;
 	public static double sekundid=0;
@@ -181,6 +187,7 @@ public class GLOBAL {
 	public static double greensspp=0;
 	public static double redsspp=0;
 	public static double stonesAAvaluepp=0;
+	public static double kogutulu=0;
 
 	
 }
