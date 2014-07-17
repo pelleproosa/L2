@@ -1,5 +1,11 @@
 package MAIN;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import objektid.failiread;
+
+
 public class GLOBAL {
 /*public static int[] minginrjada = new int[3];
 	public static String[] mingistringijada = new String[3];
@@ -188,6 +194,28 @@ public class GLOBAL {
 	public static double redsspp=0;
 	public static double stonesAAvaluepp=0;
 	public static double kogutulu=0;
-
+	
+	//////// objekt
+	public static int GlobalReaNumber=0;
+	public static List<failiread> GlobalScoreTxtRead = new ArrayList<failiread>();
+	public static List<String> failiridadelist = new ArrayList<String>();
+	public static failiread rida= new failiread(0,"","",0,0,"",0); ///////////////// Globalis olevale objektile antakse algväärtused
+	public static failiread TagasisideRida;
+	public static failiread rida1;
+	public static failiread rida2;
+	public static failiread rida3;
+	public static failiread rida4;
+	public static failiread rida5;
+	
+	public static int objektreanumber=0;
+	public static String objektcharname="";
+	public static String objektlocname="";
+	public static double objektadena=0;
+	public static double objektancientadena=0;
+	public static String objekttime="";
+	public static double objektspenttimeinseconds=0;
+	public static double objektadenaperh=0;
+	public static double objektancientadenaperh=0;
+	
 	
 }

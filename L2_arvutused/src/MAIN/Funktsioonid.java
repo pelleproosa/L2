@@ -180,5 +180,59 @@ GLOBAL.tulemus=Double.parseDouble(kakskomakohta.format((GLOBAL.tulemus)));
 
 	
 	
+	public void FailisisuStringistObjektidesse(){
+		
+	GLOBAL.failiridadelist.add("{Bem#Execution Grounds#1000#555#0d 1h 6m 50s#100#222#111}");
+	int ridadearv=	GLOBAL.failiridadelist.size();
+	int i=0;
+	String yksrida=GLOBAL.failiridadelist.get(ridadearv);
+	String lipuke1="";
+	String lipuke2="";
+		
+	String lipuke[]={"{"," ","#","d","h","m","s","}"};
+	
+
+//	{Bem#Execution Grounds#1000#555#0d 1h 6m 50s#100#222#111}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	GLOBAL.rida=
+	
+	
+	
+		
+	}
+	
+	public double aegstringistsekunditeks(String a){
+		
+		siin tagastab stringist (0d 1h 6m 50s) sekundiv‰‰rtuse
+		
+		return 0;
+		
+	}
+	
+	
 	
 }

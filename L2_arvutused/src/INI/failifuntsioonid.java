@@ -17,6 +17,8 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+
+import objektid.failiread;
 public class failifuntsioonid
 {
 
@@ -188,12 +190,25 @@ public static ArrayList<String> LoeFaili_ScoreTXT(String Read_File_Name) throws 
 	}
  
 	br.close();
-	
+	MAIN.GLOBAL.failiridadelist=rida;
 	return rida;
 
 }
 
-
+public void KirjutaReadTabelisse(failiread rida1, failiread rida2, failiread rida3, failiread rida4, failiread rida5){
+	
+	MAIN.GLOBAL.rida1=rida1;
+	MAIN.GLOBAL.rida2=rida2;
+	MAIN.GLOBAL.rida3=rida3;
+	MAIN.GLOBAL.rida4=rida4;
+	MAIN.GLOBAL.rida5=rida5;
+	
+	System.out.println("siin kirjutatakse viie rea v‰‰rtused viiele global reale...failifuntsioonid.kirjutareadtabelisse");
+	
+	
+	
+	
+}
 
 
 

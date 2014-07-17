@@ -30,10 +30,15 @@ public class MAIN {
 		System.out.println("nupp 'save/recalc' on ümber seadistamata");
 		System.out.println("nupp 'cancel' on tegemata");
 		System.out.println("nupp 'delete' on tegemata");
-		System.out.println("Töö käib paketis 'objektid': eesmärk 1) luua objekt, mis on rida failist. 2) objektide arraylist");
+		System.out.println("Töö käib paketis 'objektid': eesmärk 1) luua objekt, mis on rida failist. 2) objektide arraylist ... tehtud, kuid programmiga sidumata");
 		System.out.println("Programmi käivitades peaks kuvama failist salvestused");
 		System.out.println("kui vajutada 'calculate', kuvab kahte viimast rida üleval ja loodavat rida keskel(nagu oleks faili lõpus)");
-	INI_GLOBAL.start(args); 
+		System.out.println("Luua funktsioon: stringist(0d 1h 6m 50s) sekundid");
+		System.out.println("funktsioon INI.failifuntsioonid.KirjutaReadTabelisse(failiread,failiread,feiliread,failiread,failiread); on sidumata");
+		
+		
+		
+		INI_GLOBAL.start(args); 
 	tabel.start(args);
 
 	}

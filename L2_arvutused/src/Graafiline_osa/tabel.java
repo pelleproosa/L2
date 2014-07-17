@@ -242,6 +242,8 @@ public class tabel {
         MinuOutput[20].setBorder(punaneraam);
         MinuOutput[21].setBorder(punaneraam);
         yourInputField[47].setBorder(punaneraam);
+        yourInputField[47].setEditable(false);
+        yourInputField[47].setBackground(Color.WHITE);
         yourInputField[48].setBorder(punaneraam);
         yourInputField[49].setBorder(punaneraam);
         yourInputField[50].setBorder(punaneraam);
