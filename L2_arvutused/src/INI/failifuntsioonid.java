@@ -192,7 +192,6 @@ public static void kustutaini() throws IOException
 	 ObjectInputStream objectInputStream = new ObjectInputStream(
 		        new FileInputStream(MAIN.GLOBAL.ProgramRunLocation+MAIN.GLOBAL.ObjectSaveFileName));
 		 
-		// start getting the objects out in the order in which they were written
 		Date date = (Date) objectInputStream.readObject();
 		System.out.println("kuupäev      :"+date);
 		System.out.println("boolean      :"+objectInputStream.readBoolean());
@@ -218,16 +217,13 @@ static void kirjuta_ScoreTXT() throws Exception {
 	 
 	ObjectOutputStream objectOutputStream = new ObjectOutputStream(
             new FileOutputStream(MAIN.GLOBAL.ProgramRunLocation+MAIN.GLOBAL.ObjectSaveFileName));
-//write a date
-objectOutputStream.writeObject(new Date());
-//write a boolean
-objectOutputStream.writeBoolean(true);
-//write a float
-objectOutputStream.writeFloat(1.0f);
-//the other primitive types and objects can be saved as well
 
-//create two students objects and add them in a list. create a course
-//object and add the list of students to a list
+objectOutputStream.writeObject(new Date());
+
+objectOutputStream.writeBoolean(true);
+
+objectOutputStream.writeFloat(1.0f);
+
 rida rida1 = new rida();
 rida1.setAge(30);
 rida1.setName("rida1");
@@ -239,6 +235,9 @@ rida2.setName("rida2");
 ReaList ridadelist = new ReaList();
 ridadelist.setName("Java IO");
 List<rida> realist = new ArrayList<>();
+
+
+/////////////////////////////// 			SIIN tuleb sisestada read 
 realist.add(rida1);
 realist.add(rida2);
 ridadelist.setridadelist(realist);
