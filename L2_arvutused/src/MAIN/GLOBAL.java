@@ -68,6 +68,10 @@ public class GLOBAL {
 	
 	//File
 	public static String SaveFileName="L2Calc.ini";
+	public static String ObjectSaveFileName="ObjectsSave.obj";
+	public static String DesktopLocation=(System.getProperty("user.home")+"\\Desktop\\");
+	public static String ProgramRunLocation=(System.getProperty("user.dir")+"\\"+"L2Calc.ini");
+	
 	public static int INI_lines=16;
 	public static int yourInputFieldArv=58;
 	public static int MinuOutputArv=33;
@@ -197,15 +201,8 @@ public class GLOBAL {
 	
 	//////// objekt
 	public static int GlobalReaNumber=0;
-	public static List<failiread> GlobalScoreTxtRead = new ArrayList<failiread>();
-	public static List<String> failiridadelist = new ArrayList<String>();
-	public static failiread rida= new failiread(0,"","",0,0,"",0); ///////////////// Globalis olevale objektile antakse algväärtused
-	public static failiread TagasisideRida;
-	public static failiread rida1;
-	public static failiread rida2;
-	public static failiread rida3;
-	public static failiread rida4;
-	public static failiread rida5;
+
+
 	
 	public static int objektreanumber=0;
 	public static String objektcharname="";

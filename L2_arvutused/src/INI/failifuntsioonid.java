@@ -11,14 +11,26 @@ package INI;
 
 
 import java.io.BufferedWriter;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.File;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.Date;
 
-import objektid.failiread;
+
+import java.util.List;
+
+
+import objektid.ReaList;
+import objektid.rida;
+
 public class failifuntsioonid
 {
 
@@ -174,34 +186,71 @@ public static void kustutaini() throws IOException
 }
 
 
-public static ArrayList<String> LoeFaili_ScoreTXT(String Read_File_Name) throws Exception {
-	// Construct BufferedReader from FileReader
-	BufferedReader br = new BufferedReader(new FileReader(Read_File_Name));
- 
-	ArrayList<String> rida = new ArrayList<String>();
-	
-	String s=null;
-	int i=0;
-	while ((s = br.readLine()) != null) {
-		
-		rida.add(s);
-		
-		i++;
-	}
- 
-	br.close();
-	MAIN.GLOBAL.failiridadelist=rida;
-	return rida;
+ static void LoeFaili_ScoreTXT() throws Exception {
+	 
+	 
+	 ObjectInputStream objectInputStream = new ObjectInputStream(
+		        new FileInputStream(MAIN.GLOBAL.ProgramRunLocation+MAIN.GLOBAL.ObjectSaveFileName));
+		 
+		// start getting the objects out in the order in which they were written
+		Date date = (Date) objectInputStream.readObject();
+		System.out.println("kuup‰ev      :"+date);
+		System.out.println("boolean      :"+objectInputStream.readBoolean());
+		System.out.println("float        :"+objectInputStream.readFloat());
+		 
+		// get the course object
+		ReaList ridadelist = (ReaList) objectInputStream.readObject();
+		System.out.println("kursus       :"+ridadelist.getName());
+		rida rida1Read = ridadelist.getridadelist().get(0);
+		System.out.println("tudeng1 vanus: "+rida1Read.getAge());
+		System.out.println("tudeng1 nimi : "+rida1Read.getName());
+		rida rida2Read = ridadelist.getridadelist().get(1);
+		System.out.println("tudeng2 vanus: "+rida2Read.getAge());
+		System.out.println("tudeng2 nimi : "+rida2Read.getName());
+		objectInputStream.close();
+	 
+
 
 }
 
-public void KirjutaReadTabelisse(failiread rida1, failiread rida2, failiread rida3, failiread rida4, failiread rida5){
+static void kirjuta_ScoreTXT() throws Exception {
+	 
+	 
+	ObjectOutputStream objectOutputStream = new ObjectOutputStream(
+            new FileOutputStream(MAIN.GLOBAL.ProgramRunLocation+MAIN.GLOBAL.ObjectSaveFileName));
+//write a date
+objectOutputStream.writeObject(new Date());
+//write a boolean
+objectOutputStream.writeBoolean(true);
+//write a float
+objectOutputStream.writeFloat(1.0f);
+//the other primitive types and objects can be saved as well
+
+//create two students objects and add them in a list. create a course
+//object and add the list of students to a list
+rida rida1 = new rida();
+rida1.setAge(30);
+rida1.setName("rida1");
+
+rida rida2 = new rida();
+rida2.setAge(31);
+rida2.setName("rida2");
+
+ReaList ridadelist = new ReaList();
+ridadelist.setName("Java IO");
+List<rida> realist = new ArrayList<>();
+realist.add(rida1);
+realist.add(rida2);
+ridadelist.setridadelist(realist);
+objectOutputStream.writeObject(ridadelist);
+objectOutputStream.flush();
+objectOutputStream.close();
+
+}
+ 
+public void KirjutaReadTabelisse(){
 	
-	MAIN.GLOBAL.rida1=rida1;
-	MAIN.GLOBAL.rida2=rida2;
-	MAIN.GLOBAL.rida3=rida3;
-	MAIN.GLOBAL.rida4=rida4;
-	MAIN.GLOBAL.rida5=rida5;
+	
 	
 	System.out.println("siin kirjutatakse viie rea v‰‰rtused viiele global reale...failifuntsioonid.kirjutareadtabelisse");
 	

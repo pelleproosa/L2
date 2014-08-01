@@ -180,7 +180,7 @@ GLOBAL.tulemus=Double.parseDouble(kakskomakohta.format((GLOBAL.tulemus)));
 
 	
 	
-	public void FailisisuStringistObjektidesse(){
+	public void FailisisuObjektidesse(){
 		
 	GLOBAL.failiridadelist.add("{Bem#Execution Grounds#1000#555#0d 1h 6m 50s#100#222#111}");
 	int ridadearv=	GLOBAL.failiridadelist.size();

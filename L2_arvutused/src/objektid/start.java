@@ -15,17 +15,10 @@ public class start {
 	static void LooRida(failiread a,int reanumber, String charname, String locname, double adena, double AncientAdena, String time, double SpentTimeInSeconds){
 		
 		
-		MAIN.GLOBAL.GlobalReaNumber=MAIN.GLOBAL.GlobalScoreTxtRead.size();
-		a.reanumber=reanumber;
-		a.CharName=charname;
-		a.LocationName=locname;
-		a.EarnedAdena=adena;
-		a.EarnedAncientAdena=AncientAdena;
-		a.time=time;
-		a.SpentTimeInSeconds=SpentTimeInSeconds;
+		
 		
 
-		MAIN.GLOBAL.GlobalScoreTxtRead.add(a);     ///////////////// objekt lisatakse objektide jadasse
+		     ///////////////// objekt lisatakse objektide jadasse
 		
 	}
 
