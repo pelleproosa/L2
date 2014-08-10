@@ -28,6 +28,8 @@ import java.util.Date;
 import java.util.List;
 
 
+
+
 import objektid.ReaList;
 import objektid.rida;
 
@@ -199,13 +201,13 @@ public static void kustutaini() throws IOException
 		 
 		// get the course object
 		ReaList ridadelist = (ReaList) objectInputStream.readObject();
-		System.out.println("kursus       :"+ridadelist.getName());
+		System.out.println("kursus     :"+ridadelist.getName());
 		rida rida1Read = ridadelist.getridadelist().get(0);
-		System.out.println("tudeng1 vanus: "+rida1Read.getAge());
-		System.out.println("tudeng1 nimi : "+rida1Read.getName());
+		System.out.println("Chari nimi : "+rida1Read.getCharname());
+		System.out.println("Asukoht    : "+rida1Read.getLocationname());
 		rida rida2Read = ridadelist.getridadelist().get(1);
-		System.out.println("tudeng2 vanus: "+rida2Read.getAge());
-		System.out.println("tudeng2 nimi : "+rida2Read.getName());
+		System.out.println("Chari nimi : "+rida2Read.getCharname());
+		System.out.println("Asukoht    : "+rida2Read.getLocationname());
 		objectInputStream.close();
 	 
 
@@ -223,27 +225,16 @@ objectOutputStream.writeObject(new Date());
 objectOutputStream.writeBoolean(true);
 
 objectOutputStream.writeFloat(1.0f);
-
-rida rida1 = new rida();
-rida1.setAge(30);
-rida1.setName("rida1");
-
-rida rida2 = new rida();
-rida2.setAge(31);
-rida2.setName("rida2");
-
-ReaList ridadelist = new ReaList();
-ridadelist.setName("Java IO");
-List<rida> realist = new ArrayList<>();
+ 
 
 
-/////////////////////////////// 			SIIN tuleb sisestada read 
-realist.add(rida1);
-realist.add(rida2);
-ridadelist.setridadelist(realist);
-objectOutputStream.writeObject(ridadelist);
+
+objectOutputStream.writeObject(MAIN.GLOBAL.objektilistrida);
 objectOutputStream.flush();
 objectOutputStream.close();
+
+
+
 
 }
  

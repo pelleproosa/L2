@@ -12,13 +12,23 @@ public class start {
 	 * Pelle konstruktor
 	 */
 	
-	static void LooRida(failiread a,int reanumber, String charname, String locname, double adena, double AncientAdena, String time, double SpentTimeInSeconds){
+
+	
+	
+	
+	static void LooRidaLisaListi()			// Lõppu	/// see käivitub nupuvajutusest .... ennem lisada väljade väärtused globalisse ka
+	{
 		
-		
-		
+		MAIN.GLOBAL.objektrida.setCharname(MAIN.GLOBAL.objektcharname);
+		MAIN.GLOBAL.objektrida.setLocationname(MAIN.GLOBAL.objektlocname);
+		MAIN.GLOBAL.objektrida.setAdenaprofit(MAIN.GLOBAL.objektadenaprofit);
+		MAIN.GLOBAL.objektrida.setAncientadenaprofit(MAIN.GLOBAL.objektancientadenaprofit);
+		MAIN.GLOBAL.objektrida.setSpenttimemilliseconds(MAIN.GLOBAL.objektspenttimeinseconds);
+		MAIN.GLOBAL.objektrida.setDate(MAIN.GLOBAL.objektdate);
+
+		MAIN.GLOBAL.objektilistrida.add(MAIN.GLOBAL.objektrida);
 		
 
-		     ///////////////// objekt lisatakse objektide jadasse
 		
 	}
 
@@ -29,20 +39,11 @@ public class start {
 	public static void start(String[] args) {
 		
 		
-		failiread a=MAIN.GLOBAL.rida;
 		
-		KasutajaAsendaja.omistaglobalid(null); /// kustutada, kui programm töötab
 		
-		LooRida(
-				a,
-				MAIN.GLOBAL.objektreanumber,
-				MAIN.GLOBAL.objektcharname,
-				MAIN.GLOBAL.objektlocname,
-				MAIN.GLOBAL.objektadena,
-				MAIN.GLOBAL.objektancientadena,
-				MAIN.GLOBAL.objekttime,
-				MAIN.GLOBAL.objektspenttimeinseconds
-				);	
+		KasutajaAsendaja.omistaobjektid(null); /// kustutada, kui programm töötab
+		
+		
 
 	}
 

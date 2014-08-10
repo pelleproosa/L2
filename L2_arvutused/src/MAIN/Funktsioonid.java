@@ -86,6 +86,162 @@ public class Funktsioonid {
 		GLOBAL.readFunktsioonist=read;
 	}
 	
+	public void kulunudmillisekundidstringiks(double KuvatavAeg) {              seda funktsiooni pole süsteemi integreeritud //GLOBAL.P2evTundMinutSekund[3]
+		double p2evad;
+		double tunnid;
+		double minutid;
+		double sekundid;
+		DecimalFormatSymbols decimalSymbol = new DecimalFormatSymbols(Locale.getDefault());
+        decimalSymbol.setDecimalSeparator('.');
+        decimalSymbol.setGroupingSeparator(',');
+        DecimalFormat nullkomakohta = new DecimalFormat("###",decimalSymbol);
+        DecimalFormat kakskomakohta = new DecimalFormat("#.00",decimalSymbol);
+        String s=(kakskomakohta.format(GLOBAL.tulemus)); 
+        double tulemus=Double.parseDouble(s);
+
+        p2evad=0;
+        tunnid=0;
+        minutid=0;
+        sekundid=tulemus;
+        
+		   double j22k=0;     
+	        if (KuvatavAeg>86400){                                         // kui sekundeid jagub nii palju, et saab 24h
+	        	j22k=sekundid % 86400;
+	        	p2evad=Double.parseDouble(nullkomakohta.format(((sekundid-j22k)/86400)));//päevade täisarv saadakse sekunditest
+	        	sekundid=j22k;
+	        			//(GLOBAL.sekundid-(GLOBAL.h24*86400));			   // võtan sekunditest päevad maha
+	        }
+	        if (sekundid>3600){                                         // kui sekundeid jagub nii palju, et saab 1h
+	        	j22k=sekundid % 3600;
+	        	tunnid=Double.parseDouble(nullkomakohta.format(((sekundid-j22k)/3600)));//tundide täisarv saadakse sekunditest
+	        	sekundid=j22k;
+	        			//(GLOBAL.sekundid-(GLOBAL.tunnid*3600));			   // võtan sekunditest tunnid maha
+	        }
+	        if (sekundid>60){                                         // kui sekundeid jagub nii palju, et saab 1min
+	        	j22k=sekundid % 60;
+	        	minutid=Double.parseDouble(nullkomakohta.format(((sekundid-j22k)/60)));//minutite täisarv saadakse sekunditest
+	        	//System.out.println(GLOBAL.minutid);
+	        	sekundid=j22k;
+	        			//(GLOBAL.sekundid-(GLOBAL.minutid*60));			   // võtan sekunditest minutid maha
+	        }
+	        System.out.print("Funktsioonid-kulunudmillisekundidstringiks return väärtus:");
+		System.out.println(/*""+p2evad+"Days "+*/tunnid+"h "+minutid+"min "+sekundid+"sec");
+		GLOBAL.P2evTundMinutSekund[0]=""+p2evad;
+		GLOBAL.P2evTundMinutSekund[1]=""+tunnid;
+		GLOBAL.P2evTundMinutSekund[2]=""+minutid;
+		GLOBAL.P2evTundMinutSekund[3]=""+sekundid;
+		
+	}
+	public void muudetudAjastringmillisekunditeks(String muudetudAjastring)   // eeldusel, et string on 0d 0h 0m 0s
+	{
+		String[] lipuke=new String[4];
+		lipuke[0]=" ";
+		lipuke[1]="d";
+		lipuke[2]="h";
+		lipuke[3]="m";
+		lipuke[4]="s";
+		String jupike1=muudetudAjastring;
+		String jupike2="";
+		int asukoht1=0;
+		int asukoht2=0;
+		
+		while (true){  // tühikute eemaldamine
+
+			if(jupike1.indexOf(lipuke[0]) != -1){        			//leidus tühik
+				asukoht2=jupike1.indexOf(lipuke[0]);     			//märgistan viimase koha enne tyhikut
+				jupike2=jupike1.substring(asukoht1, asukoht2); 		//võtan stringi kuni tühikuni
+				asukoht1=asukoht2;									//panen lipukesed paika
+				asukoht2=jupike1.length();							//mõõdan stringi pikkuse
+				jupike2=jupike1.substring((asukoht1+1),asukoht2);	//võtan stringi tagumise osa, jättes tyhiku välja(algus+1)
+				jupike1=jupike1+jupike2;									//liidan jupid kokku ilma tyhikuta
+				jupike2=jupike1;									//annan mõlemale sama stringi väärtuse
+				asukoht1=0;											//nullin viimase lipukese
+
+			}else{ 													//ei leidunud tyhikut
+				break;
+			}			
+		}
+		
+		if(jupike1.indexOf(lipuke[1]) != -1){        			//leidus d              // päevad
+			asukoht2=jupike1.indexOf(lipuke[1]);     			//märgistan viimase koha enne d
+			jupike2=jupike1.substring(asukoht1, asukoht2); 		//võtan stringi kuni d
+			asukoht1=asukoht2;									//panen lipukesed paika
+			asukoht2=jupike1.length();							//mõõdan stringi pikkuse
+			jupike2=jupike1.substring((asukoht1+1),asukoht2);	//võtan stringi tagumise osa, jättes d välja(algus+1)
+			jupike1=jupike2;									//annan mõlemale sama stringi väärtuse
+			GLOBAL.P2evTundMinutSekund[0]=jupike2;									
+			asukoht1=0;											//nullin viimase lipukese
+
+		}
+		
+		if(jupike1.indexOf(lipuke[2]) != -1){        			//leidus h            // tunnid
+			asukoht2=jupike1.indexOf(lipuke[1]);     			//märgistan viimase koha enne h
+			jupike2=jupike1.substring(asukoht1, asukoht2); 		//võtan stringi kuni h
+			asukoht1=asukoht2;									//panen lipukesed paika
+			asukoht2=jupike1.length();							//mõõdan stringi pikkuse
+			jupike2=jupike1.substring((asukoht1+1),asukoht2);	//võtan stringi tagumise osa, jättes h välja(algus+1)
+			jupike1=jupike2;									//annan mõlemale sama stringi väärtuse
+			GLOBAL.P2evTundMinutSekund[1]=jupike2;									
+			asukoht1=0;											//nullin viimase lipukese
+
+		}
+		
+		if(jupike1.indexOf(lipuke[3]) != -1){        			//leidus m             // minutid
+			asukoht2=jupike1.indexOf(lipuke[1]);     			//märgistan viimase koha enne m
+			jupike2=jupike1.substring(asukoht1, asukoht2); 		//võtan stringi kuni m
+			asukoht1=asukoht2;									//panen lipukesed paika
+			asukoht2=jupike1.length();							//mõõdan stringi pikkuse
+			jupike2=jupike1.substring((asukoht1+1),asukoht2);	//võtan stringi tagumise osa, jättes m välja(algus+1)
+			jupike1=jupike2;									//annan mõlemale sama stringi väärtuse
+			GLOBAL.P2evTundMinutSekund[2]=jupike2;									
+			asukoht1=0;											//nullin viimase lipukese
+
+		}
+		
+		if(jupike1.indexOf(lipuke[4]) != -1){        			//leidus s             // sekundid
+			asukoht2=jupike1.indexOf(lipuke[1]);     			//märgistan viimase koha enne s
+			jupike2=jupike1.substring(asukoht1, asukoht2); 		//võtan stringi kuni s
+			asukoht1=asukoht2;									//panen lipukesed paika
+			asukoht2=jupike1.length();							//mõõdan stringi pikkuse
+			jupike2=jupike1.substring((asukoht1+1),asukoht2);	//võtan stringi tagumise osa, jättes s välja(algus+1)
+			jupike1=jupike2;									//annan mõlemale sama stringi väärtuse
+			GLOBAL.P2evTundMinutSekund[3]=jupike2;									
+			asukoht1=0;											//nullin viimase lipukese
+
+		}
+		
+		
+		
+		
+		double 
+		millisekundid=((Double.parseDouble(GLOBAL.P2evTundMinutSekund[0]))*86400000);
+		millisekundid=millisekundid+((Double.parseDouble(GLOBAL.P2evTundMinutSekund[1])*3600000));
+		millisekundid=millisekundid+((Double.parseDouble(GLOBAL.P2evTundMinutSekund[2])*60000));
+		millisekundid=millisekundid+((Double.parseDouble(GLOBAL.P2evTundMinutSekund[3])*1000));
+		
+		
+		ArvutaPerHUuesti(millisekundid);
+		
+		
+		
+	}
+	
+	
+	public void ArvutaPerHUuesti(double uusaeg){ // seda funktsiooni pole integreeritud .... see peaks saama väärtuse programmi aknas muudatusest
+		
+		
+		GLOBAL.objektadenaperh=GLOBAL.objektadenaprofit/((uusaeg/3600000));						
+		GLOBAL.objektancientadenaperh=GLOBAL.objektancientadenaprofit/((uusaeg/3600000));
+		
+		
+	}
+	
+	
+	
+	
+	
+	
+	
 	public static void time()
 	{
 
@@ -180,58 +336,9 @@ GLOBAL.tulemus=Double.parseDouble(kakskomakohta.format((GLOBAL.tulemus)));
 
 	
 	
-	public void FailisisuObjektidesse(){
-		
-	GLOBAL.failiridadelist.add("{Bem#Execution Grounds#1000#555#0d 1h 6m 50s#100#222#111}");
-	int ridadearv=	GLOBAL.failiridadelist.size();
-	int i=0;
-	String yksrida=GLOBAL.failiridadelist.get(ridadearv);
-	String lipuke1="";
-	String lipuke2="";
-		
-	String lipuke[]={"{"," ","#","d","h","m","s","}"};
+	
 	
 
-//	{Bem#Execution Grounds#1000#555#0d 1h 6m 50s#100#222#111}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	GLOBAL.rida=
-	
-	
-	
-		
-	}
-	
-	public double aegstringistsekunditeks(String a){
-		
-		siin tagastab stringist (0d 1h 6m 50s) sekundiväärtuse
-		
-		return 0;
-		
-	}
 	
 	
 	

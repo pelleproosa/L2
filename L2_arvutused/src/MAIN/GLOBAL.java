@@ -1,9 +1,13 @@
 package MAIN;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
-import objektid.failiread;
+import objektid.rida;
+
+
 
 
 public class GLOBAL {
@@ -70,7 +74,7 @@ public class GLOBAL {
 	public static String SaveFileName="L2Calc.ini";
 	public static String ObjectSaveFileName="ObjectsSave.obj";
 	public static String DesktopLocation=(System.getProperty("user.home")+"\\Desktop\\");
-	public static String ProgramRunLocation=(System.getProperty("user.dir")+"\\"+"L2Calc.ini");
+	public static String ProgramRunLocation=(System.getProperty("user.dir")+"\\");
 	
 	public static int INI_lines=16;
 	public static int yourInputFieldArv=58;
@@ -200,16 +204,24 @@ public class GLOBAL {
 	public static double kogutulu=0;
 	
 	//////// objekt
-	public static int GlobalReaNumber=0;
+	
+	
+	public static rida objektrida;
+	public static List <rida> objektilistrida;
+	
+
 
 
 	
 	public static int objektreanumber=0;
 	public static String objektcharname="";
 	public static String objektlocname="";
-	public static double objektadena=0;
-	public static double objektancientadena=0;
+	public static int objektadenaprofit=0;
+	public static int objektancientadenaprofit=0;
+	static SimpleDateFormat sdf = new SimpleDateFormat("dd/M/yyyy");             ///date to string
+	public static String objektdate = sdf.format(new Date()); 
 	public static String objekttime="";
+	public static String[] P2evTundMinutSekund=new String [3];
 	public static double objektspenttimeinseconds=0;
 	public static double objektadenaperh=0;
 	public static double objektancientadenaperh=0;
