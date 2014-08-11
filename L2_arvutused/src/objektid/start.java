@@ -23,10 +23,13 @@ public class start {
 		MAIN.GLOBAL.objektrida.setLocationname(MAIN.GLOBAL.objektlocname);
 		MAIN.GLOBAL.objektrida.setAdenaprofit(MAIN.GLOBAL.objektadenaprofit);
 		MAIN.GLOBAL.objektrida.setAncientadenaprofit(MAIN.GLOBAL.objektancientadenaprofit);
-		MAIN.GLOBAL.objektrida.setSpenttimemilliseconds(MAIN.GLOBAL.objektspenttimeinseconds);
+		MAIN.GLOBAL.objektrida.setAdenaprofitperH(MAIN.GLOBAL.objektadenaperh);
+		MAIN.GLOBAL.objektrida.setAncientAdenaprofitperH(MAIN.GLOBAL.objektancientadenaperh);
 		MAIN.GLOBAL.objektrida.setDate(MAIN.GLOBAL.objektdate);
+		MAIN.GLOBAL.objektrida.setKuvatavAeg(MAIN.GLOBAL.objektKuvatavAeg);
 
 		MAIN.GLOBAL.objektilistrida.add(MAIN.GLOBAL.objektrida);
+		
 		
 
 		

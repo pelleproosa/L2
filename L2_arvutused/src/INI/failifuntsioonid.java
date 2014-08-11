@@ -4,6 +4,30 @@ package INI;
 
 
 /*
+ * SISUKORD
+ * 
+ * 1)Fail_Kirjuta(String Faili_Nimi, String[] Sisu, String Kirjutamise_Moodus, int sisu_suurus)
+ * 	Ilmselt INI fail. Kirjutab sinna "Append" Stringi jada. Kui pole, siis loob selle.
+ * 
+ * 2)String[] LoeFaili_Aadress_Algus_L6pp(String Read_File_Name)
+ * 	Loeb etteantud faili ja väljastab selle sisu tagasi String jadana
+ * 
+ * 3)kustutafail()
+ * 	Kustutab faili MAIN.GLOBAL.SaveFileName
+ * 
+ * 4)scoreadd(String Score)
+ * 	Kirjutab sisseantud stringi faili Score.txt
+ * 
+ * 5)kustutaini()
+ * 	Kustutab faili: L2Calc.ini
+ * 
+ * 6)LoeFaili_ScoreTXT()
+ * 	Loeb faili Score.txt ja omistab selle sisu Listile: MAIN.GLOBAL.objektilistrida
+ * 
+ * 7)kirjuta_ScoreTXT()
+ * 	Kirjutab Listi: MAIN.GLOBAL.objektilistrida faili: Score.txt
+ * 
+ * 
  *                        Sisendiks anda  :  (String file name, String sisu, String t2psustus(append/rewrite))
  *                        Output gives: Boolean false=error, true=done;
  * 
@@ -25,7 +49,9 @@ import java.util.ArrayList;
 import java.util.Date;
 
 
+import java.util.Iterator;
 import java.util.List;
+
 
 
 
@@ -98,7 +124,7 @@ while (i<sisu_suurus){
 		return line;
 
 	}
-	public static void kustutafail()
+	public static void kustutafail()  
 	{
 		try{
 			 
@@ -116,11 +142,8 @@ while (i<sisu_suurus){
  
     	}
 	}
-public static void peitu()
-{
-	
-}
-public static void scoreadd(String Score) throws IOException
+
+public static void scoreadd(String Score) throws IOException    
 {
 	boolean olemas=false;
 	File f=new File(System.getProperty("user.dir")+"\\"+"Score.txt");
@@ -154,7 +177,7 @@ output.write(Score);
 
 
 
-public static void kustutaini() throws IOException
+public static void kustutaini() throws IOException	
 {
 	boolean olemas=false;
 	File ini=new File(System.getProperty("user.dir")+"\\"+"L2Calc.ini");
@@ -200,12 +223,17 @@ public static void kustutaini() throws IOException
 		System.out.println("float        :"+objectInputStream.readFloat());
 		 
 		// get the course object
+		MAIN.GLOBAL.objektilistrida= (List) objectInputStream.readObject();
+		
+/*
 		ReaList ridadelist = (ReaList) objectInputStream.readObject();
-		System.out.println("kursus     :"+ridadelist.getName());
-		rida rida1Read = ridadelist.getridadelist().get(0);
+		MAIN.GLOBAL.objektilistrida=ridadelist;
+*/		
+		
+		rida rida1Read = MAIN.GLOBAL.objektilistrida.get(0);
 		System.out.println("Chari nimi : "+rida1Read.getCharname());
 		System.out.println("Asukoht    : "+rida1Read.getLocationname());
-		rida rida2Read = ridadelist.getridadelist().get(1);
+		rida rida2Read = MAIN.GLOBAL.objektilistrida.get(1);
 		System.out.println("Chari nimi : "+rida2Read.getCharname());
 		System.out.println("Asukoht    : "+rida2Read.getLocationname());
 		objectInputStream.close();
@@ -238,19 +266,10 @@ objectOutputStream.close();
 
 }
  
-public void KirjutaReadTabelisse(){
-	
-	
-	
-	System.out.println("siin kirjutatakse viie rea väärtused viiele global reale...failifuntsioonid.kirjutareadtabelisse");
-	
-	
-	
-	
-}
-
 
 
 
 }
+
+
 

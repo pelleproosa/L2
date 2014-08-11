@@ -4,9 +4,46 @@ import java.sql.Date;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.text.SimpleDateFormat;
+import java.util.Iterator;
 import java.util.Locale;
 
+import objektid.rida;
 
+/*
+ * SISUKORD
+ * 
+ * 1)String tulemstringist(String text1)
+ * 	Eemaldab sisseantud stringist märgid {" ","="}
+ * 
+ * 2)TulbadReadstringideks()
+ * 	Teeb Globalis olevast arrayst stringide jada tulpade ning ridade näol, mida kasutab graafiline osa kuvatavate asjade positsioneerimisel
+ * 
+ * 3)kulunudmillisekundidstringiks(double KuvatavAeg)  POLE RAKENDATUD
+ * 	Sisseantud millisekunditest lahutab laiali ja edastab arraysse GLOBAL.P2evTundMinutSekund[0]=päevad, ..1=tunnid, ..2=minutid, 3=sekundid ;
+ * 
+ * 4)muudetudAjastringmillisekunditeks(String muudetudAjastring) POLE RAKENDATUD
+ * 	Sisseantud stringi liidab kokku millisekundite summaks ja annab edasi funktsioonile: ArvutaPerHUuesti(double uusaeg)
+ *  
+ * 5)ArvutaPerHUuesti(double uusaeg) 
+ *  Sisseantud millisekundid teisendab tundideks ning arvutab adena ja ancient adena tunnikasumid uuesti GLOBAL.objektadenaperh ja GLOBAL.objektancientadenaperh
+ *  
+ * 6)time()
+ * 	Sisseantud millisekunditest GLOBAL.h24=päevad GLOBAL.tunnid=tunnid GLOBAL.minutid=minutid GLOBAL.sekundid=sekundid ja String
+ * 	GLOBAL.ajavahemikpp=((int)(GLOBAL.h24)+"d "+(int)GLOBAL.tunnid+"h "+(int)GLOBAL.minutid+"m "+(int)GLOBAL.sekundid+"s");
+ * 
+ * 7)profitcalc()
+ * 	Arvutab olemasolevate GLOBAL väärtuste põhjal ja omistab uue väärtuse: GLOBAL.tulemus
+ * 
+ * 8)KustutaRidaListist(int jrkNr) POLE RAKENDATUD
+ * 	Vastavalt sisseantud numbrile kustutab jadast GLOBAL.objektilistrida ühe objekti ...peaks...
+ * 
+ * 9)YleKirjutaRidaListi(rida salvestatav, int jrkNr) POLE RAKENDATUD
+ * 	Etteantud objekt kirjutatakse Listis soovitavale kohale olemasoleva asemele ...vist...
+ * 
+ * 10)LisaRidaListi(rida salvestatav) POLE RAKENDATUD
+ * 	Etteantud objekt lisatakse Listi lõppu
+ *  
+ */
 
 public class Funktsioonid {
 
@@ -19,9 +56,6 @@ public class Funktsioonid {
 		String b="";
 		int asukoht1=0;
 		int asukoht2=0;
-		int tulpRidaLugeja=0;
-		int tulem=0;
-		boolean loetud=false;
 		a=text1;
 		asukoht1=0;
 		b=a;
@@ -86,7 +120,7 @@ public class Funktsioonid {
 		GLOBAL.readFunktsioonist=read;
 	}
 	
-	public void kulunudmillisekundidstringiks(double KuvatavAeg) {              seda funktsiooni pole süsteemi integreeritud //GLOBAL.P2evTundMinutSekund[3]
+	public void kulunudmillisekundidstringiks(double KuvatavAeg) {             //GLOBAL.P2evTundMinutSekund[3]
 		double p2evad;
 		double tunnid;
 		double minutid;
@@ -125,13 +159,21 @@ public class Funktsioonid {
 	        			//(GLOBAL.sekundid-(GLOBAL.minutid*60));			   // võtan sekunditest minutid maha
 	        }
 	        System.out.print("Funktsioonid-kulunudmillisekundidstringiks return väärtus:");
-		System.out.println(/*""+p2evad+"Days "+*/tunnid+"h "+minutid+"min "+sekundid+"sec");
+		System.out.println(/*""+p2evad+"Days "+*/tunnid+"h "+minutid+"m "+sekundid+"s");
 		GLOBAL.P2evTundMinutSekund[0]=""+p2evad;
 		GLOBAL.P2evTundMinutSekund[1]=""+tunnid;
 		GLOBAL.P2evTundMinutSekund[2]=""+minutid;
 		GLOBAL.P2evTundMinutSekund[3]=""+sekundid;
 		
 	}
+	
+	
+	
+	
+	
+	
+	
+	
 	public void muudetudAjastringmillisekunditeks(String muudetudAjastring)   // eeldusel, et string on 0d 0h 0m 0s
 	{
 		String[] lipuke=new String[4];
@@ -227,7 +269,7 @@ public class Funktsioonid {
 	}
 	
 	
-	public void ArvutaPerHUuesti(double uusaeg){ // seda funktsiooni pole integreeritud .... see peaks saama väärtuse programmi aknas muudatusest
+	public void ArvutaPerHUuesti(double uusaeg){ 
 		
 		
 		GLOBAL.objektadenaperh=GLOBAL.objektadenaprofit/((uusaeg/3600000));						
@@ -242,7 +284,7 @@ public class Funktsioonid {
 	
 	
 	
-	public static void time()
+	public static void time()    
 	{
 
 		if (!GLOBAL.timerunning){
@@ -334,11 +376,62 @@ GLOBAL.tulemus=Double.parseDouble(kakskomakohta.format((GLOBAL.tulemus)));
 	}
 	
 
-	
-	
-	
-	
+	public void KustutaRidaListist(int jrkNr){ 
+		
 
+		Iterator<rida> i = GLOBAL.objektilistrida.iterator();
+		int lugeja=0;
+		while (i.hasNext()) {
+		   Object o = i.next();
+		   
+		   if (lugeja==jrkNr){
+		  
+		   //some condition
+		    i.remove();
+		    System.out.println("failifunktsioonid.kustutaridalistist Kustutati rida, millel charname: "+(GLOBAL.objektilistrida.get(jrkNr)).getCharname());
+		    break;
+		   }
+		    lugeja++;
+		    
+		    
+		}
+	
+	
+	}
+	public void YleKirjutaRidaListi(rida salvestatav, int jrkNr){                // rida salvestatakse Listi ülekirjutamise vormis 
+		
+		
+//		MAIN.GLOBAL.objektilistrida.set(jrkNr, salvestatav);   ///ei tea, kas toimib
+		
+//		MAIN.GLOBAL.objektilistrida.get(jrkNr).equals(salvestatav);  /// ei tea, kas toimib
+		
+		GLOBAL.objektilistrida.get(jrkNr).setCharname(salvestatav.getCharname());
+		GLOBAL.objektilistrida.get(jrkNr).setLocationname(salvestatav.getLocationname());
+		GLOBAL.objektilistrida.get(jrkNr).setAdenaprofit(salvestatav.getAdenaprofit());
+		GLOBAL.objektilistrida.get(jrkNr).setAncientadenaprofit(salvestatav.getAncientadenaprofit());
+		GLOBAL.objektilistrida.get(jrkNr).setAdenaprofitperH(salvestatav.getAncientAdenaprofitperH());
+		GLOBAL.objektilistrida.get(jrkNr).setAncientAdenaprofitperH(salvestatav.getAncientAdenaprofitperH());
+		GLOBAL.objektilistrida.get(jrkNr).setDate(salvestatav.getDate());
+		GLOBAL.objektilistrida.get(jrkNr).setKuvatavAeg(salvestatav.getKuvatavAeg());
+		
+		
+		
+		
+		
+		
+		
+		System.out.println("siin kirjutatakse muudetud rea väärtus global reale...failifuntsioonid.kirjutaridatabelisse");
+		
+		
+		
+		
+	}
+
+	public void LisaRidaListi(rida salvestatav){
+
+		// MAIN.GLOBAL.objektilistrida.add(3,salvestatav);    // See võibolla lisab ka keskele uue kolmanda... huvitav
+		GLOBAL.objektilistrida.add(salvestatav);
+	}
 	
 	
 	

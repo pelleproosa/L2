@@ -220,7 +220,7 @@ public class GLOBAL {
 	public static int objektancientadenaprofit=0;
 	static SimpleDateFormat sdf = new SimpleDateFormat("dd/M/yyyy");             ///date to string
 	public static String objektdate = sdf.format(new Date()); 
-	public static String objekttime="";
+	public static String objektKuvatavAeg="";
 	public static String[] P2evTundMinutSekund=new String [3];
 	public static double objektspenttimeinseconds=0;
 	public static double objektadenaperh=0;

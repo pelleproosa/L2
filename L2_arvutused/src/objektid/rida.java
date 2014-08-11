@@ -79,18 +79,18 @@ public class rida implements Serializable {
 		return date;
 	}
 
-	public void setDate(Date date) {
-		SimpleDateFormat kuup2ev = new SimpleDateFormat("dd/M/yyyy");             ///date to string
+	public void setDate(String date) {
+		//SimpleDateFormat kuup2ev = new SimpleDateFormat("dd/M/yyyy");             ///date to string
 		 
-		this.date = kuup2ev.format(date); 
+		this.date = (date); 
 	}
 	
 	public double getAdenaprofitperH() {
 		return AdenaprofitperH;
 	}
 
-	public void setAdenaprofitperH(double AncientAdenaprofitperH) {
-		this.AncientAdenaprofitperH = AncientAdenaprofitperH;
+	public void setAdenaprofitperH(double AdenaprofitperH) {
+		this.AdenaprofitperH = AdenaprofitperH;
 	}
 	
 	public double getAncientAdenaprofitperH() {
