@@ -3,6 +3,8 @@
  */
 package MAIN;
 
+
+
 import Graafiline_osa.tabel;
 import INI.INI_GLOBAL;
 
@@ -16,8 +18,36 @@ public class MAIN {
 	 * @param args
 	 * @throws Exception 
 	 */
-	public static void main(String[] args) throws Exception {
+	static void LooCD(CDList a,String aa, String b, String c, String d){
+		
+		a.setartistName("MIKI");
+		a.setalbumTitle("Glaabu, Nipi ja Tige Kala");
+		a.setlabel("Peatükk 3");
+		a.setyearOfRelease("1970");
+		a.printout();
 
+		GLOBAL.jada.add(a);
+
+		
+		
+	}
+	public static void main(String[] args) {
+		
+		
+		
+		GLOBAL.cd=new CDList("","","","");
+		
+		LooCD(GLOBAL.cd,"","","","");	
+		
+		CDList b=GLOBAL.jada.get(0);
+		b.setyearOfRelease("1500");
+		String nimi=b.getalbumTitle();
+		b.printout();
+		System.out.println();
+		System.out.println("Albumi Nimi Get abil: "+nimi);
+
+		System.exit(0);
+		
 		
 		GLOBAL.SaveFileName=System.getProperty("user.dir")+"\\"+"L2Calc.ini";
 		
@@ -38,7 +68,13 @@ public class MAIN {
 		
 		
 		
-		INI_GLOBAL.start(args); 
+		try {
+			INI_GLOBAL.start(args);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+		objektid.start.start(null);
 	tabel.start(args);
 
 	}

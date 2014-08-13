@@ -28,8 +28,8 @@ public class start {
 		MAIN.GLOBAL.objektrida.setDate(MAIN.GLOBAL.objektdate);
 		MAIN.GLOBAL.objektrida.setKuvatavAeg(MAIN.GLOBAL.objektKuvatavAeg);
 
-		MAIN.GLOBAL.objektilistrida.add(MAIN.GLOBAL.objektrida);
-		
+		//MAIN.GLOBAL.objektilistrida.add(MAIN.GLOBAL.objektrida);
+		System.out.println("objektid.start      objekti lisamine jadasse tegemata");
 		
 
 		
@@ -44,7 +44,7 @@ public class start {
 		
 		
 		
-		KasutajaAsendaja.omistaobjektid(null); /// kustutada, kui programm töötab
+		KasutajaAsendaja.omistaobjektid(); /// kustutada, kui programm töötab
 		
 		
 

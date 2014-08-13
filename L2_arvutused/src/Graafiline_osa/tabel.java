@@ -27,8 +27,6 @@ import javax.swing.SwingConstants;
 
 
 import javax.swing.border.Border;
-import javax.swing.text.Caret;
-
 import MAIN.Funktsioonid;
 import MAIN.GLOBAL;
 import layout.TableLayout;
@@ -231,28 +229,95 @@ public class tabel {
         MinuOutput[8].setForeground(Color.GREEN);
         MinuOutput[8].setCaretColor(Color.GREEN);
         MinuOutput[8].setBackground(Color.darkGray);
+        MinuOutput[9].setVisible(false);
         MinuOutput[18].setForeground(Color.BLUE);
         MinuOutput[19].setForeground(Color.BLUE);
         MinuOutput[20].setForeground(Color.BLUE);
         MinuOutput[21].setForeground(Color.BLUE);
         Border punaneraam = BorderFactory.createLineBorder(Color.RED, 1);
 
-        MinuOutput[18].setBorder(punaneraam);
-        MinuOutput[19].setBorder(punaneraam);
-        MinuOutput[20].setBorder(punaneraam);
-        MinuOutput[21].setBorder(punaneraam);
-        yourInputField[47].setBorder(punaneraam);
-        yourInputField[47].setEditable(false);
-        yourInputField[47].setBackground(Color.WHITE);
-        yourInputField[48].setBorder(punaneraam);
-        yourInputField[49].setBorder(punaneraam);
-        yourInputField[50].setBorder(punaneraam);
-        MinuOutput[18].setBackground(Color.WHITE);
-        MinuOutput[19].setBackground(Color.WHITE);
-        MinuOutput[20].setBackground(Color.WHITE);
-        MinuOutput[21].setBackground(Color.WHITE);
+        MinuOutput[26].setBorder(punaneraam);
+        MinuOutput[26].setBackground(Color.WHITE);
+        MinuOutput[27].setBorder(punaneraam);
+        MinuOutput[27].setBackground(Color.WHITE);
+        MinuOutput[28].setBorder(punaneraam);
+        MinuOutput[28].setBackground(Color.WHITE);
+        MinuOutput[29].setBorder(punaneraam);
+        MinuOutput[29].setBackground(Color.WHITE);
+        yourInputField[55].setBorder(punaneraam);
+        yourInputField[55].setBackground(Color.WHITE);
+        yourInputField[55].setEditable(false);
+        yourInputField[56].setBorder(punaneraam);
+        yourInputField[57].setBorder(punaneraam);
+        yourInputField[58].setBorder(punaneraam);
        
-        		
+// Võtan failist loetud Listist viimased viis liiget(rida ehk objekti) ja kirjutan need välja
+        try{
+        	int ii=MAIN.GLOBAL.objektilistrida.size();
+        if(ii>0){
+        	System.out.println(ii);
+        	
+        	MinuOutput[26].setText(MAIN.GLOBAL.objektilistrida.get(ii).getCharname());
+        	MinuOutput[27].setText(MAIN.GLOBAL.objektilistrida.get(ii).getLocationname());
+        	MinuOutput[28].setText(""+(MAIN.GLOBAL.objektilistrida.get(ii).getAdenaprofit()));
+            MinuOutput[29].setText(""+(MAIN.GLOBAL.objektilistrida.get(ii).getAncientadenaprofit()));
+        	yourInputField[55].setText(MAIN.GLOBAL.objektilistrida.get(ii).getKuvatavAeg());
+        	yourInputField[56].setText(""+MAIN.GLOBAL.objektilistrida.get(ii).getAdenaprofitperH());
+        	yourInputField[57].setText(""+MAIN.GLOBAL.objektilistrida.get(ii).getAncientAdenaprofitperH());
+        	yourInputField[58].setText(""+ii);
+        	ii--;
+        	if(ii>0){
+        	MinuOutput[22].setText(MAIN.GLOBAL.objektilistrida.get(ii).getCharname());
+        	MinuOutput[23].setText(MAIN.GLOBAL.objektilistrida.get(ii).getLocationname());
+        	MinuOutput[24].setText(""+(MAIN.GLOBAL.objektilistrida.get(ii).getAdenaprofit()));
+            MinuOutput[25].setText(""+(MAIN.GLOBAL.objektilistrida.get(ii).getAncientadenaprofit()));
+        	yourInputField[51].setText(MAIN.GLOBAL.objektilistrida.get(ii).getKuvatavAeg());
+        	yourInputField[52].setText(""+MAIN.GLOBAL.objektilistrida.get(ii).getAdenaprofitperH());
+        	yourInputField[53].setText(""+MAIN.GLOBAL.objektilistrida.get(ii).getAncientAdenaprofitperH());
+        	yourInputField[54].setText(""+ii);
+        	}
+        	ii--;
+        	if(ii>0){
+        	MinuOutput[18].setText(MAIN.GLOBAL.objektilistrida.get(ii).getCharname());
+        	MinuOutput[19].setText(MAIN.GLOBAL.objektilistrida.get(ii).getLocationname());
+        	MinuOutput[20].setText(""+(MAIN.GLOBAL.objektilistrida.get(ii).getAdenaprofit()));
+            MinuOutput[21].setText(""+(MAIN.GLOBAL.objektilistrida.get(ii).getAncientadenaprofit()));
+        	yourInputField[47].setText(MAIN.GLOBAL.objektilistrida.get(ii).getKuvatavAeg());
+        	yourInputField[48].setText(""+MAIN.GLOBAL.objektilistrida.get(ii).getAdenaprofitperH());
+        	yourInputField[49].setText(""+MAIN.GLOBAL.objektilistrida.get(ii).getAncientAdenaprofitperH());
+        	yourInputField[50].setText(""+ii);
+        	}
+        	ii--;
+        	if(ii>0){
+        	
+        	
+        	MinuOutput[14].setText(MAIN.GLOBAL.objektilistrida.get(ii).getCharname());
+        	MinuOutput[15].setText(MAIN.GLOBAL.objektilistrida.get(ii).getLocationname());
+        	MinuOutput[16].setText(""+(MAIN.GLOBAL.objektilistrida.get(ii).getAdenaprofit()));
+            MinuOutput[17].setText(""+(MAIN.GLOBAL.objektilistrida.get(ii).getAncientadenaprofit()));
+        	yourInputField[43].setText(MAIN.GLOBAL.objektilistrida.get(ii).getKuvatavAeg());
+        	yourInputField[44].setText(""+MAIN.GLOBAL.objektilistrida.get(ii).getAdenaprofitperH());
+        	yourInputField[45].setText(""+MAIN.GLOBAL.objektilistrida.get(ii).getAncientAdenaprofitperH());
+        	yourInputField[46].setText(""+ii);
+        	}
+        	ii--;
+        	if(ii>0){
+        	MinuOutput[10].setText(MAIN.GLOBAL.objektilistrida.get(ii).getCharname());
+        	MinuOutput[11].setText(MAIN.GLOBAL.objektilistrida.get(ii).getLocationname());
+        	MinuOutput[12].setText(""+(MAIN.GLOBAL.objektilistrida.get(ii).getAdenaprofit()));
+            MinuOutput[13].setText(""+(MAIN.GLOBAL.objektilistrida.get(ii).getAncientadenaprofit()));
+        	yourInputField[30].setText(MAIN.GLOBAL.objektilistrida.get(ii).getKuvatavAeg());
+        	yourInputField[31].setText(""+MAIN.GLOBAL.objektilistrida.get(ii).getAdenaprofitperH());
+        	yourInputField[32].setText(""+MAIN.GLOBAL.objektilistrida.get(ii).getAncientAdenaprofitperH());
+        	yourInputField[33].setText(""+ii);
+        	}
+        }
+        }catch(Exception e){
+        	System.out.println("ERROR!    Vist ei ole Listist midagi võtta  (tabel)");
+        }
+        
+        
+        
 
 
         frame.add(button[0], MAIN.GLOBAL.btnlocation_1);
@@ -273,34 +338,7 @@ public class tabel {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////  ALGAVAD NUPPUDE INITSIALISEERIMISED JNE                 //////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-   //     button[8].setVisible(false);
-    //    button[10].setVisible(false);
-        /*        button[0].addActionListener(
-        	    new ActionListener() {
-        	    	
-        	        public void actionPerformed(ActionEvent e) {
-        	        	failifuntsioonid.kustutafail();
-        	        	try {
-							INI_GLOBAL.start(args);
-						} catch (Exception e1) {
-							// TODO Auto-generated catch block
-							
-						}
-        	        	
-        	        	
-        	            String str=yourInputField[1].getText();
-        	            MinuOutput[7].setText(str);
-        	        
-        	        }
-        	        
-        	        
-        	        
-        	        
-        	    }	
-        		
-        		
-        		);
- */       
+     
         button[2].addActionListener(             // BSSD  -MATS
         	    new ActionListener() {
         	    	
@@ -577,7 +615,7 @@ int i=0;
         	        	
         	        	
         	        Funktsioonid.time();
-        	        MinuOutput[9].setText(MAIN.GLOBAL.ajavahemikpp);
+        	        //MinuOutput[9].setText(MAIN.GLOBAL.ajavahemikpp);
         	        if(MAIN.GLOBAL.timerunning==true)
         	        	{
         	        	yourInputField[7].setBackground(Color.ORANGE);
@@ -700,11 +738,19 @@ int i=0;
         	        	try {
 							INI.failifuntsioonid.scoreadd(s);
 		        	        labelid[25].setText("Saved to 'Score.txt'");
-		        	     //   yourInputField[30].setVisible(false);
-		        	     //   yourInputField[31].setVisible(false);
-		        	     //   yourInputField[32].setVisible(false);
-		        	     //   yourInputField[33].setVisible(false);
-		        	     //   button[8].setVisible(false);
+		        	        
+		        	        
+		        	       /* 
+		        	        MinuOutput[26].setText(MAIN.GLOBAL.objektilistrida.get(i).getCharname());
+		                	MinuOutput[27].setText(MAIN.GLOBAL.objektilistrida.get(i).getLocationname());
+		                	MinuOutput[28].setText(""+(MAIN.GLOBAL.objektilistrida.get(i).getAdenaprofit()));
+		                    MinuOutput[29].setText(""+(MAIN.GLOBAL.objektilistrida.get(i).getAncientadenaprofit()));
+		                	yourInputField[55].setText(MAIN.GLOBAL.objektilistrida.get(i).getKuvatavAeg());
+		                	yourInputField[56].setText(""+MAIN.GLOBAL.objektilistrida.get(i).getAdenaprofitperH());
+		                	yourInputField[57].setText(""+MAIN.GLOBAL.objektilistrida.get(i).getAncientAdenaprofitperH());
+		        	        
+		        	        */
+		        	        
 						} catch (IOException e1) {
 							// TODO Auto-generated catch block
 							e1.printStackTrace();

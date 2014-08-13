@@ -1,25 +1,22 @@
 package objektid;
 
-import java.io.Serializable;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 
 
 /*
- * 			Sisse:  setKuvatavAeg(String aeg); 
+ * 			Sisse:   
  * 					setDate(Date date);
  * 					setCharname(String charname);
  * 					setLocationname(String locationname);
  * 					setAdenaprofitperH((double AdenaprofitperH));					
         			setAncientAdenaprofitperH((double AncientAdenaprofitperH));	
- * 					
+ * 					setKuvatavAeg(String aeg);
  */
 
 
 
-@SuppressWarnings("serial")
-public class rida implements Serializable {
+
+public class rida {
+	
     private String charname;
     private String locationname;
     private int adenaprofit;
@@ -46,31 +43,31 @@ public class rida implements Serializable {
         return charname;
     }
 
-    public void setCharname(String charname) {
-        this.charname = charname;
+    public void setCharname(String cname) {
+        charname = cname;
     }
     public String getLocationname() {
         return locationname;
     }
 
-    public void setLocationname(String locationname) {
-        this.locationname = locationname;
+    public void setLocationname(String locname) {
+        locationname = locname;
     }
 
     public int getAdenaprofit() {
         return adenaprofit;
     }
 
-    public void setAdenaprofit(int adenaprofit) {
-        this.adenaprofit = adenaprofit;
+    public void setAdenaprofit(int aprofit) {
+        adenaprofit = aprofit;
     }
     
     public int getAncientadenaprofit() {
         return ancientadenaprofit;
     }
 
-    public void setAncientadenaprofit(int ancientadenaprofit) {
-        this.ancientadenaprofit = ancientadenaprofit;
+    public void setAncientadenaprofit(int AAprofit) {
+        ancientadenaprofit = AAprofit;
     }
     
 
@@ -79,36 +76,49 @@ public class rida implements Serializable {
 		return date;
 	}
 
-	public void setDate(String date) {
+	public void setDate(String kuup) {
 		//SimpleDateFormat kuup2ev = new SimpleDateFormat("dd/M/yyyy");             ///date to string
 		 
-		this.date = (date); 
+		date = (kuup); 
 	}
 	
 	public double getAdenaprofitperH() {
 		return AdenaprofitperH;
 	}
 
-	public void setAdenaprofitperH(double AdenaprofitperH) {
-		this.AdenaprofitperH = AdenaprofitperH;
+	public void setAdenaprofitperH(double AperH) {
+		AdenaprofitperH = AperH;
 	}
 	
 	public double getAncientAdenaprofitperH() {
 		return AncientAdenaprofitperH;
 	}
 
-	public void setAncientAdenaprofitperH(double AncientAdenaprofitperH) {
-		this.AncientAdenaprofitperH = AncientAdenaprofitperH;
+	public void setAncientAdenaprofitperH(double AAperH) {
+		AncientAdenaprofitperH = AAperH;
 	}
 	
 	public String getKuvatavAeg() {
 		return KuvatavAeg;
 	}
 
-	public void setKuvatavAeg(String KuvatavAeg) {
+	public void setKuvatavAeg(String Aeg) {
 		
-		this.KuvatavAeg = KuvatavAeg;
+		KuvatavAeg = Aeg;
 		
+	}
+	
+	void printout(){
+		System.out.println();
+		System.out.println("Char name    : "+charname);
+		System.out.println("Location name: "+locationname);
+		System.out.println("a profit     : "+adenaprofit);
+		System.out.println("AA profit    : "+ancientadenaprofit);
+		System.out.println("Date         : "+date);
+		System.out.println("a perH       : "+AdenaprofitperH);
+		System.out.println("AA perH      : "+AncientAdenaprofitperH);
+		System.out.println("Time         : "+KuvatavAeg);
+
 	}
 	
 }
