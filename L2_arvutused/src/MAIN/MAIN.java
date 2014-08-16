@@ -18,12 +18,12 @@ public class MAIN {
 	 * @param args
 	 * @throws Exception 
 	 */
-	static void LooCD(CDList a,String aa, String b, String c, String d){
+	public static void LooCD(CDList a,String aa, String b, String c, String d){
 		
-		a.setartistName("MIKI");
-		a.setalbumTitle("Glaabu, Nipi ja Tige Kala");
-		a.setlabel("Peatükk 3");
-		a.setyearOfRelease("1970");
+		a.setartistName(aa);
+		a.setalbumTitle(b);
+		a.setlabel(c);
+		a.setyearOfRelease(d);
 		a.printout();
 
 		GLOBAL.jada.add(a);
@@ -37,14 +37,20 @@ public class MAIN {
 		
 		GLOBAL.cd=new CDList("","","","");
 		
-		LooCD(GLOBAL.cd,"","","","");	
-		
+		LooCD(GLOBAL.cd,"MIKI","Glaabu, Nipi ja Tige Kala","Peatükk 3","1970");	
+		objektid.KasutajaAsendaja.omistaobjektid();
 		CDList b=GLOBAL.jada.get(0);
+		CDList c=GLOBAL.jada.get(1);
 		b.setyearOfRelease("1500");
 		String nimi=b.getalbumTitle();
 		b.printout();
+		c.printout();
 		System.out.println();
-		System.out.println("Albumi Nimi Get abil: "+nimi);
+		System.out.println("Albumi Nimi Get abil          : "+nimi);
+		nimi=c.getalbumTitle();
+		System.out.println("Teise albumi nimi             : "+nimi);
+		GLOBAL.jada.get(1).setalbumTitle("Uus nimi");
+		System.out.println("Teise albumi nimi muudetuna   : "+GLOBAL.jada.get(1).getalbumTitle());
 
 		System.exit(0);
 		

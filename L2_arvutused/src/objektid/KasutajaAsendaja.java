@@ -1,18 +1,22 @@
 package objektid;
 
+import MAIN.CDList;
+import MAIN.GLOBAL;
+
 
 
 public class KasutajaAsendaja {
 
 
-	static void omistaobjektid() {
-		CDList[] cd=MAIN.GLOBAL.jada;
-		cd[0].setalbumTitle("Pealkiri");
-		cd[0].setartistName("Totu Cool");
-		cd[0].setlabel("Nimetu");
-		cd[0].setyearOfRelease("1977");
-		cd[0].printout();
-		System.exit(0);
+	public static void omistaobjektid() {
+		
+		
+		GLOBAL.cd=new CDList("","","","");
+		
+		MAIN.MAIN.LooCD(GLOBAL.cd,"JUKU","Dr Alban","Lugu 1","1977");
+		
+		
+/*		System.exit(0);
 		
 		//MAIN.GLOBAL.jada[0].setartistname("");
 		rida reake=MAIN.GLOBAL.objektrida;
@@ -34,7 +38,7 @@ public class KasutajaAsendaja {
 
 		MAIN.GLOBAL.objektilistrida.add(reake);
 		
-		
+		*/
 
 	}
 
