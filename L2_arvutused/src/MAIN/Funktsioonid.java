@@ -7,8 +7,6 @@ import java.text.SimpleDateFormat;
 import java.util.Iterator;
 import java.util.Locale;
 
-import objektid.rida;
-
 /*
  * SISUKORD
  * 
@@ -427,12 +425,31 @@ GLOBAL.tulemus=Double.parseDouble(kakskomakohta.format((GLOBAL.tulemus)));
 		
 	}
 
-	public void LisaRidaListi(rida salvestatav){
+	public static void LisaLoodavRidaListi(rida salvestatav,String charname, String locationname,int adenaprofit, int ancientadenaprofit, String date, double adenaprofitperh, double ancientadenaprofitperh, String kuvatavaeg){
 
+		salvestatav.setCharname(charname);
+		salvestatav.setLocationname(locationname);
+		salvestatav.setAdenaprofit(adenaprofit);
+		salvestatav.setAncientadenaprofit(ancientadenaprofit);
+		salvestatav.setDate(date);
+		salvestatav.setAdenaprofitperH(adenaprofitperh);
+		salvestatav.setAncientAdenaprofitperH(ancientadenaprofitperh);
+		salvestatav.setKuvatavAeg(kuvatavaeg);
+		
+		
+		
 		// MAIN.GLOBAL.objektilistrida.add(3,salvestatav);    // See võibolla lisab ka keskele uue kolmanda... huvitav
 		GLOBAL.objektilistrida.add(salvestatav);
 	}
-	
+	public static void LisaRidaListi(rida salvestatav){
+
+		
+		
+		
+		
+		// MAIN.GLOBAL.objektilistrida.add(3,salvestatav);    // See võibolla lisab ka keskele uue kolmanda... huvitav
+		GLOBAL.objektilistrida.add(salvestatav);
+	}
 	
 	
 }

@@ -1,7 +1,7 @@
 package objektid;
 
-import MAIN.CDList;
 import MAIN.GLOBAL;
+import MAIN.rida;
 
 
 
@@ -11,9 +11,15 @@ public class KasutajaAsendaja {
 	public static void omistaobjektid() {
 		
 		
-		GLOBAL.cd=new CDList("","","","");
+		GLOBAL.objektrida=new rida("Nophaie", "Talking Island", 0, 0, "", 0, 0, "");
+		GLOBAL.objektilistrida.add(GLOBAL.objektrida);
+		GLOBAL.objektrida=new rida("Monster", "Elven village", 0, 0, "", 0, 0, "");
+		GLOBAL.objektilistrida.add(GLOBAL.objektrida);
 		
-		MAIN.MAIN.LooCD(GLOBAL.cd,"JUKU","Dr Alban","Lugu 1","1977");
+		
+		
+		
+		
 		
 		
 /*		System.exit(0);

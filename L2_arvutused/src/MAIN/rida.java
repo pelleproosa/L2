@@ -1,4 +1,4 @@
-package objektid;
+package MAIN;
 
 
 
@@ -39,6 +39,23 @@ public class rida {
 	System.out.println(date); //Tue Aug 31 10:20:56 SGT 1982
 
 	*/
+	
+	public rida(String charname, String locationname,int adenaprofit, int ancientadenaprofit, String date, double adenaprofitperh, double ancientadenaprofitperh, String kuvatavaeg){
+		super();
+		this.charname=charname;
+		this.locationname=locationname;
+		this.adenaprofit=adenaprofit;
+		this.ancientadenaprofit=ancientadenaprofit;
+		this.date=date;
+		this.AdenaprofitperH=adenaprofitperh;
+		this.AncientAdenaprofitperH=ancientadenaprofitperh;
+		
+		
+		
+	}
+	
+	
+	
     public String getCharname() {
         return charname;
     }

@@ -5,8 +5,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import objektid.rida;
-
 
 
 
@@ -69,9 +67,7 @@ public class GLOBAL {
 	public static rida objektrida;
 	
 	public static List <rida> objektilistrida=new ArrayList<>();
-	//public static CDList[] jada=new CDList[10];
-	public static CDList cd;
-	public static List <CDList> jada=new ArrayList<>();
+
 	
 
 	public static int objektreanumber=0;
@@ -79,6 +75,8 @@ public class GLOBAL {
 	public static String objektlocname="";
 	public static int objektadenaprofit=0;
 	public static int objektancientadenaprofit=0;
+	public static int objektadenaprofitperh=0;
+	public static int objektancientadenaprofitperh=0;
 	static SimpleDateFormat sdf = new SimpleDateFormat("dd/M/yyyy");             ///date to string
 	public static String objektdate = sdf.format(new Date()); 
 	public static String objektKuvatavAeg="";

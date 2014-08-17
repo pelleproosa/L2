@@ -52,12 +52,7 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 
-
-
-
-
-import objektid.ReaList;
-import objektid.rida;
+import MAIN.rida;
 
 public class failifuntsioonid
 {
