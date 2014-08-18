@@ -1,5 +1,6 @@
 package MAIN;
 
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -8,7 +9,7 @@ import java.util.List;
 
 
 
-public class GLOBAL {
+public class GLOBAL implements Serializable{
 /*public static int[] minginrjada = new int[3];
 	public static String[] mingistringijada = new String[3];
 */	
@@ -74,6 +75,8 @@ public class GLOBAL {
 
 	public static int objektreanumber=0;
 	public static int objektridadearv=0;
+	public static int objektRidaFookuses=0;
+	
 	public static String objektcharname="";
 	public static String objektlocname="";
 	public static int objektadenaprofit=0;
@@ -129,14 +132,14 @@ public class GLOBAL {
 	public static int height=700;
 	//Columns and Rows in window drawing
     public static double size[][] = {
-    	{90, 90, 90, 90, 90, 200, 90, 90, 90, 90, 90, 20,90,90,90}, // Columns selle rea saab ees 0: String tulbad=""+GLOBAL.size[0][..];
+    	{90, 90, 90, 90, 90, 200, 90, 90, 90, 90, 90, 25,90,90,90}, // Columns selle rea saab ees 0: String tulbad=""+GLOBAL.size[0][..];
     	{30, 30, 30, 30, 30, 30, 30, 30, 30, 30,
     	 30, 30, 30, 30, 30, 30, 30, 30, 30, 30,
     	 30, 30, 30} // Rows     selle rea saab ees 1: String tulbad=""+GLOBAL.size[1][..];
     								};
     public static String tulbadFunktsioonist="";
     public static String readFunktsioonist="";
-    public static boolean displaylocations=true;
+    public static boolean displaylocations=false;
     public static String locationskirjefailis="Display locations=false";
     //Buttons
     public static String btn1="Mats->BSSD";
@@ -183,9 +186,9 @@ public class GLOBAL {
     									  	 "6, 10","8, 10","4, 10","5, 10","5, 9",	//30
     									  	 "0, 17","0, 18","0, 19","7,10"};
     public static String[] labeltext={"ei kasuta","Before Start","Inventory","After Stop","Adena/h","PROFIT ",
-    											  "Results","Buy","Adena INPUT","CALCULATOR","HP pot.1",						//10
+    											  "Results","Buy","Adena INPUT","CALCULATOR","HP pot.1",				//10
     											  "Adena","Soul.O","Spirit.O","Cry.D","HP pot.2",
-    											  "BSSD","SSD","Spiritshots","SoulShots","1 item Price",						//20
+    											  "BSSD","SSD","Spiritshots","SoulShots","1 item Price",				//20
     											  "AncientAdena/h","Alarcity pot","M. Haste","Haste","Nr",
     											  "Adena","Time","Char name", "Location","SCORE.TXT",					//30
     											  "Blue stone","Green stone","Red stone","Ancient Adena"};				

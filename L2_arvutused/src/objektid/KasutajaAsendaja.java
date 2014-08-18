@@ -11,9 +11,25 @@ public class KasutajaAsendaja {
 	public static void omistaobjektid() {
 		
 		
-		GLOBAL.objektrida=new rida("Nophaie", "Talking Island", 0, 0, "", 0, 0, "");
+		GLOBAL.objektrida=new rida("Nophaie", "Talking Island", 0, 0, "", 0, 0, 1);
 		GLOBAL.objektilistrida.add(GLOBAL.objektrida);
-		GLOBAL.objektrida=new rida("Monster", "Elven village", 0, 0, "", 0, 0, "");
+		GLOBAL.objektrida=new rida("Monster", "Elven village", 0, 0, "", 0, 0, 2);
+		GLOBAL.objektilistrida.add(GLOBAL.objektrida);
+		GLOBAL.objektrida=new rida("Pele", "Stuttgart", 0, 0, "", 0, 0, 3);
+		GLOBAL.objektilistrida.add(GLOBAL.objektrida);
+		GLOBAL.objektrida=new rida("Businessman", "Dark Elven village", 0, 0, "", 0, 0, 4);
+		GLOBAL.objektilistrida.add(GLOBAL.objektrida);
+		GLOBAL.objektrida=new rida("Bem", "Gludin", 0, 0, "", 0, 0, 5);
+		GLOBAL.objektilistrida.add(GLOBAL.objektrida);
+		GLOBAL.objektrida=new rida("Lifesong", "Gludio", 0, 0, "", 0, 0, 6);
+		GLOBAL.objektilistrida.add(GLOBAL.objektrida);
+		GLOBAL.objektrida=new rida("Hannibal", "Aden", 0, 0, "", 0, 0, 7);
+		GLOBAL.objektilistrida.add(GLOBAL.objektrida);
+		GLOBAL.objektrida=new rida("Terminator", "Oren", 0, 0, "", 0, 0, 8);
+		GLOBAL.objektilistrida.add(GLOBAL.objektrida);
+		GLOBAL.objektrida=new rida("Protector", "Forest Of the Dead", 0, 0, "", 0, 0, 9);
+		GLOBAL.objektilistrida.add(GLOBAL.objektrida);
+		GLOBAL.objektrida=new rida("Spoilmaster", "Blazing Swamp", 0, 0, "", 0, 0, 10);
 		GLOBAL.objektilistrida.add(GLOBAL.objektrida);
 		
 		

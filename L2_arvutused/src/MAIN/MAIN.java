@@ -23,26 +23,30 @@ public class MAIN {
 		
 		
 		
-		GLOBAL.objektrida=new rida("", "", 0, 0, "", 0, 0, "");
-		rida reake=new rida("Antonius", "Giran", 0, 0, "", 0, 0, "");
-		GLOBAL.realistike=new realistobjekt(GLOBAL.objektilistrida);
+		GLOBAL.objektrida=new rida("Puhas", "", 0, 0, "", 0, 0, 0);
+		rida reake=new rida("Antonius", "Giran", 0, 0, "", 0, 0, 0);
+		//GLOBAL.realistike=new realistobjekt(GLOBAL.objektilistrida);
 		
 			
-		Funktsioonid.LisaLoodavRidaListi( GLOBAL.objektrida,GLOBAL.objektcharname, GLOBAL.objektlocname, GLOBAL.objektadenaprofit, GLOBAL.objektancientadenaprofit, GLOBAL.objektdate, GLOBAL.objektadenaprofit, GLOBAL.objektancientadenaprofitperh, GLOBAL.objektKuvatavAeg);
+		Funktsioonid.LisaLoodavRidaListi( GLOBAL.objektrida,GLOBAL.objektcharname, GLOBAL.objektlocname, GLOBAL.objektadenaprofit, GLOBAL.objektancientadenaprofit, GLOBAL.objektdate, GLOBAL.objektadenaprofit, GLOBAL.objektancientadenaprofitperh, GLOBAL.objektRidaFookuses);
 		Funktsioonid.YleKirjutaRidaListi(reake, 0);
 		
 		
 		objektid.KasutajaAsendaja.omistaobjektid();
+		rida a=GLOBAL.objektilistrida.get(0);
 		rida b=GLOBAL.objektilistrida.get(1);
 		rida c=GLOBAL.objektilistrida.get(2);
 		b.setAdenaprofit(100);
-		String nimi=b.getCharname();
+		String nimi=a.getCharname();
+		a.printout();
 		b.printout();
 		c.printout();
 		System.out.println();
-		System.out.println("Albumi Nimi Get abil          : "+nimi);
+		System.out.println("a          : "+nimi);
+		nimi=b.getCharname();
+		System.out.println("b          : "+nimi);
 		nimi=c.getCharname();
-		System.out.println("Teise albumi nimi             : "+nimi);
+		System.out.println("c          : "+nimi);
 		//GLOBAL.objektilistrida.get(1).setCharname("Uus nimi");
 		//System.out.println("Teise albumi nimi muudetuna   : "+GLOBAL.objektilistrida.get(1).getCharname());
 		try {
@@ -74,7 +78,7 @@ public class MAIN {
 		
 		
 		GLOBAL.SaveFileName=System.getProperty("user.dir")+"\\"+"L2Calc.ini";
-		
+/*		
 	//	System.out.println(System.getProperty("user.dir")+"\\"+"L2Calc.ini");
 		// System.out.println(System.getProperty("user.home")+"\\Desktop\\");
 		System.out.println("Graafiline..'tabel' nupp 'calculate' peab liigutama AFTER väärtused BEFORE tulpa ja AFTER nullima(järgmiseks tsükliks)");
@@ -90,7 +94,7 @@ public class MAIN {
 		System.out.println("Luua funktsioon: stringist(0d 1h 6m 50s) sekundid");
 		System.out.println("funktsioon INI.failifuntsioonid.KirjutaReadTabelisse(failiread,failiread,feiliread,failiread,failiread); on sidumata");
 		
-		
+	*/	
 		
 		try {
 			INI_GLOBAL.start(args);

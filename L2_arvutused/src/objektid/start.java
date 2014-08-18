@@ -23,10 +23,10 @@ public class start {
 		MAIN.GLOBAL.objektrida.setLocationname(MAIN.GLOBAL.objektlocname);
 		MAIN.GLOBAL.objektrida.setAdenaprofit(MAIN.GLOBAL.objektadenaprofit);
 		MAIN.GLOBAL.objektrida.setAncientadenaprofit(MAIN.GLOBAL.objektancientadenaprofit);
+		MAIN.GLOBAL.objektrida.setKuvatavAeg(MAIN.GLOBAL.objektKuvatavAeg);
 		MAIN.GLOBAL.objektrida.setAdenaprofitperH(MAIN.GLOBAL.objektadenaperh);
 		MAIN.GLOBAL.objektrida.setAncientAdenaprofitperH(MAIN.GLOBAL.objektancientadenaperh);
-		MAIN.GLOBAL.objektrida.setDate(MAIN.GLOBAL.objektdate);
-		MAIN.GLOBAL.objektrida.setKuvatavAeg(MAIN.GLOBAL.objektKuvatavAeg);
+		MAIN.GLOBAL.objektrida.setReanr(MAIN.GLOBAL.objektRidaFookuses);
 
 		//MAIN.GLOBAL.objektilistrida.add(MAIN.GLOBAL.objektrida);
 		System.out.println("objektid.start      objekti lisamine jadasse tegemata");
@@ -44,7 +44,7 @@ public class start {
 		
 		
 		
-		KasutajaAsendaja.omistaobjektid(); /// kustutada, kui programm töötab
+	//	KasutajaAsendaja.omistaobjektid(); /// kustutada, kui programm töötab
 		
 		
 

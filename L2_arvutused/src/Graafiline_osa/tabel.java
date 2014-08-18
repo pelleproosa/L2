@@ -13,6 +13,9 @@ import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -33,10 +36,12 @@ import javax.swing.border.Border;
 
 import MAIN.Funktsioonid;
 import MAIN.GLOBAL;
+import MAIN.rida;
 import layout.TableLayout;
 
-public class tabel {
-
+public class tabel implements Serializable{
+public static final JTextField[] yourInputField= new JTextField[(MAIN.GLOBAL.yourInputFieldArv+1)];
+public static final  JTextField[] MinuOutput=new JTextField[(MAIN.GLOBAL.MinuOutputArv+1)];
     public static void start(final String args[]) {
     	
         JFrame frame = new JFrame(MAIN.GLOBAL.aknanimi);
@@ -79,7 +84,7 @@ public class tabel {
         labelid[21].setHorizontalAlignment(SwingConstants.CENTER);
 //        labelid[25].setVisible(false);
         labelid[25].setHorizontalAlignment(SwingConstants.CENTER);
-        labelid[25].setForeground(Color.BLUE);
+        //labelid[25].setForeground(Color.BLUE);
 //        labelid[26].setVisible(false);
         labelid[26].setHorizontalAlignment(SwingConstants.CENTER);
 //        labelid[27].setVisible(false);
@@ -102,7 +107,7 @@ public class tabel {
         
         
         
-        final JTextField[] yourInputField= new JTextField[(MAIN.GLOBAL.yourInputFieldArv+1)];
+        
         
         for (int i = 1; i < (MAIN.GLOBAL.yourInputFieldArv+1); i++)
         {
@@ -114,7 +119,7 @@ public class tabel {
           frame.add(yourInputField[i],MAIN.GLOBAL.inputlocation[i]);
           
       //    System.out.println("i="+i+" Asukoht="+MAIN.GLOBAL.inputlocation[i]);
-          yourInputField[i].setText("0");
+         // yourInputField[i].setText("0");
         }
         yourInputField[10].setText(""+GLOBAL.yksBssD);
         yourInputField[13].setText(""+GLOBAL.yksssD);
@@ -134,21 +139,13 @@ public class tabel {
         yourInputField[32].setEditable(false);
         yourInputField[33].setEditable(false);
         //yourInputField[34].setEditable(false);
-       yourInputField[43].setEditable(false);
-       yourInputField[44].setEditable(false);
-       yourInputField[45].setEditable(false);
-       yourInputField[46].setEditable(false);
-       yourInputField[48].setEditable(false);
-       yourInputField[49].setEditable(false);
-       yourInputField[50].setEditable(false);
-       yourInputField[51].setEditable(false);
-       yourInputField[52].setEditable(false);
-       yourInputField[53].setEditable(false);
-       yourInputField[54].setEditable(false);
-       yourInputField[55].setEditable(false);
-       yourInputField[56].setEditable(false);
-       yourInputField[57].setEditable(false);
-       yourInputField[58].setEditable(false);
+        int algus=43;
+        int end=83;
+        while(algus<end){
+        	yourInputField[algus].setEditable(false);	
+        	algus++;
+        }
+
         
         
         
@@ -192,10 +189,6 @@ public class tabel {
         yourInputField[38].setForeground(Color.WHITE);
         yourInputField[41].setBackground(Color.RED);
         yourInputField[41].setForeground(Color.WHITE);
-        yourInputField[30].setText("30");
-        yourInputField[31].setText("31");
-        yourInputField[32].setText("32");
-        yourInputField[33].setText("33");
         
         
         
@@ -208,7 +201,8 @@ public class tabel {
         
         
         
-       final  JTextField[] MinuOutput=new JTextField[(MAIN.GLOBAL.MinuOutputArv+1)];
+        
+       
 
         int i = 0;
         for (i = 1; i < (MAIN.GLOBAL.MinuOutputArv+1); i++)
@@ -234,26 +228,31 @@ public class tabel {
         MinuOutput[8].setCaretColor(Color.GREEN);
         MinuOutput[8].setBackground(Color.darkGray);
         MinuOutput[9].setVisible(false);
-        MinuOutput[18].setForeground(Color.BLUE);
-        MinuOutput[19].setForeground(Color.BLUE);
-        MinuOutput[20].setForeground(Color.BLUE);
-        MinuOutput[21].setForeground(Color.BLUE);
+       
         Border punaneraam = BorderFactory.createLineBorder(Color.RED, 1);
 
-        MinuOutput[26].setBorder(punaneraam);
-        MinuOutput[26].setBackground(Color.WHITE);
-        MinuOutput[27].setBorder(punaneraam);
-        MinuOutput[27].setBackground(Color.WHITE);
-        MinuOutput[28].setBorder(punaneraam);
-        MinuOutput[28].setBackground(Color.WHITE);
-        MinuOutput[29].setBorder(punaneraam);
-        MinuOutput[29].setBackground(Color.WHITE);
-        yourInputField[55].setBorder(punaneraam);
-        yourInputField[55].setBackground(Color.WHITE);
+        yourInputField[83].setBorder(punaneraam);
+        yourInputField[83].setBackground(Color.WHITE);
+        yourInputField[84].setBorder(punaneraam);
+        yourInputField[84].setBackground(Color.WHITE);
+        yourInputField[85].setBorder(punaneraam);
+        yourInputField[85].setBackground(Color.WHITE);
+        yourInputField[86].setBorder(punaneraam);
+        yourInputField[86].setBackground(Color.WHITE);
+        yourInputField[87].setBorder(punaneraam);
+        yourInputField[87].setBackground(Color.WHITE);
+        yourInputField[88].setBorder(punaneraam);
+       // yourInputField[88].setBackground(Color.WHITE);
+        yourInputField[88].setEditable(false);
+        yourInputField[89].setBorder(punaneraam);
+       // yourInputField[89].setBackground(Color.WHITE);
+        yourInputField[89].setEditable(false);
+        yourInputField[90].setBorder(punaneraam);
+       // yourInputField[90].setBackground(Color.WHITE);
+        yourInputField[90].setEditable(false);
+
         yourInputField[55].setEditable(false);
-        yourInputField[56].setBorder(punaneraam);
-        yourInputField[57].setBorder(punaneraam);
-        yourInputField[58].setBorder(punaneraam);
+        
  /*      
 // Võtan failist loetud Listist viimased viis liiget(rida ehk objekti) ja kirjutan need välja
         try{
@@ -343,29 +342,14 @@ public class tabel {
 ////////////////////////////  ALGAVAD NUPPUDE INITSIALISEERIMISED JNE                 //////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
      
-        ///////Tabeli ridade väärtused aknasse(9)///////
-        // RIDA 5 //
-      //outputlocation 26 .. 29 inputlocation 55 .. 58
-//double ancientadenaprofitperh, String kuvatavaeg)
-        int i1=MAIN.GLOBAL.objektridadearv;
-        if(i1>0){
-       	MinuOutput[26].setText(MAIN.GLOBAL.objektilistrida.get(i1).getCharname());
-       	MinuOutput[27].setText(MAIN.GLOBAL.objektilistrida.get(i1).getLocationname()); 
-       	MinuOutput[28].setText(""+MAIN.GLOBAL.objektilistrida.get(i1).getAdenaprofit()); 
-       	MinuOutput[29].setText(""+MAIN.GLOBAL.objektilistrida.get(i1).getAncientAdenaprofitperH());
-       	yourInputField[55].setText(MAIN.GLOBAL.objektilistrida.get(i1).getDate());
-       	yourInputField[56].setText(""+MAIN.GLOBAL.objektilistrida.get(i1).getAdenaprofitperH());
-       	yourInputField[57].setText(""+MAIN.GLOBAL.objektilistrida.get(i1).getAncientAdenaprofitperH());
-       	yourInputField[58].setText(""+MAIN.GLOBAL.objektilistrida.get(i1).getKuvatavAeg());
-       	
-        } 
         
-     while   (i1>1){
-    	 System.out.println("tabel.java.  Siin kontrollib listi suuruse, ja kuvab errorita normaalse koguse ridu");
-    	 System.out.println("Mõte: output ja input globaliks teha ning kasutada siin teist funktsiooni ridade omistamiseks nuppudega UP DOWN");
-    	 i1--;
-    	 
-     }
+ LeiaViimaneRida(GLOBAL.objektilistrida);
+ System.out.println("GLOBAL.objektridadearv :"+GLOBAL.objektridadearv);
+ GLOBAL.objektridadearv--;
+ GLOBAL.objektRidaFookuses=GLOBAL.objektridadearv;
+ OtsustaKuvamine(GLOBAL.objektridadearv,GLOBAL.objektridadearv);
+        
+     
         
         
         
@@ -810,7 +794,50 @@ int i=0;
         	        	
 
         	        }}	
-        		);    
+        		); 
+
+        button[11].addActionListener(             // Up
+        	    new ActionListener() {
+        	    	
+        	        public void actionPerformed(ActionEvent e) {
+        	        	
+        	        		if(MAIN.GLOBAL.objektRidaFookuses>0){
+        	        			if(MAIN.GLOBAL.objektRidaFookuses==8){rida reake=new rida("peida", "rida", 0, 0, "", 0, 0, 0);joonistarida1(reake,0);}
+        	        			if(MAIN.GLOBAL.objektRidaFookuses==7){rida reake=new rida("peida", "rida", 0, 0, "", 0, 0, 0);joonistarida2(reake,0);}
+        	        			if(MAIN.GLOBAL.objektRidaFookuses==6){rida reake=new rida("peida", "rida", 0, 0, "", 0, 0, 0);joonistarida3(reake,0);}
+        	        			if(MAIN.GLOBAL.objektRidaFookuses==5){rida reake=new rida("peida", "rida", 0, 0, "", 0, 0, 0);joonistarida4(reake,0);}
+        	        			if(MAIN.GLOBAL.objektRidaFookuses==4){rida reake=new rida("peida", "rida", 0, 0, "", 0, 0, 0);joonistarida5(reake,0);}
+        	        			if(MAIN.GLOBAL.objektRidaFookuses==3){rida reake=new rida("peida", "rida", 0, 0, "", 0, 0, 0);joonistarida6(reake,0);}
+        	        			if(MAIN.GLOBAL.objektRidaFookuses==2){rida reake=new rida("peida", "rida", 0, 0, "", 0, 0, 0);joonistarida7(reake,0);}
+        	        			if(MAIN.GLOBAL.objektRidaFookuses==1){rida reake=new rida("peida", "rida", 0, 0, "", 0, 0, 0);joonistarida8(reake,0);}
+        	        		MAIN.GLOBAL.objektRidaFookuses--;
+        	        		}
+        	        		
+        	        		System.out.println("button11 Up. ridadearv :"+GLOBAL.objektridadearv+" fookuses: "+MAIN.GLOBAL.objektRidaFookuses);
+        	        		 OtsustaKuvamine(GLOBAL.objektridadearv,MAIN.GLOBAL.objektRidaFookuses);
+						
+        	        	
+
+        	        	
+
+        	        }}	
+        		);
+        button[12].addActionListener(             // Down
+        	    new ActionListener() {
+        	    	
+        	        public void actionPerformed(ActionEvent e) {
+        	        	
+        	        		if(MAIN.GLOBAL.objektridadearv>MAIN.GLOBAL.objektRidaFookuses){MAIN.GLOBAL.objektRidaFookuses++;}
+        	        		
+        	        		System.out.println("button12 Down. ridadearv :"+GLOBAL.objektridadearv+" fookuses: "+MAIN.GLOBAL.objektRidaFookuses);
+        	        		 OtsustaKuvamine(GLOBAL.objektridadearv,MAIN.GLOBAL.objektRidaFookuses);
+						
+        	        	
+
+        	        	
+
+        	        }}	
+        		);
         
       /*
         yourInputField[1].addActionListener(
@@ -840,24 +867,241 @@ int i=0;
         	    }
         	);
        */
-        
-
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
     }
+    
+///////Tabeli ridade väärtused aknasse(9)///////
+    // RIDA 5 //
+  
+//double ancientadenaprofitperh, String kuvatavaeg)
+    
+    
+    
+    
+	
+	
+	
+	 
+    
+    
+    static void joonistarida1(rida sisu1,int reanr){//output 10 .. 13. input 30 .. 33
+    	if((sisu1.getCharname().equalsIgnoreCase("peida"))&&(sisu1.getLocationname().equalsIgnoreCase("rida"))){
+    		MinuOutput[10].setText("");
+    		MinuOutput[11].setText("");
+    		MinuOutput[12].setText("");
+    		MinuOutput[13].setText("");
+    		yourInputField[30].setText("");
+    		yourInputField[31].setText("");
+    		yourInputField[32].setText("");
+    		yourInputField[33].setText("");
+    	}else{
+    		MinuOutput[10].setText(sisu1.getCharname());
+    		MinuOutput[11].setText(sisu1.getLocationname());
+    		MinuOutput[12].setText(""+sisu1.getAdenaprofit());
+    		MinuOutput[13].setText(""+sisu1.getAncientadenaprofit());
+    	
+    		yourInputField[30].setText(sisu1.getKuvatavAeg());
+    		yourInputField[31].setText(""+sisu1.getAdenaprofitperH());
+    		yourInputField[32].setText(""+sisu1.getAncientAdenaprofitperH());
+    		yourInputField[33].setText(""+(sisu1.getReanr()+1));
+    	}
+    	
+    }
+    static void joonistarida2(rida sisu2,int reanr){//output 14 .. 17. input 43 .. 46
+    	if((sisu2.getCharname().equalsIgnoreCase("peida"))&&(sisu2.getLocationname().equalsIgnoreCase("rida"))){
+    		MinuOutput[14].setText("");
+    		MinuOutput[15].setText("");
+    		MinuOutput[16].setText("");
+    		MinuOutput[17].setText("");
+    		yourInputField[43].setText("");
+    		yourInputField[44].setText("");
+    		yourInputField[45].setText("");
+    		yourInputField[46].setText("");
+    	}else{
+    	
+    	MinuOutput[14].setText(sisu2.getCharname());
+    	MinuOutput[15].setText(sisu2.getLocationname());
+    	MinuOutput[16].setText(""+sisu2.getAdenaprofit());
+    	MinuOutput[17].setText(""+sisu2.getAncientadenaprofit());
+    	
+    	yourInputField[43].setText(sisu2.getKuvatavAeg());
+    	yourInputField[44].setText(""+sisu2.getAdenaprofitperH());
+    	yourInputField[45].setText(""+sisu2.getAncientAdenaprofitperH());
+    	yourInputField[46].setText(""+(sisu2.getReanr()+1));
+    	}
+    }
+    static void joonistarida3(rida sisu3,int reanr){//out 18 .. 21 in 47 .. 50
+    	if((sisu3.getCharname().equalsIgnoreCase("peida"))&&(sisu3.getLocationname().equalsIgnoreCase("rida"))){
+    		MinuOutput[18].setText("");
+    		MinuOutput[19].setText("");
+    		MinuOutput[20].setText("");
+    		MinuOutput[21].setText("");
+    		yourInputField[47].setText("");
+    		yourInputField[48].setText("");
+    		yourInputField[49].setText("");
+    		yourInputField[50].setText("");
+    	}else{
+    	MinuOutput[18].setText(sisu3.getCharname());
+    	MinuOutput[19].setText(sisu3.getLocationname());
+    	MinuOutput[20].setText(""+sisu3.getAdenaprofit());
+    	MinuOutput[21].setText(""+sisu3.getAncientadenaprofit());
+    	
+    	yourInputField[47].setText(sisu3.getKuvatavAeg());
+    	yourInputField[48].setText(""+sisu3.getAdenaprofitperH());
+    	yourInputField[49].setText(""+sisu3.getAncientAdenaprofitperH());
+    	yourInputField[50].setText(""+(sisu3.getReanr()+1));
+    	}
+    }
+    static void joonistarida4(rida sisu4,int reanr){//o 22 .. 25. i 51 .. 54
+    	if((sisu4.getCharname().equalsIgnoreCase("peida"))&&(sisu4.getLocationname().equalsIgnoreCase("rida"))){
+    		MinuOutput[22].setText("");
+    		MinuOutput[23].setText("");
+    		MinuOutput[24].setText("");
+    		MinuOutput[25].setText("");
+    		yourInputField[51].setText("");
+    		yourInputField[52].setText("");
+    		yourInputField[53].setText("");
+    		yourInputField[54].setText("");
+    	}else{
+    	MinuOutput[22].setText(sisu4.getCharname());
+    	MinuOutput[23].setText(sisu4.getLocationname());
+    	MinuOutput[24].setText(""+sisu4.getAdenaprofit());
+    	MinuOutput[25].setText(""+sisu4.getAncientadenaprofit());
+    	
+    	yourInputField[51].setText(sisu4.getKuvatavAeg());
+    	yourInputField[52].setText(""+sisu4.getAdenaprofitperH());
+    	yourInputField[53].setText(""+sisu4.getAncientAdenaprofitperH());
+    	yourInputField[54].setText(""+(sisu4.getReanr()+1));
+    	}
+    }
+    static void joonistarida5(rida sisu5,int reanr){//outputlocation 26 .. 29 inputlocation 55 .. 58
+    	if((sisu5.getCharname().equalsIgnoreCase("peida"))&&(sisu5.getLocationname().equalsIgnoreCase("rida"))){
+    		MinuOutput[26].setText("");
+    		MinuOutput[27].setText("");
+    		MinuOutput[28].setText("");
+    		MinuOutput[29].setText("");
+    		yourInputField[55].setText("");
+    		yourInputField[56].setText("");
+    		yourInputField[57].setText("");
+    		yourInputField[58].setText("");
+    	}else{
+    	MinuOutput[26].setText(sisu5.getCharname());
+    	MinuOutput[27].setText(sisu5.getLocationname());
+    	MinuOutput[28].setText(""+sisu5.getAdenaprofit());
+    	MinuOutput[29].setText(""+sisu5.getAncientadenaprofit());
+    	
+    	yourInputField[55].setText(sisu5.getKuvatavAeg());
+    	yourInputField[56].setText(""+sisu5.getAdenaprofitperH());
+    	yourInputField[57].setText(""+sisu5.getAncientAdenaprofitperH());
+    	yourInputField[58].setText(""+(sisu5.getReanr()+1));
+    	}
+    }
+    static void joonistarida6(rida sisu6,int reanr){
+    	if((sisu6.getCharname().equalsIgnoreCase("peida"))&&(sisu6.getLocationname().equalsIgnoreCase("rida"))){
+        	yourInputField[59].setText("");
+        	yourInputField[60].setText("");
+        	yourInputField[61].setText("");
+        	yourInputField[62].setText("");
+        	yourInputField[63].setText("");
+        	yourInputField[64].setText("");
+        	yourInputField[65].setText("");
+        	yourInputField[66].setText("");
+    	}else{
+    	yourInputField[59].setText(sisu6.getCharname());
+    	yourInputField[60].setText(sisu6.getLocationname());
+    	yourInputField[61].setText(""+sisu6.getAdenaprofit());
+    	yourInputField[62].setText(""+sisu6.getAncientadenaprofit());
+    	yourInputField[63].setText(sisu6.getKuvatavAeg());
+    	yourInputField[64].setText(""+sisu6.getAdenaprofitperH());
+    	yourInputField[65].setText(""+sisu6.getAncientAdenaprofitperH());
+    	yourInputField[66].setText(""+(sisu6.getReanr()+1));
+    	}
+    }
+    static void joonistarida7(rida sisu7,int reanr){
+    	if((sisu7.getCharname().equalsIgnoreCase("peida"))&&(sisu7.getLocationname().equalsIgnoreCase("rida"))){
+    		yourInputField[67].setText("");
+        	yourInputField[68].setText("");
+        	yourInputField[69].setText("");
+        	yourInputField[70].setText("");
+        	yourInputField[71].setText("");
+        	yourInputField[72].setText("");
+        	yourInputField[73].setText("");
+        	yourInputField[74].setText("");
+    	}else{
+    	yourInputField[67].setText(sisu7.getCharname());
+    	yourInputField[68].setText(sisu7.getLocationname());
+    	yourInputField[69].setText(""+sisu7.getAdenaprofit());
+    	yourInputField[70].setText(""+sisu7.getAncientadenaprofit());
+    	yourInputField[71].setText(sisu7.getKuvatavAeg());
+    	yourInputField[72].setText(""+sisu7.getAdenaprofitperH());
+    	yourInputField[73].setText(""+sisu7.getAncientAdenaprofitperH());
+    	yourInputField[74].setText(""+(sisu7.getReanr()+1));
+    	}
+    }
+    static void joonistarida8(rida sisu8,int reanr){
+    	if((sisu8.getCharname().equalsIgnoreCase("peida"))&&(sisu8.getLocationname().equalsIgnoreCase("rida"))){
+    		yourInputField[75].setText("");
+        	yourInputField[76].setText("");
+        	yourInputField[77].setText("");
+        	yourInputField[78].setText("");
+        	yourInputField[79].setText("");
+        	yourInputField[80].setText("");
+        	yourInputField[81].setText("");
+        	yourInputField[82].setText("");
+    	}else{
+    	yourInputField[75].setText(sisu8.getCharname());
+    	yourInputField[76].setText(sisu8.getLocationname());
+    	yourInputField[77].setText(""+sisu8.getAdenaprofit());
+    	yourInputField[78].setText(""+sisu8.getAncientadenaprofit());
+    	yourInputField[79].setText(sisu8.getKuvatavAeg());
+    	yourInputField[80].setText(""+sisu8.getAdenaprofitperH());
+    	yourInputField[81].setText(""+sisu8.getAncientAdenaprofitperH());
+    	yourInputField[82].setText(""+(sisu8.getReanr()+1));
+    	
+    }}
+    static void joonistarida9(rida sisu9,int reanr){
+    	
+    	yourInputField[83].setText(sisu9.getCharname());
+    	yourInputField[84].setText(sisu9.getLocationname());
+    	yourInputField[85].setText(""+sisu9.getAdenaprofit());
+    	yourInputField[86].setText(""+sisu9.getAncientadenaprofit());
+    	yourInputField[87].setText(sisu9.getKuvatavAeg());
+    	yourInputField[88].setText(""+sisu9.getAdenaprofitperH());
+    	yourInputField[89].setText(""+sisu9.getAncientAdenaprofitperH());
+    	yourInputField[90].setText(""+(sisu9.getReanr()+1));
+    	
+    }
+    
+    static void LeiaViimaneRida(List <rida> realist){
+    	GLOBAL.objektridadearv=realist.size();
+    }
+    static void ValiAntudRidaListist(int valik){
+    	GLOBAL.objektrida=GLOBAL.objektilistrida.get(valik);
+    	
+    }
+    static void OtsustaKuvamine(int ridadearv,int RidaFookuses){
+    	//kuvab alt üles(tagant ettepoole, palju mahub ehk X<=9 rida) igale reale vaja oma väärtused lugeda
+    	
+    	if((ridadearv>=RidaFookuses)&&(ridadearv>0)){ //Kontroll, kas soovitav rida jääb olemasolevasse piirkonda 
+    		int reanr=RidaFookuses;
+    			if (RidaFookuses<9){}
+    			if(reanr>=0){joonistarida9(MAIN.GLOBAL.objektilistrida.get(reanr),reanr);reanr--;}
+    			if(reanr>=0){joonistarida8(MAIN.GLOBAL.objektilistrida.get(reanr),reanr);reanr--;}
+    			if(reanr>=0){joonistarida7(MAIN.GLOBAL.objektilistrida.get(reanr),reanr);reanr--;}
+    			if(reanr>=0){joonistarida6(MAIN.GLOBAL.objektilistrida.get(reanr),reanr);reanr--;}
+    			if(reanr>=0){joonistarida5(MAIN.GLOBAL.objektilistrida.get(reanr),reanr);reanr--;}
+    			if(reanr>=0){joonistarida4(MAIN.GLOBAL.objektilistrida.get(reanr),reanr);reanr--;}
+    			if(reanr>=0){joonistarida3(MAIN.GLOBAL.objektilistrida.get(reanr),reanr);reanr--;}
+    			if(reanr>=0){joonistarida2(MAIN.GLOBAL.objektilistrida.get(reanr),reanr);reanr--;}
+    			if(reanr>=0){joonistarida1(MAIN.GLOBAL.objektilistrida.get(reanr),reanr);reanr--;}
+    		
+    		
+    		
+    		
+    		
+    	}
+    }
+    
+    
 }

@@ -407,10 +407,10 @@ GLOBAL.tulemus=Double.parseDouble(kakskomakohta.format((GLOBAL.tulemus)));
 		GLOBAL.objektilistrida.get(jrkNr).setLocationname(salvestatav.getLocationname());
 		GLOBAL.objektilistrida.get(jrkNr).setAdenaprofit(salvestatav.getAdenaprofit());
 		GLOBAL.objektilistrida.get(jrkNr).setAncientadenaprofit(salvestatav.getAncientadenaprofit());
+		GLOBAL.objektilistrida.get(jrkNr).setKuvatavAeg(salvestatav.getKuvatavAeg());
 		GLOBAL.objektilistrida.get(jrkNr).setAdenaprofitperH(salvestatav.getAncientAdenaprofitperH());
 		GLOBAL.objektilistrida.get(jrkNr).setAncientAdenaprofitperH(salvestatav.getAncientAdenaprofitperH());
-		GLOBAL.objektilistrida.get(jrkNr).setDate(salvestatav.getDate());
-		GLOBAL.objektilistrida.get(jrkNr).setKuvatavAeg(salvestatav.getKuvatavAeg());
+		GLOBAL.objektilistrida.get(jrkNr).setReanr(salvestatav.getReanr());
 		
 		
 		
@@ -425,23 +425,23 @@ GLOBAL.tulemus=Double.parseDouble(kakskomakohta.format((GLOBAL.tulemus)));
 		
 	}
 
-	public static void LisaLoodavRidaListi(rida salvestatav,String charname, String locationname,int adenaprofit, int ancientadenaprofit, String date, double adenaprofitperh, double ancientadenaprofitperh, String kuvatavaeg){
+	public static void LisaLoodavRidaListi(rida salvestatav,String charname, String locationname,int adenaprofit, int ancientadenaprofit, String kuvatavaeg, double adenaprofitperh, double ancientadenaprofitperh,int Reanr ){
 
 		salvestatav.setCharname(charname);
 		salvestatav.setLocationname(locationname);
 		salvestatav.setAdenaprofit(adenaprofit);
 		salvestatav.setAncientadenaprofit(ancientadenaprofit);
-		salvestatav.setDate(date);
+		salvestatav.setKuvatavAeg(kuvatavaeg);
 		salvestatav.setAdenaprofitperH(adenaprofitperh);
 		salvestatav.setAncientAdenaprofitperH(ancientadenaprofitperh);
-		salvestatav.setKuvatavAeg(kuvatavaeg);
+		salvestatav.setReanr(Reanr);
 		
 		
 		
 		
 		
 		GLOBAL.objektilistrida.add(salvestatav);
-		GLOBAL.realistike.setRealist(GLOBAL.objektilistrida);
+		//GLOBAL.realistike.setRealist(GLOBAL.objektilistrida);
 		
 	}
 	public static void LisaRidaListi(rida salvestatav){

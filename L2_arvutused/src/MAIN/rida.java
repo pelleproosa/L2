@@ -23,7 +23,7 @@ public class rida implements Serializable{
     private String locationname;
     private int adenaprofit;
     private int ancientadenaprofit;
-	private String date; 
+	private int reanr; 
 	private double AdenaprofitperH;
 	private double AncientAdenaprofitperH;
 	
@@ -42,15 +42,16 @@ public class rida implements Serializable{
 
 	*/
 	
-	public rida(String charname, String locationname,int adenaprofit, int ancientadenaprofit, String date, double adenaprofitperh, double ancientadenaprofitperh, String kuvatavaeg){
+	public rida(String charname, String locationname,int adenaprofit, int ancientadenaprofit, String kuvatavaeg, double adenaprofitperh, double ancientadenaprofitperh, int Reanr){
 		super();
 		this.charname=charname;
 		this.locationname=locationname;
 		this.adenaprofit=adenaprofit;
 		this.ancientadenaprofit=ancientadenaprofit;
-		this.date=date;
+		this.KuvatavAeg=kuvatavaeg;
 		this.AdenaprofitperH=adenaprofitperh;
 		this.AncientAdenaprofitperH=ancientadenaprofitperh;
+		this.reanr=Reanr;
 		
 		
 		
@@ -91,14 +92,14 @@ public class rida implements Serializable{
     
 
 
-	public String getDate() {
-		return date;
+	public int getReanr() {
+		return reanr;
 	}
 
-	public void setDate(String kuup) {
+	public void setReanr(int reaNr) {
 		//SimpleDateFormat kuup2ev = new SimpleDateFormat("dd/M/yyyy");             ///date to string
 		 
-		date = (kuup); 
+		reanr = reaNr; 
 	}
 	
 	public double getAdenaprofitperH() {
@@ -133,10 +134,10 @@ public class rida implements Serializable{
 		System.out.println("Location name: "+locationname);
 		System.out.println("a profit     : "+adenaprofit);
 		System.out.println("AA profit    : "+ancientadenaprofit);
-		System.out.println("Date         : "+date);
+		System.out.println("Time         : "+KuvatavAeg);
 		System.out.println("a perH       : "+AdenaprofitperH);
 		System.out.println("AA perH      : "+AncientAdenaprofitperH);
-		System.out.println("Time         : "+KuvatavAeg);
+		System.out.println("Rea nr       : "+reanr);
 
 	}
 	
