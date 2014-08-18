@@ -34,6 +34,7 @@ package INI;
  * */
 
 
+import java.io.BufferedOutputStream;
 import java.io.BufferedWriter;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -44,7 +45,10 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.io.ObjectOutput;
 import java.io.ObjectOutputStream;
+import java.io.OutputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -54,7 +58,7 @@ import java.util.List;
 
 import MAIN.rida;
 
-public class failifuntsioonid
+public class failifuntsioonid 
 {
 
 
@@ -206,17 +210,19 @@ public static void kustutaini() throws IOException
 }
 
 
- static void LoeFaili_ScoreTXT() throws Exception {
+ public static void LoeFaili_ScoreTXT() throws Exception {
 	 
 	 
 	 ObjectInputStream objectInputStream = new ObjectInputStream(
 		        new FileInputStream(MAIN.GLOBAL.ProgramRunLocation+MAIN.GLOBAL.ObjectSaveFileName));
 		 
 		Date date = (Date) objectInputStream.readObject();
-		System.out.println("kuupäev      :"+date);
+/*		System.out.println("kuupäev      :"+date);
 		System.out.println("boolean      :"+objectInputStream.readBoolean());
 		System.out.println("float        :"+objectInputStream.readFloat());
-		 
+*/		 
+		objectInputStream.readBoolean();
+		objectInputStream.readFloat();
 		// get the course object
 		MAIN.GLOBAL.objektilistrida= (List) objectInputStream.readObject();
 		
@@ -224,24 +230,24 @@ public static void kustutaini() throws IOException
 		ReaList ridadelist = (ReaList) objectInputStream.readObject();
 		MAIN.GLOBAL.objektilistrida=ridadelist;
 */		
-		
+		/*
 		rida rida1Read = MAIN.GLOBAL.objektilistrida.get(0);
 		System.out.println("Chari nimi : "+rida1Read.getCharname());
 		System.out.println("Asukoht    : "+rida1Read.getLocationname());
 		rida rida2Read = MAIN.GLOBAL.objektilistrida.get(1);
 		System.out.println("Chari nimi : "+rida2Read.getCharname());
 		System.out.println("Asukoht    : "+rida2Read.getLocationname());
+		*/
 		objectInputStream.close();
 	 
 
 
 }
 
-static void kirjuta_ScoreTXT() throws Exception {
+public static void kirjuta_ScoreTXT() throws Exception {
 	 
 	 
-	ObjectOutputStream objectOutputStream = new ObjectOutputStream(
-            new FileOutputStream(MAIN.GLOBAL.ProgramRunLocation+MAIN.GLOBAL.ObjectSaveFileName));
+	ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(MAIN.GLOBAL.ProgramRunLocation+MAIN.GLOBAL.ObjectSaveFileName));
 
 objectOutputStream.writeObject(new Date());
 
@@ -257,8 +263,17 @@ objectOutputStream.flush();
 objectOutputStream.close();
 
 
-
-
+/*	
+	      OutputStream file = new FileOutputStream("output.put");
+	      OutputStream buffer = new BufferedOutputStream(file);
+	      ObjectOutput output = new ObjectOutputStream(buffer);
+		
+	    
+	      output.writeObject(MAIN.GLOBAL.realistike);
+	   
+output.flush();
+output.close();
+*/
 }
  
 

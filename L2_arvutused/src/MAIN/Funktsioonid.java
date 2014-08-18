@@ -396,7 +396,7 @@ GLOBAL.tulemus=Double.parseDouble(kakskomakohta.format((GLOBAL.tulemus)));
 	
 	
 	}
-	public void YleKirjutaRidaListi(rida salvestatav, int jrkNr){                // rida salvestatakse Listi ülekirjutamise vormis 
+	public static void YleKirjutaRidaListi(rida salvestatav, int jrkNr){                // rida salvestatakse Listi ülekirjutamise vormis 
 		
 		
 //		MAIN.GLOBAL.objektilistrida.set(jrkNr, salvestatav);   ///ei tea, kas toimib
@@ -438,8 +438,11 @@ GLOBAL.tulemus=Double.parseDouble(kakskomakohta.format((GLOBAL.tulemus)));
 		
 		
 		
-		// MAIN.GLOBAL.objektilistrida.add(3,salvestatav);    // See võibolla lisab ka keskele uue kolmanda... huvitav
+		
+		
 		GLOBAL.objektilistrida.add(salvestatav);
+		GLOBAL.realistike.setRealist(GLOBAL.objektilistrida);
+		
 	}
 	public static void LisaRidaListi(rida salvestatav){
 
@@ -447,7 +450,7 @@ GLOBAL.tulemus=Double.parseDouble(kakskomakohta.format((GLOBAL.tulemus)));
 		
 		
 		
-		// MAIN.GLOBAL.objektilistrida.add(3,salvestatav);    // See võibolla lisab ka keskele uue kolmanda... huvitav
+		
 		GLOBAL.objektilistrida.add(salvestatav);
 	}
 	

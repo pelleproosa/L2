@@ -1,7 +1,10 @@
 package Graafiline_osa;
 
 
-
+/*
+ * Siin Luuakse aken ja komponendid selles.
+ * Väärtused võetakse GLOBAL-ist.
+ */
 
 
 import java.awt.Color;
@@ -27,6 +30,7 @@ import javax.swing.SwingConstants;
 
 
 import javax.swing.border.Border;
+
 import MAIN.Funktsioonid;
 import MAIN.GLOBAL;
 import layout.TableLayout;
@@ -250,7 +254,7 @@ public class tabel {
         yourInputField[56].setBorder(punaneraam);
         yourInputField[57].setBorder(punaneraam);
         yourInputField[58].setBorder(punaneraam);
-       
+ /*      
 // Võtan failist loetud Listist viimased viis liiget(rida ehk objekti) ja kirjutan need välja
         try{
         	int ii=MAIN.GLOBAL.objektilistrida.size();
@@ -316,7 +320,7 @@ public class tabel {
         	System.out.println("ERROR!    Vist ei ole Listist midagi võtta  (tabel)");
         }
         
-        
+    */    
         
 
 
@@ -339,6 +343,33 @@ public class tabel {
 ////////////////////////////  ALGAVAD NUPPUDE INITSIALISEERIMISED JNE                 //////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
      
+        ///////Tabeli ridade väärtused aknasse(9)///////
+        // RIDA 5 //
+      //outputlocation 26 .. 29 inputlocation 55 .. 58
+//double ancientadenaprofitperh, String kuvatavaeg)
+        int i1=MAIN.GLOBAL.objektridadearv;
+        if(i1>0){
+       	MinuOutput[26].setText(MAIN.GLOBAL.objektilistrida.get(i1).getCharname());
+       	MinuOutput[27].setText(MAIN.GLOBAL.objektilistrida.get(i1).getLocationname()); 
+       	MinuOutput[28].setText(""+MAIN.GLOBAL.objektilistrida.get(i1).getAdenaprofit()); 
+       	MinuOutput[29].setText(""+MAIN.GLOBAL.objektilistrida.get(i1).getAncientAdenaprofitperH());
+       	yourInputField[55].setText(MAIN.GLOBAL.objektilistrida.get(i1).getDate());
+       	yourInputField[56].setText(""+MAIN.GLOBAL.objektilistrida.get(i1).getAdenaprofitperH());
+       	yourInputField[57].setText(""+MAIN.GLOBAL.objektilistrida.get(i1).getAncientAdenaprofitperH());
+       	yourInputField[58].setText(""+MAIN.GLOBAL.objektilistrida.get(i1).getKuvatavAeg());
+       	
+        } 
+        
+     while   (i1>1){
+    	 System.out.println("tabel.java.  Siin kontrollib listi suuruse, ja kuvab errorita normaalse koguse ridu");
+    	 System.out.println("Mõte: output ja input globaliks teha ning kasutada siin teist funktsiooni ridade omistamiseks nuppudega UP DOWN");
+    	 i1--;
+    	 
+     }
+        
+        
+        
+        
         button[2].addActionListener(             // BSSD  -MATS
         	    new ActionListener() {
         	    	

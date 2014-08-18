@@ -66,11 +66,14 @@ public class GLOBAL {
 	
 	public static rida objektrida;
 	
+	public static realistobjekt realistike;
+	
 	public static List <rida> objektilistrida=new ArrayList<>();
 
 	
 
 	public static int objektreanumber=0;
+	public static int objektridadearv=0;
 	public static String objektcharname="";
 	public static String objektlocname="";
 	public static int objektadenaprofit=0;
@@ -86,15 +89,15 @@ public class GLOBAL {
 	public static double objektancientadenaperh=0;
 
 	
-	static String[] Tabelirida1={"4, 11","5, 11","6, 11","7, 11","8, 11","9, 11","10, 11","11, 11"}; //output 10 .. 13. input 30 .. 33
-	static String[] Tabelirida2={"4, 12","5, 12","6, 12","7, 12","8, 12","9, 12","10, 12","11, 12"}; //output 14 .. 17. input 43 .. 46
-	static String[] Tabelirida3={"4, 13","5, 13","6, 13","7, 13","8, 13","9, 13","10, 13","11, 13"}; //out 18 .. 21 in 47 .. 50
-	static String[] Tabelirida4={"4, 14","5, 14","6, 14","7, 14","8, 14","9, 14","10, 14","11, 14"}; //o 22 .. 25. i 51 .. 54
-	static String[] Tabelirida5={"4, 15","5, 15","6, 15","7, 15","8, 15","9, 15","10, 15","11, 15"}; //outputlocation 26 .. 29 inputlocation 55 .. 58
-	static String[] Tabelirida6={"4, 16","5, 16","6, 16","7, 16","8, 16","9, 16","10, 16","11, 16"}; // input 59 .. 66
-	static String[] Tabelirida7={"4, 17","5, 17","6, 17","7, 17","8, 17","9, 17","10, 17","11, 17"}; // input 67 .. 74
-	static String[] Tabelirida8={"4, 18","5, 18","6, 18","7, 18","8, 18","9, 18","10, 18","11, 18"}; // input 75 .. 82
-	static String[] Tabelirida9={"4, 19","5, 19","6, 19","7, 19","8, 19","9, 19","10, 19","11, 19"}; // input 83 .. 90
+	public static String[] Tabelirida1={"4, 11","5, 11","6, 11","7, 11","8, 11","9, 11","10, 11","11, 11"}; //output 10 .. 13. input 30 .. 33
+	public static String[] Tabelirida2={"4, 12","5, 12","6, 12","7, 12","8, 12","9, 12","10, 12","11, 12"}; //output 14 .. 17. input 43 .. 46
+	public static String[] Tabelirida3={"4, 13","5, 13","6, 13","7, 13","8, 13","9, 13","10, 13","11, 13"}; //out 18 .. 21 in 47 .. 50
+	public static String[] Tabelirida4={"4, 14","5, 14","6, 14","7, 14","8, 14","9, 14","10, 14","11, 14"}; //o 22 .. 25. i 51 .. 54
+	public static String[] Tabelirida5={"4, 15","5, 15","6, 15","7, 15","8, 15","9, 15","10, 15","11, 15"}; //outputlocation 26 .. 29 inputlocation 55 .. 58
+	public static String[] Tabelirida6={"4, 16","5, 16","6, 16","7, 16","8, 16","9, 16","10, 16","11, 16"}; // input 59 .. 66
+	public static String[] Tabelirida7={"4, 17","5, 17","6, 17","7, 17","8, 17","9, 17","10, 17","11, 17"}; // input 67 .. 74
+	public static String[] Tabelirida8={"4, 18","5, 18","6, 18","7, 18","8, 18","9, 18","10, 18","11, 18"}; // input 75 .. 82
+	public static String[] Tabelirida9={"4, 19","5, 19","6, 19","7, 19","8, 19","9, 19","10, 19","11, 19"}; // input 83 .. 90
 	
 
 	//public static String tabelirida1jada[]=tabelirida1.getTabelirida();
@@ -112,7 +115,7 @@ public class GLOBAL {
 	
 	//File
 	public static String SaveFileName="L2Calc.ini";
-	public static String ObjectSaveFileName="ObjectsSave.obj";
+	public static String ObjectSaveFileName="Objects.obj";
 	public static String DesktopLocation=(System.getProperty("user.home")+"\\Desktop\\");
 	public static String ProgramRunLocation=(System.getProperty("user.dir")+"\\");
 	

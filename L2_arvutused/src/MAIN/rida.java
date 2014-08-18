@@ -1,5 +1,7 @@
 package MAIN;
 
+import java.io.Serializable;
+
 
 
 /*
@@ -15,7 +17,7 @@ package MAIN;
 
 
 
-public class rida {
+public class rida implements Serializable{
 	
     private String charname;
     private String locationname;

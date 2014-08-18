@@ -24,9 +24,14 @@ public class MAIN {
 		
 		
 		GLOBAL.objektrida=new rida("", "", 0, 0, "", 0, 0, "");
-		Funktsioonid.LisaLoodavRidaListi( GLOBAL.objektrida,GLOBAL.objektcharname, GLOBAL.objektlocname, GLOBAL.objektadenaprofit, GLOBAL.objektancientadenaprofit, GLOBAL.objektdate, GLOBAL.objektadenaprofit, GLOBAL.objektancientadenaprofitperh, GLOBAL.objektKuvatavAeg);
+		rida reake=new rida("Antonius", "Giran", 0, 0, "", 0, 0, "");
+		GLOBAL.realistike=new realistobjekt(GLOBAL.objektilistrida);
 		
 			
+		Funktsioonid.LisaLoodavRidaListi( GLOBAL.objektrida,GLOBAL.objektcharname, GLOBAL.objektlocname, GLOBAL.objektadenaprofit, GLOBAL.objektancientadenaprofit, GLOBAL.objektdate, GLOBAL.objektadenaprofit, GLOBAL.objektancientadenaprofitperh, GLOBAL.objektKuvatavAeg);
+		Funktsioonid.YleKirjutaRidaListi(reake, 0);
+		
+		
 		objektid.KasutajaAsendaja.omistaobjektid();
 		rida b=GLOBAL.objektilistrida.get(1);
 		rida c=GLOBAL.objektilistrida.get(2);
@@ -38,10 +43,34 @@ public class MAIN {
 		System.out.println("Albumi Nimi Get abil          : "+nimi);
 		nimi=c.getCharname();
 		System.out.println("Teise albumi nimi             : "+nimi);
-		GLOBAL.objektilistrida.get(1).setCharname("Uus nimi");
-		System.out.println("Teise albumi nimi muudetuna   : "+GLOBAL.objektilistrida.get(1).getCharname());
-
-		System.exit(0);
+		//GLOBAL.objektilistrida.get(1).setCharname("Uus nimi");
+		//System.out.println("Teise albumi nimi muudetuna   : "+GLOBAL.objektilistrida.get(1).getCharname());
+		try {
+			System.out.print("Kirjutan objektide Listi faili...");
+			INI.failifuntsioonid.kirjuta_ScoreTXT();
+		} catch (Exception e1) {
+			// TODO Auto-generated catch block
+			System.out.println("Score.txt kirjutamisel error");
+			e1.printStackTrace();
+		}System.out.println("ok");
+		
+		
+		try {
+			System.out.print("Loen objektide Listi failist...");
+			INI.failifuntsioonid.LoeFaili_ScoreTXT();
+		} catch (Exception e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}System.out.println("ok");
+		GLOBAL.objektridadearv=GLOBAL.objektilistrida.size();
+		System.out.println("Objektide arv listis: "+GLOBAL.objektilistrida.size());
+		
+		System.out.println("tulem   : "+GLOBAL.objektilistrida.get(0).getCharname());
+		System.out.println("tulem   : "+GLOBAL.objektilistrida.get(1).getCharname());
+		System.out.println("tulem   : "+GLOBAL.objektilistrida.get(2).getCharname());
+		
+		
+	//	System.exit(0);
 		
 		
 		GLOBAL.SaveFileName=System.getProperty("user.dir")+"\\"+"L2Calc.ini";
